@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar fixed-top" style="background-color: #efefef;">
+        <div class="container">
+          <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Nike
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Adidas
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Converse
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Giới thiệu</a>
+                </li>
+              </ul>
+             
+            </div>
+          </div>
+          <a class="navbar-brand" href="#">
+            <img src="image/logo1.jpg" alt="Bootstrap" width="120" height="120">
+            <span style="font-family: Oxanium, sans-serif; font-weight: 800;">Shoes Fashion</span>
+          </a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <div class="offcanvas-header">
+            <li class="nav-item dropdown" style="list-style: none;">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-left: 3px;">
+                <i class="fas fa-user fa-lg" style="color: black;"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+                <li><a class="dropdown-item" href="#">Đăng kí</a></li>
+              </ul>
+            </li>
+            <li style="list-style: none;">
+              <a class="nav-link " href="#" style="padding:0px 5px 0px 12px;">
+                <i class="fas fa-cart-plus fa-lg"></i>
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+	<main role="main">
+        <div class="container mt-4">
+            <div id="thongbao" class="alert alert-danger d-none face" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="card">
+				<div class="container ">
+					<div class="row g-2">
+					  <div class="col-6 ">
+						<div class="p-3 text-center"><img src="./image/anh1.jpg" alt="" width="500" height="400"><br><br>
+							<p>
+								<img src="./image/anh1.jpg" alt="" width="100">
+								<img src="./image/anh1.jpg" alt="" width="100">
+								<img src="./image/anh1.jpg" alt="" width="100">
+								<img src="./image/anh1.jpg" alt="" width="100">
+								<img src="./image/anh1.jpg" alt="" width="100">
+							</p></div>
+							<div>
+								 <h4>Mô tả sản phẩm</h4> <h6>
+									Giày tập thể thao nữ Basic Walking Anta 1224A7790-5 sở hữu thiết kế thời trang, năng động, cùng chất liệu bền bỉ hỗ trợ vận động tốt và bảo vệ đôi chân cho người mang. 
+									- Đế cao su mềm, êm ái giúp bạn cảm thấy dễ chịu khi di chuyển trong thời gian dài. 
+									
+									- Đồng hành cùng thiết kế thời trang, giày thể thao Anta mang tính năng thoáng khí, giúp cân bằng nhiệt và độ ẩm trong những điều kiện môi trường khác nhau, đế có các đường rãnh chống trơn trượt. 
+									
+									- Sản phẩm sở hữu phong cách hiện đại, khỏe khoắn, màu sắc trẻ trung hợp với nhiều lứa tuổi và dáng người. Đường may tỉ mỉ, tinh tế tạo cho bạn cảm giác yên tâm về chất lượng. 
+									
+									- Sản phẩm có tính ứng dụng cao, mang khi tập luyện thể thao, đi làm hay đi chơi...
+									
+									</h6>
+							</div>
+					  </div>
+					  <div class="col-6">
+						<div class="p-3">
+							<h2 class="product-title">GIÀY TẬP THỂ THAO NAM NỮ BASIC WALKING ANTA   <span class="badge text-bg-danger">Mới</span></h2>
+							<p>Thương hiệu: ANTA New   Mã sản phẩm: Live-1224A7790-5-5</small></p>
+							
+							<h3><strong style="size: 50; color: red;">1,190,000đ</strong> <small class="text-muted" >Giá cũ: <s><span>1,990,000đ</span></s></small></h3>
+								
+							<br>
+							<span class="border border-danger">
+								<div>
+									<h4>KHUYẾN MÃI</h4>
+									<h6>SALE SẬP SÀN - NGÀN ƯU ĐÃI!</h6>
+									<h6>🎁 Nhập mã VNPAYANTA giảm thêm 30k đơn 500k, 50k đơn 800k, 70k đơn 1.500k (Thanh toán online VNPAY)</h6>
+									<h6>🔥ĐỒNG GIÁ 99K, 199K, 299K, 399K,…</h6> 
+									<h6>🔥NEW ARRIVAL: Giảm 100k đơn 1triệu, 300k đơn 2triệu, 600k đơn 3triệu</h6>
+									<h6>🔥SALE upto 50% hàng trăm sản phẩm</h6>
+
+	
+								</div>
+
+							</span>
+							<div>
+								<label for="soluong">size:</label>
+							<button type="button" class="btn btn-light">36</button>
+							<button type="button" class="btn btn-light">37</button>
+							<button type="button" class="btn btn-light">38</button>
+							<button type="button" class="btn btn-light">39</button>
+							<button type="button" class="btn btn-light">40</button>
+							<button type="button" class="btn btn-light">41</button>
+							<button type="button" class="btn btn-light">42</button>
+							<button type="button" class="btn btn-light">43</button>
+							
+							</div><br>
+							<div class="form-group"> 
+								<label for="soluong">Số lượng đặt mua:</label>
+								<input type="number" class="form-control" id="soluong" name="soluong">
+							</div><br>
+							<button type="button" class="btn btn-danger"  style="width: 600px; height: 50px; text-align: center;">Mua ngay</button>
+							
+							
+							
+					  <div class="col-6">
+						<div class="p-3">Custom column padding</div>
+					  </div>
+					  <div class="col-6">
+						<div class="p-3">Custom column padding</div>
+					  </div> 
+					</div>
+				  </div>
+                <!-- <div class="container-fliud">
+                    
+
+                        <div class="wrapper row">
+							
+                            <div class="preview col-md-6">
+								<div class="wrapper row">
+									<img src="./image/anh1.jpg" alt="" width="300">
+									<p>
+										<img src="./image/anh1.jpg" alt="" width="90">
+										<img src="./image/anh1.jpg" alt="" width="90">
+										<img src="./image/anh1.jpg" alt="" width="90">
+										<img src="./image/anh1.jpg" alt="" width="90">
+									</p>
+                                <div class="preview-pic tab-content">
+                                    <div class="tab-pane" id="pic-1">
+                                        <img src="image/anh1.jpg" alt="Bootstrap" width="470" height="330">
+                                    </div>
+                                    <div class="tab-pane" id="pic-2">
+                                        <img src="image/anh1.jpg" alt="Bootstrap" width="170" height="30">
+                                    </div>
+                                    <div class="tab-pane active" id="pic-3">
+                                        <img src="image/anh1.jpg" alt="Bootstrap" width="170" height="30">
+                                    </div>
+                                </div>
+                                <ul class="preview-thumbnail nav nav-tabs">
+                                    <li class="active">
+                                        <a data-target="#pic-1" data-toggle="tab" class="">
+											<img src="image/anh1.jpg" alt="Bootstrap" width="170" height="30">
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a data-target="#pic-2" data-toggle="tab" class="">
+											<img src="image/anh1.jpg" alt="Bootstrap" width="170" height="30">
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a data-target="#pic-3" data-toggle="tab" class="active">
+											<img src="image/anh1.jpg" alt="Bootstrap" width="170" height="30">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="details col-md-6">
+                                <h3 class="product-title">Samsung Galaxy Tab 10.1 3G 16G</h3>
+                                <div class="rating">
+                                    <div class="stars">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <span class="review-no">999 reviews</span>
+                                </div>
+                                <p class="product-description">Màn hình 10.1 inch cảm ứng đa điểm</p>
+                                <small class="text-muted">Giá cũ: <s><span>10,990,000.00 vnđ</span></s></small>
+                                <h4 class="price">Giá hiện tại: <span>10,990,000.00 vnđ</span></h4>
+                                <p class="vote"><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
+                                    <strong>Uy
+                                        tín</strong>!</p>
+                                <h5 class="sizes">sizes:
+                                    <span class="size" data-toggle="tooltip" title="cỡ Nhỏ">s</span>
+                                    <span class="size" data-toggle="tooltip" title="cỡ Trung bình">m</span>
+                                    <span class="size" data-toggle="tooltip" title="cỡ Lớn">l</span>
+                                    <span class="size" data-toggle="tooltip" title="cỡ Đại">xl</span>
+                                </h5>
+                                <h5 class="colors">colors:
+                                    <span class="color orange not-available" data-toggle="tooltip"
+                                        title="Hết hàng"></span>
+                                    <span class="color green"></span>
+                                    <span class="color blue"></span>
+                                </h5>
+                                <div class="form-group">
+                                    <label for="soluong">Số lượng đặt mua:</label>
+                                    <input type="number" class="form-control" id="soluong" name="soluong">
+                                </div>
+                                <div class="action">
+                                    <a class="add-to-cart btn btn-default" id="btnThemVaoGioHang">Thêm vào giỏ hàng</a>
+                                    <a class="like btn btn-default" href="#"><span class="fa fa-heart"></span></a>
+                                </div>
+                            </div>
+
+                        </div>
+                </div> -->
+            </div>
+
+            <!-- <div class="card">
+                <div class="container-fluid">
+                    <h3>Thông tin chi tiết về Sản phẩm</h3>
+                    <div class="row">
+                        <div class="col">
+                            Vi xử lý Dual-core 1 Cortex-A9 tốc độ 1GHz
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- End block content -->
+    </main>
+</body>
+</html>
