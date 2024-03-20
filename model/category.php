@@ -1,6 +1,6 @@
 <?php
     function category_select_all(){
-        $sql = "SELECT * from categories";
+        $sql = "SELECT * FROM categories";
         return pdo_query($sql);
     }
     function category_select_name($cate_name){

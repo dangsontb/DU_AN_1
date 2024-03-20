@@ -19,7 +19,7 @@
                                 <a class="nav-link text-light " aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="./danhmuc/listdm.html">Danh mục</a>
+                                <a class="nav-link text-light" href="index.php?act=list_category">Danh mục</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="./brand/listbrand.html">Thương hiệu</a>
@@ -55,64 +55,4 @@
             </p>
         </header>
 
-        <!-- main -->
-        <main class="container_">
-        
-                <h3 class="alert alert-success text-success"> Danh sách danh mục</h3>
-                <table class="table table-hover">
-                    <thead  class="table-secondary" >
-                        <tr>
-                            <th></th>
-                            <th>Mã Brand</th>
-                            <th>Tên Brand</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><input class="form-check-input" type="checkbox"></td>
-                            <td>1</td>
-                            <td>Adidas</td>
-                            <td>
-                                <a href="" class="btn btn-primary fw-medium">Edit</a>
-                                <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input class="form-check-input" type="checkbox"></td>
-                            <td>2</td>
-                            <td>Nike</td>
-                            <td>
-                                <a href="editdm.html" class="btn btn-primary fw-medium">Edit</a>
-                                <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input class="form-check-input" type="checkbox"></td>
-                            <td>3</td>
-                            <td>Puma</td>
-                            <td>
-                                <a href="" class="btn btn-primary fw-medium">Edit</a>
-                                <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
-                            </td>
-                        </tr>
-                     
-                        
-                    </tbody>
-                    
-                </table>
-                <form action="" method="post">
-                    <div class="form-group">
-                        <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
-                        <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
-                        <a   class="btn btn-outline-danger fw-medium">Xóa mục đã chọn</a>
-                        <a href="addbrand.html"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
-                    </div>
-                </form>
-              
-        </main>
-
-    </div>
-</body>
-</html>
+      
