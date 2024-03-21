@@ -34,7 +34,7 @@
                         <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
                         <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
                         <a   class="btn btn-outline-danger fw-medium">Xóa mục đã chọn</a>
-                        <a href="addbrand.html"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
+                        <a href="index.php?act=add_cate"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
                     </div>
                 </form>
               

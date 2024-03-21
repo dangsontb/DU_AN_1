@@ -38,6 +38,45 @@
                 }
                 include "brand/add_brand.php";
                 break;
+
+                case 'edit':
+                    if(isset($_GET['id']) && ($_GET['id']) >0 ){
+                          
+                       $show_one_brand = brand_select_by_id($_GET['id']);
+                    }
+                   
+                    include 'brand/update_brand.php';
+                    break;
+
+                case 'update_brand':
+                    
+                    if(isset($_POST['update']) && $_POST['update']){
+                        $brand_id = $_POST['brand_id'];
+                        $brand_name = $_POST['brand_name'];
+                        
+                        if(!empty($brand_name)){
+                            $brand_name_unique = brand_select_name($brand_name);
+                            if(is_array($brand_name_unique)){
+                                $brand_name_error = "Tên này đã tồn tại";
+                            }else{
+                                brand_update($brand_id,$brand_name);         
+                            }
+                        }else $brand_name_error = "Không được để trống !";
+                       
+                    }
+                    $list_brand = brand_select_all();
+                    include 'brand/list_brand.php';
+                    break;    
+
+              case 'delete':
+                if(isset($_GET['id']) && ($_GET['id']) >0 ){
+
+                    delete_brand($_GET['id']);
+                }
+                $list_brand = brand_select_all();
+                include "brand/list_brand.php";
+                break;
+                  
             // --------------------------PRODUCT----------------------------------
             case 'list_product':
             
