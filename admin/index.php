@@ -16,6 +16,7 @@
                 $list_category = category_select_all();
                 include "category/list_cate.php";
                 break;
+
             // --------------------------BRAND----------------------------------
             case 'list_brand':
                 $list_brand = brand_select_all();
@@ -33,12 +34,12 @@
                         }else{
                             brand_insert($brand_name);
                         }
-                    }else $brand_name_error = "Không được để trống !";
-                   
+                    }else $brand_name_error = "Không được để trống !";                 
                 }
                 include "brand/add_brand.php";
                 break;
 
+<<<<<<< HEAD
                 case 'edit':
                     if(isset($_GET['id']) && ($_GET['id']) >0 ){
                           
@@ -77,14 +78,33 @@
                 include "brand/list_brand.php";
                 break;
                   
+=======
+>>>>>>> 802cdd2f8ca6dce4fadb45444983cfcf8a7261c5
             // --------------------------PRODUCT----------------------------------
             case 'list_product':
-            
+                if(isset($_POST['themmoi']) $$ $_POST['themmoi']){
+
+                }
                 $list_product = product_select_all() ;
                 include 'product/list_product.php';
                 break;
             case 'add_product':
+                if(isset($_POST['themmoi']) && $_POST['themmoi']){
+                   $name = $_POST['name'] ;
+                   $price = $_POST['price'] ;
+                   $image = $_FILES['image'] ;
+                   $description = $_POST['description'] ;
+                   $sale = $_POST['sale'] ;
+                   $create_at = $_POST['create_at'] ;
+                   $view = $_POST['view'] ;
+                   $cate_id  = $_POST['cate_id '] ;
+                   $brand_id  = $_POST['brand_id '] ;
+                }
                 include 'product/add_product.php';
+                break;
+            // --------------------------User----------------------------------
+            case 'list_user':
+                include 'user/list_user.php';
                 break;
             default : include "home.php";
         }

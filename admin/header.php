@@ -28,19 +28,19 @@
                                 <a class="nav-link text-light" href="index.php?act=list_product">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="./user/list-user.html">Khách hàng</a>
+                                <a class="nav-link text-light" href="index.php?act=list_user">Khách hàng</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Bình luận</a>
+                                <a class="nav-link text-light" href="index.php?act=list_comment">Bình luận</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Đơn hàng</a>
+                                <a class="nav-link text-light" href="index.php?act=list_bill">Đơn hàng</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Thuộc tính</a>
+                                <a class="nav-link text-light" href="index.php?act=list_property">Thuộc tính</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Thống kê</a>
+                                <a class="nav-link text-light" href="index.php?act=list_statistical">Thống kê</a>
                             </li>
                         </ul>
                     </div>
