@@ -12,7 +12,7 @@
         return pdo_query_one($sql,$brand_id);
     }
     function brand_insert($brand_name){
-        $sql = "INSERT into brand(brand_name) value =? ";
+        $sql = "INSERT INTO brand(brand_name) value(?) ";
         pdo_execute($sql,$brand_name); 
     }
     function brand_update($brand_id,$brand_name){

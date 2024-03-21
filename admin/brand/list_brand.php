@@ -8,17 +8,17 @@
                     <thead  class="table-secondary" >
                         <tr>
                             <th></th>
-                            <th>ID Danh Mục</th>
-                            <th>Tên Danh Mục</th>
+                            <th>Mã Brand</th>
+                            <th>Tên Brand</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($list_category as $category) : extract($category); ?>
+                        <?php foreach ($list_brand as $brand) : extract($brand); ?>
                         <tr>
                             <td><input class="form-check-input" type="checkbox"></td>
-                            <td><?= $cate_id ?></td>
-                            <td><?= $cate_name?></td>
+                            <td><?= $brand_id ?></td>
+                            <td><?= $brand_name?> </td>
                             <td>
                                 <a href="" class="btn btn-primary fw-medium">Edit</a>
                                 <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
@@ -34,7 +34,7 @@
                         <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
                         <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
                         <a   class="btn btn-outline-danger fw-medium">Xóa mục đã chọn</a>
-                        <a href="addbrand.html"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
+                        <a href="index.php?act=add_brand"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
                     </div>
                 </form>
               

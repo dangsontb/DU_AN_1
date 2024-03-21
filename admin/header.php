@@ -22,10 +22,10 @@
                                 <a class="nav-link text-light" href="index.php?act=list_category">Danh mục</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="./brand/listbrand.html">Thương hiệu</a>
+                                <a class="nav-link text-light" href="index.php?act=list_brand">Thương hiệu</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="./product/list_product.html">Sản phẩm</a>
+                                <a class="nav-link text-light" href="index.php?act=list_product">Sản phẩm</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="./user/list-user.html">Khách hàng</a>
