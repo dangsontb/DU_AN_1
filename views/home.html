@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&family=Playball&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
@@ -12,179 +13,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
-<style>
-  *{
-      box-sizing: border-box;
-      padding: 0px;
-      margin: 0px;
-  }
-  .controller{
-      margin: auto;
-  }
 
-
-
-  /* ========================================== CSS HEADER ============================================ */
-  
-  .dieuhuong{
-    height: 107px
-  }
-  .menu{
-    margin-left: 50px;
-  }
-  .dropdown-menu {
-    --bs-dropdown-min-width: 7rem;
-  }
-  .icon{
-    margin: 0px 50px 0px 20px;
-  }
-  @media only screen and (max-width: 46.1875em){
-    .dieuhuong{
-        height: 190px;
-    }
-    .icon{
-        margin: 20px 0px 0px 60px;
-
-    }
-  }
-
-/* ============================================== CSS HEADER ============================================= */
-
-
-  .camket{
-    margin: 78px 0px 60px 0px;
-  }
-  .boxright{
-    float: right;
-    width: 75%;
-  }
-  .luachon{
-    position: relative;
-    margin-bottom: 70px;
-  }
-  .luachon select{
-    border: 1px solid black;
-    position: absolute;
-    right: 0px;
-    width: 40%;
-    padding: 8px;
-  }
-  .sanpham{
-    margin-bottom: 60px;
-  }
-  .name a{
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  }
-  .item{
-      border: none;
-      box-shadow: 0px 0px 3px 0px rgb(191, 191, 191);
-
-  }
-  .item:hover{
-      box-shadow: 1px 0px 5px 1px rgb(175, 175, 175);
-      border-radius: 8px;
-  }
-  .anh{
-  height: 100%;
-  padding: 10px;
-  }
-  .muahang{
-    color: white;
-    background-color: #e40000b0;
-    width: 100%;
-    margin-top: 30px;
-    border: none;
-    font-weight: 700;
-    text-align: center;
-    padding: 4px 0px;
-  }
-  .muahang:hover{
-    background-color: #E40001;
-
-  }
-  .chuyentrang{
-      margin-bottom: 80px;
-  }
-  .boxleft{
-      float: left;
-      width: 20%;
-  }
-  .price{
-  margin-top: 78px;
-  background-color:#EFEFEF;
-  padding: 20px 4px 20px 10px;
-  }
-  .price h6{
-  text-align: center;
-  padding-bottom: 8px;
-  }
-  .size{
-  margin-top: 20px;
-  background-color:#EFEFEF;
-  padding: 20px 0px 20px 10px;
-  }
-  .size h6{
-  text-align: center;
-  padding-bottom: 8px;
-  }
-  .sphot{
-  margin-top: 20px;
-  background-color:#EFEFEF;
-  padding: 20px 12px 20px 10px;
-  }
-  .sphot h6{
-  text-align: center;
-  padding-bottom: 8px;
-  }
-  .hot{
-  text-decoration: none;
-  color: black;
-  display: flex;
-  margin-bottom: 10px;
-  }
-  .hot:hover{
-  background-color: white;
-  }
-  .hot img{
-  width: 32px;
-  height: 30px;
-  margin-right: 8px;
-  }
-  .hot span{
-  font-size: small;
-  margin-top: 4px;
-  }
-  .kichthuoc .form-check{
-    margin-bottom: 10px;
-  }
-  footer{
-    clear: both;
-    background-image: url(../DU_AN_1/image/banner2.jpg);
-  }
-  .thongtin{
-    background-color: rgba(192, 192, 192, 0.253);
-  }
-  .chinhsach{
-    padding: 50px 50px 30px 50px;
-    text-align: left;
-    font-weight: 500;
-    color: #4d1e1e;
-
-  }
-  .chinhsach h4{
-    font-weight: 700;
-  }
 
 </style>
 <body>
         <header>
           <!-- =========================================================== NAVBAR ============================================================ -->
             <div class="dieuhuong">
-                <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(243, 243, 243);">
-                    <div style="margin-left: 40px;">
+                <nav class="navbar navbar-expand-lg fixed-top">
+                    <div class="logo">
                         <a class="navbar-brand d-flex" href="#">
-                          <img src="./image/logo1.jpg" alt="" width="100">
+                          <img src="../image/logo1.jpg" alt="" width="100">
                           <span style="font-family: Oxanium, sans-serif; font-weight: 800; padding-top: 34px;">Shoes Fashion</span>
                         </a>
                     </div>
@@ -193,7 +32,7 @@
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
-                      <div class="collapse navbar-collapse" id="navbarScroll">
+                      <div class="collapse navbar-collapse " id="navbarScroll">
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                             
                             <li class="nav-item dropdown">
@@ -238,7 +77,7 @@
                         </form>
                       </div>
                     </div>
-                    <div class="d-flex icon" style="">
+                    <div class="d-flex icon">
                         <li class="nav-item dropdown" style="list-style: none; ">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user fa-lg" style="color: black;"></i>
@@ -262,13 +101,13 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="1000">
-                        <img src="./image/banner1.jpg" class="d-block w-100 " alt="..." style="height: 550px;">
+                        <img src="../image/banner1.jpg" class="d-block w-100 " alt="..." style="height: 550px;">
                         </div>
                         <div class="carousel-item" data-bs-interval="1000">
-                        <img src="./image/banner2.jpg" class="d-block w-100" alt="..." style="height: 550px;">
+                        <img src="../image/banner3.jpg" class="d-block w-100" alt="..." style="height: 550px;">
                         </div>
                         <div class="carousel-item" data-bs-interval="1000">
-                        <img src="./image/banner3.jpg" class="d-block w-100" alt="..." style="height: 550px;">
+                        <img src="../image/banner4.jpg" class="d-block w-100" alt="..." style="height: 550px;">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -385,43 +224,43 @@
                         <h6>10 Sản phẩm HOT</h6>
                         <div>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                             <a href="" class="hot">
-                              <img src="image/anh1.jpg" class="img-thumbnail" alt="...">
+                              <img src="../image/anh1.jpg" class="img-thumbnail" alt="...">
                               <span>Nike dunk low cacao wow</span>
                             </a>
                         </div>
@@ -446,11 +285,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -458,11 +303,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -470,11 +321,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -482,11 +339,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -494,11 +357,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -506,11 +375,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -518,11 +393,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -531,11 +412,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -543,11 +430,17 @@
                         <div class="col name">
                           <a href="">
                             <div class="card h-100 item">
-                              <img src="image/anh1.jpg" class="card-img-top anh" alt="...">
+                              <img src="../image/anh1.jpg" class="card-img-top anh" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title text-center">NIKE DUNK LOW CACAO WOW</h5>
-                                <p class="card-text text-center text-danger fw-semibold">1,200,000 VNĐ</p>
-                                <a href="#" class="btn btn-primary muahang">Mua hàng</a>
+                                <h6 class="card-title text-left">NIKE DUNK LOW CACAO WOW</h6>
+                                <p class="card-text text-left text-danger fw-semibold gia_ht">1,200,000 VNĐ</p>
+                                <div class="gia">
+                                  <del>2,000,000VNĐ</del>
+                                  <span class="bg-danger text-light rounded-circle giamgia">25%</span>
+                                </div>
+                                <a href="#" class=" muahang">
+                                   <i class="fas fa-cart-plus fa-lg"></i>
+                                </a>
                               </div>
                             </div>
                           </a>
@@ -579,7 +472,6 @@
 
         <!-- =============================================== FOOTER ================================================= -->
         <footer>
-            <div class="thongtin">
                 <div class="container text-center">
                     <div class="row align-items-start">
                       <div class="col chinhsach">
@@ -605,7 +497,6 @@
                       </div>
                     </div>
                 </div>
-            </div>
         </footer>
 </body>
 </html>
