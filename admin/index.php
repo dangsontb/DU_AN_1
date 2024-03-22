@@ -17,7 +17,7 @@
                 include "category/list_cate.php";
                 break;
 
-                case 'delete':
+                case 'delete_cate':
                     if(isset($_GET['id']) &&  ($_GET['id']) > 0){
                        delete_category($_GET['id']);
                     } 
@@ -35,7 +35,7 @@
                 include 'category/add_cate.php';
                 break;
 
-            case 'edit':
+            case 'edit_cate':
                if(isset($_GET['id']) &&  ($_GET['id']) > 0){
                 $show_one_cate =  category_select_by_id($_GET['id']);
                 } 
