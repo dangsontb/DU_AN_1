@@ -29,23 +29,23 @@
                     <div class="price">
                         <h6>Mức giá</h6>
                         <form action="" class="chu">
-                            <div class="form-check">
+                            <div class="form-check mb-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">Dưới 500,000 VNĐ</label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check mb-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">500,000 VNĐ - 1,000,000 VNĐ</label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check mb-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">1,000,000 VNĐ - 1,500,000 VNĐ</label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check mb-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">1,500,000 VNĐ - 2,000,000 VNĐ</label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check mb-3">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">Dưới 2,000,000 VNĐ</label>
                             </div>
@@ -169,9 +169,9 @@
                                           <img src="'.$hinh.'" class="card-img-top" alt="...">
                                           <div class="card-body">
                                             <h6 class="card-title text-left">'.$name.'</h6>
-                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.$price_sale =(( $price *  $sale )/100).' VNĐ</p>
+                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.$price_sale =number_format(( $price - ( $price *  $sale )/100)).' VNĐ</p>
                                             <div class="gia">
-                                              <del>'.$price.' VNĐ</del>
+                                              <del>'.$price = number_format($price).' VNĐ</del>
                                               <span class="bg-danger text-light rounded-circle giamgia">'.$sale.'%</span>
                                             </div>
                                             <a href="#" class=" muahang">

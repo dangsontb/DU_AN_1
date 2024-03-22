@@ -28,3 +28,7 @@ function loadall_sanpham_home(){
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+function product_select_name($name){
+    $sql = "SELECT * from product where name = ?";
+    return pdo_query_one($sql,$name);
+}

@@ -15,34 +15,34 @@
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Giá sản phẩm</label>
                     <input type="number" class="form-control" name='price' value="0">
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['price'])? $error['price'] :'' ?></p>
                 </div>
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Ảnh sản phẩm</label>
                     <input type="file" class="form-control" name='image'>
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['image'])? $error['image'] :'' ?></p>
                 </div>
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Lượt xem</label>
                     <input type="number" class="form-control" name='view'>
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['view'])? $error['view'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Giảm giá</label>
                     <input type="number" class="form-control" name='sale'>
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['sale'])? $error['sale'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Ngày nhập</label>
                     <input type="date" value="" class="form-control" name='create_at'>
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['create_at'])? $error['create_at'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder"  >Danh mục</label>
                     <select class="form-select" id="autoSizingSelect" name="cate_id">
-                      <option selected>Chọn danh mục</option>
+                      <option selected value="">Chọn danh mục</option>
                       <?php foreach ($list_category as $category) : extract($category); ?>
 
                         <option value="<?= $cate_id ?>"><?= $cate_name?></option>
@@ -51,7 +51,7 @@
 
                       
                     </select>
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['cate_id'])? $error['cate_id'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Brand</label>
@@ -65,13 +65,13 @@
                       <?php endforeach ?>
 
                     </select>
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['brand_id'])? $error['brand_id'] :'' ?></p>
                 </div>
                 <div class="col-12">
                     <label  class="form-label fw-bolder" >Mô tả</label>
                     <textarea class="form-control" name="description" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
                    
-                    <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['description'])? $error['description'] :'' ?></p>
                 </div>
                 <div class="col-12">
                     <input type="submit" name="themmoi" class="btn btn-outline-success fw-medium" value="Thêm mới"></input>

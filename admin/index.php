@@ -126,12 +126,15 @@
                     // $image_description_tail = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     $tails = ['png','jpg','jpeg','pdf'];
 
-                    $target_dir = "../upload/";
+                    $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($_FILES["image"]["name"]);
                     $error =[];
 
                     if(!empty($name)){
-                        
+                        $product_by_name = product_select_name($name);
+                        if(is_array($product_by_name)){
+                            $error['name'] =" Tên sản phẩm đã tồn tại !" ;
+                        }
                         if(strlen($name) > 255 ) $error['name'] = "Tên phải ngắn hơn 255 ký tự";
                     }else{
                         $error['name'] ="Nhập tên sản phẩm !" ;
@@ -164,8 +167,8 @@
                     }
 
                     if(!empty($sale) ){
-                        if($sale < 1){
-                            $error['sale'] = "Giá phải lớn hơn 0";
+                        if($sale < 1 || $sale >99){
+                            $error['sale'] = "Giá phải lớn hơn 0 và lớn hơn 99";
                         }
                     }else{
                         $error['sale'] = "Nhập giảm  giá";
