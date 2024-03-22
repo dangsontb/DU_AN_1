@@ -12,7 +12,7 @@
         return pdo_query_one($sql,$cate_id);
     }
     function category_insert($cate_name){
-        $sql = "INSERT into categories(cate_name) value =? ";
+        $sql = "INSERT into categories(cate_name) value (?) ";
         pdo_execute($sql,$cate_name); 
     }
     function category_update($cate_id,$cate_name){
@@ -20,7 +20,7 @@
         pdo_execute($sql,$cate_name,$cate_id);
     }
     function delete_category($cate_id){
-        $sql = "DELETE * FROM categories WHERE cate_id=".$cate_id;
+        $sql = "DELETE  FROM categories WHERE cate_id=".$cate_id;
         pdo_execute($sql);
     }
 ?>
