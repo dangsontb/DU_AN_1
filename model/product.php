@@ -23,3 +23,8 @@ function product_insert($name, $price, $image, $description, $sale, $create_at, 
     pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
 }
 
+function loadall_sanpham_home(){
+    $sql="SELECT * FROM `product` WHERE 1 ORDER BY product_id DESC LIMIT 0,9";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}

@@ -34,6 +34,7 @@
     .dieuhuong{
         height: 190px;
     }
+   
   }
 
 /* ============================================== CSS HEADER ============================================= */
@@ -73,9 +74,8 @@
       box-shadow: 1px 0px 5px 1px rgb(175, 175, 175);
       border-radius: 8px;
   }
-  .anh{
-  height: 100%;
-  padding: 10px;
+  .card-img-top {
+    height: 280px;
   }
   h6{
     font-size: small;
