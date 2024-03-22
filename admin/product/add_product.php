@@ -5,7 +5,7 @@
         
             <h3 class="alert alert-success text-success"> Thêm mới sản phẩm</h3>
    
-            <form action="" class="row g-3" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=add_product" class="row g-3" method="post" enctype="multipart/form-data">
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Tên sản phẩm</label>

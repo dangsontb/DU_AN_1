@@ -75,32 +75,32 @@
                 }
                 include "brand/add_brand.php";
                 break;
-             case 'delete':
-                     if(isset($_GET['id']) &&  ($_GET['id']) > 0){
-                        delete_brand($_GET['id']);
-                     } 
-                     $list_brand = brand_select_all();
+            case 'delete':
+                    if(isset($_GET['id']) &&  ($_GET['id']) > 0){
+                    delete_brand($_GET['id']);
+                    } 
+                    $list_brand = brand_select_all();
 
-                include 'brand/list_brand.php';
-                break;
+            include 'brand/list_brand.php';
+            break;
 
-             case 'edit':
-                if(isset($_GET['id']) &&  ($_GET['id']) > 0){
-                  $show_one_brand =  brand_select_by_id($_GET['id']);
-                 } 
-              
-                include 'brand/update_brand.php';
-                break;  
-                
-              case 'update_brand':
-                if(isset($_POST['update']) && ($_POST['update'])){
-                    $brand_id=$_POST['brand_id'];
-                    $brand_name=$_POST['brand_name'];
-                    brand_update($brand_id,$brand_name);
-                }
-                $list_brand = brand_select_all();
-                include 'brand/list_brand.php';
-                break;  
+            case 'edit':
+            if(isset($_GET['id']) &&  ($_GET['id']) > 0){
+                $show_one_brand =  brand_select_by_id($_GET['id']);
+                } 
+            
+            include 'brand/update_brand.php';
+            break;  
+            
+            case 'update_brand':
+            if(isset($_POST['update']) && ($_POST['update'])){
+                $brand_id=$_POST['brand_id'];
+                $brand_name=$_POST['brand_name'];
+                brand_update($brand_id,$brand_name);
+            }
+            $list_brand = brand_select_all();
+            include 'brand/list_brand.php';
+            break;  
             // --------------------------PRODUCT----------------------------------
             case 'list_product':
                 if(isset($_POST['themmoi']) && $_POST['themmoi']){
@@ -205,6 +205,101 @@
                 include 'product/add_product.php';
                 break;
             // --------------------------User----------------------------------
+            case 'edit_product':
+                if(isset($_GET['product_id']) &&  ($_GET['product_id']) > 0){
+                        $product_by_id = product_select_by_id($_GET['product_id']);
+                    
+                    } 
+                $list_category = category_select_all();
+                $list_brand    = brand_select_all();
+                include 'product/update_product.php';
+                break;  
+                case 'update_product':
+                    if(isset($_POST['update']) && $_POST['update']){
+                        $name_update = $_POST['name'] ;
+                        $price_update = $_POST['price'] ;
+                        $image_update = $_FILES['image']['name'] ;
+                        
+                        $description_update = $_POST['description'] ;
+                        $sale_update = $_POST['sale'] ;
+                        $create_at_update = $_POST['create_at'] ;
+                        $view_update = $_POST['view'] ;
+                        $cate_id_update  = $_POST['cate_id'] ;
+                        $brand_id_update  = $_POST['brand_id'] ;
+                        $product_id_update = $_POST['product_id'];
+                        // $image_description = $_FILES['img_product']['name'] ;
+                        $image_tail = strtolower(pathinfo($image_update, PATHINFO_EXTENSION));
+                        // $image_description_tail = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+                        $tails = ['png','jpg','jpeg','pdf'];
+                    
+                        $target_dir = "../uploads/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        $error =[];
+                    
+                        if(!empty($name_update)){
+                            
+                            if(strlen($name_update) > 255 ) $error['name_update'] = "Tên phải ngắn hơn 255 ký tự";
+                        }else{
+                            $error['name_update'] ="Nhập tên sản phẩm !"  ;
+                        }
+                        if(!empty($price_update)){
+                            if($price_update < 0 ) $error['price_update'] = "Giá phải lớn hơn 0";
+                        }else{
+                            $error['price'] = "Nhập giá sản phẩm" ;
+                        }
+                    
+                        if(!empty($image_update)){
+                            if(!in_array($image_tail, $tails)   ){
+                                $error['image_update'] = "Vui lòng chọn ảnh";
+                            }
+                        }
+                       
+                        if(empty($brand_id_update)){
+                            $error['brand_update'] = "Chọn thương hiệu" ;
+                        }
+                        
+                        if(empty($cate_id_update)){
+                            $error['cate'] =  "Chọn danh mục";
+                        }
+                    
+                        if(!empty($sale_update) ){
+                            if($sale_update < 1 || $sale_update > 99 ){
+                                $error['sale_update'] = "Giảm giá phải lớn hơn và nhỏ hơn 100";
+                            }
+                        }else{
+                            $error['sale_update'] = "Nhập giảm  giá";
+                        }
+                    
+                        if(!empty($view) ){
+                            if($view < 0){
+                                $error['view_update'] = "View phải lớn hơn 0";
+                            }
+                        }
+                    
+                        if(empty($create_at_update)){
+                            $error['create_at_update'] = "Vui lòng chọn ngày" ;
+                        }
+                    
+                        if(empty($error)){
+                            move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
+                          
+                            $a ='aaaaaaaaaaaaaa';
+                            product_update($product_id_update, $name_update, $price_update, $image_update, $description_update, $sale_update, $create_at_update, $view_update, $cate_id_update, $brand_id_update);
+                        }
+                        // if(!empty($image_description)){
+                        //     if(!in_array($image_description_tail, $tails)  && filesize($image_description) > 8192){
+                        //         $error['image_description'] = "Phải là ảnh  và kích thước nhỏ hơn 1mb";
+                        //     }
+                        // }else{
+                        //     $error['image_description'] = "Vui lòng chọn ảnh";
+                        // }
+                    
+                    
+                    }
+                    $list_product = product_select_all() ;
+                    include 'product/list_product.php';     
+                    break;
+                // --------------------------User----------------------------------    
             case 'list_user':
                 include 'user/list_user.php';
                 break;

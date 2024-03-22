@@ -34,7 +34,7 @@
                             <td> <?= $create_at?> </td>
                             <td> <?= $view?></td>
                             <td>
-                                <a href="edit_product.html" class="btn btn-primary fw-medium">Edit</a>
+                                <a href="index.php?act=edit_product&product_id=<?= $product_id ?>" class="btn btn-primary fw-medium">Edit</a>
                                 <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
                             </td>
                         </tr>
