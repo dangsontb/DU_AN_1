@@ -51,7 +51,7 @@
 
                       
                     </select>
-                    <p class="text-danger"> <?= isset($error['cate_id'])? $error['cate_id'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['cate'])? $error['cate'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Brand</label>
@@ -65,7 +65,7 @@
                       <?php endforeach ?>
 
                     </select>
-                    <p class="text-danger"> <?= isset($error['brand_id'])? $error['brand_id'] :'' ?></p>
+                    <p class="text-danger"> <?= isset($error['brand'])? $error['brand'] :'' ?></p>
                 </div>
                 <div class="col-12">
                     <label  class="form-label fw-bolder" >Mô tả</label>

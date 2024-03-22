@@ -48,10 +48,9 @@
                 
             </nav>
             <p class="d-inline-flex gap-1 m-2">
-                <a class="btn btn-secondary" data-bs-toggle="collapse" href="../index.php" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-secondary" data-bs-toggle="collapse" href="../index.php"  aria-controls="collapseExample">
                     Quay về trang giao diện
                 </a>
-               
             </p>
         </header>
 

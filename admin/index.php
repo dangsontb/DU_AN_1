@@ -125,11 +125,11 @@
                     $image_tail = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     // $image_description_tail = strtolower(pathinfo($image, PATHINFO_EXTENSION));
                     $tails = ['png','jpg','jpeg','pdf'];
-
+                
                     $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($_FILES["image"]["name"]);
                     $error =[];
-
+                
                     if(!empty($name)){
                         $product_by_name = product_select_name($name);
                         if(is_array($product_by_name)){
@@ -137,43 +137,42 @@
                         }
                         if(strlen($name) > 255 ) $error['name'] = "Tên phải ngắn hơn 255 ký tự";
                     }else{
-                        $error['name'] ="Nhập tên sản phẩm !" ;
+                        $error['name'] ="Nhập tên sản phẩm !"  ;
                     }
-
                     if(!empty($price)){
                         if($price < 0 ) $error['price'] = "Giá phải lớn hơn 0";
                     }else{
                         $error['price'] = "Nhập giá sản phẩm" ;
                     }
-
+                
                     if(!empty($image)){
-                        if(!in_array($image_tail, $tails)  && filesize($image) > 8192){
-                            $error['image'] = "Phải là ảnh  và kích thước nhỏ hơn 1mb";
+                        if(!in_array($image_tail, $tails)   ){
+                            $error['image'] = "Vui lòng chọn ảnh";
                         }
                     }else{
                         $error['image'] = "Vui lòng chọn ảnh";
                     }
-
+                
                     if(empty($description)){
                         $error['description'] = "Nhập mô tả" ;
                     }
-
+                
                     if(empty($brand_id)){
-                        $error['brand_id'] = "Chọn thương hiệu" ;
+                        $error['brand'] = "Chọn thương hiệu" ;
                     }
                     
                     if(empty($cate_id)){
-                        $error['cate_id'] =  "Chọn danh mục";
+                        $error['cate'] =  "Chọn danh mục";
                     }
-
+                
                     if(!empty($sale) ){
-                        if($sale < 1 || $sale >99){
-                            $error['sale'] = "Giá phải lớn hơn 0 và lớn hơn 99";
+                        if($sale < 1 || $sale > 99 ){
+                            $error['sale'] = "Giảm giá phải lớn hơn và nhỏ hơn 100";
                         }
                     }else{
                         $error['sale'] = "Nhập giảm  giá";
                     }
-
+                
                     if(!empty($view) ){
                         if($view < 1){
                             $error['view'] = "View phải lớn hơn 0";
@@ -181,14 +180,14 @@
                     }else{
                         $error['view'] = "Nhập view";
                     }
-
+                
                     if(empty($create_at)){
                         $error['create_at'] = "Vui lòng chọn ngày" ;
                     }
-
+                
                     if(empty($error)){
                         move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-
+                
                         product_insert($name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
                     }
                     // if(!empty($image_description)){
@@ -198,8 +197,8 @@
                     // }else{
                     //     $error['image_description'] = "Vui lòng chọn ảnh";
                     // }
-
-
+                
+                
                 }
                 $list_category = category_select_all();
                 $list_brand    = brand_select_all();
