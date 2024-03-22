@@ -29,23 +29,17 @@
      
                     </div>
                 </div>
-                <div class="col-4">
-                    <label  class="form-label fw-bolder" >Ảnh mô tả</label>
-                    <input type="file" class="form-control" name='img_product' multiple="multiple">
-                    <div class="valid-feedback"  >
-     
-                    </div>
-                </div>
+                
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Lượt xem</label>
-                    <input type="text" class="form-control" name='view'>
+                    <input type="number" class="form-control" name='view'>
                     <div class="valid-feedback">
                         
                     </div>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Giảm giá</label>
-                    <input type="text" class="form-control" name='sale'>
+                    <input type="number" class="form-control" name='sale'>
                     <div class="valid-feedback">
                         
                     </div>
@@ -62,8 +56,7 @@
                     <select class="form-select" id="autoSizingSelect" name="cate_id">
                       <option selected>Chọn danh mục</option>
                       <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      
                     </select>
                 </div>
                 <div class="col-4">

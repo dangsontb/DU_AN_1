@@ -59,7 +59,6 @@
                 include "brand/list_brand.php";
                 break;
 
-
             case 'add_brand':
                 if(isset($_POST['themmoi']) && $_POST['themmoi']){
                     $brand_name = $_POST['brand_name'];
