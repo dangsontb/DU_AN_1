@@ -30,6 +30,7 @@ function loadall_sanpham_home(){
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+<<<<<<< HEAD
 function loadall_sanpham_cate($keyw="",$cate_id=0){
     $sql="SELECT * FROM `product` WHERE 1";
     if($keyw!=""){
@@ -64,4 +65,9 @@ function loadall_product_top10(){
     $sql="SELECT * FROM `product` WHERE 1 ORDER BY view DESC LIMIT 0,10";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
+=======
+function product_select_name($name){
+    $sql = "SELECT * from product where name = ?";
+    return pdo_query_one($sql,$name);
+>>>>>>> 14ba750577a3a0e5dfa9881766b41a684fbb9ae4
 }
