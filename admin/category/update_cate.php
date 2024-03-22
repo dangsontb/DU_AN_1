@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <input type="submit" name="themmoi" class="btn btn-outline-success fw-medium" value="Cập nhật"></input>
+                    <input type="submit" name="update" class="btn btn-outline-success fw-medium" value="Cập nhật"></input>
                     <button type="reset" name=""  class="btn btn-outline-info fw-medium">Nhâp lại</button>
                     <a href="index.php?act=add_cate"  class="btn btn-outline-primary fw-medium">Danh sách</a>
                 </div>

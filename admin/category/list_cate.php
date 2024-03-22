@@ -20,8 +20,8 @@
                             <td><?= $cate_id ?></td>
                             <td><?= $cate_name?></td>
                             <td>
-                                <a href="" class="btn btn-primary fw-medium">Edit</a>
-                                <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
+                                <a href="index.php?act=edit&id=<?= $category['cate_id'] ?>" class="btn btn-primary fw-medium">Edit</a>
+                                <a href="index.php?act=delete&id=<?= $category['cate_id'] ?>" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
                             </td>
                         </tr>
                       

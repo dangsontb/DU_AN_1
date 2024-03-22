@@ -12,7 +12,7 @@
                 ?>
                 <div class="mb-3">
                     <label class="form-label fw-bolder">ID Brand</label>
-                    <input class="form-control" name='brand_id' value="auto number" id="disabledInput" type="text" placeholder="" disabled>
+                    <input class="form-control"  value="auto number" id="disabledInput" type="text" placeholder="" disabled>
                     <input type="hidden" name="brand_id" value="<?= $show_one_brand['brand_id'] ?>">
                 </div>
                 <div class="mb-3">
