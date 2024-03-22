@@ -23,8 +23,45 @@ function product_insert($name, $price, $image, $description, $sale, $create_at, 
     pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
 }
 
+
+
 function loadall_sanpham_home(){
     $sql="SELECT * FROM `product` WHERE 1 ORDER BY product_id DESC LIMIT 0,9";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham_cate($keyw="",$cate_id=0){
+    $sql="SELECT * FROM `product` WHERE 1";
+    if($keyw!=""){
+        $sql.=" AND product_name like '%".$keyw."%'";
+    }
+    if($cate_id>0){
+        $sql.=" AND cate_id ='".$cate_id."'";
+    }
+    $sql.=" ORDER BY product_id DESC";
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function load_name_cate($cate_id){
+        $sql="SELECT * FROM `categories` WHERE cate_id=".$cate_id;
+        $dm=pdo_query_one($sql);
+        extract($dm);
+        return $cate_name;
+}
+function loadall_sanpham_brand($keyw="",$brand_id=0){
+    $sql="SELECT * FROM `product` WHERE 1";
+    if($keyw!=""){
+        $sql.=" AND product_name like '%".$keyw."%'";
+    }
+    if($brand_id>0){
+        $sql.=" AND brand_id ='".$brand_id."'";
+    }
+    $sql.=" ORDER BY product_id DESC";
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_product_top10(){
+    $sql="SELECT * FROM `product` WHERE 1 ORDER BY view DESC LIMIT 0,10";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }

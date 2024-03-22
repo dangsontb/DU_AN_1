@@ -107,6 +107,7 @@
   .boxleft{
       float: left;
       width: 20%;
+      margin-bottom: 30px;
   }
   .price{
   margin-top: 78px;
