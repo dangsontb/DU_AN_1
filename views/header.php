@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../views/css/style.css">
+    <link rel="stylesheet" href="views/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Oxanium:wght@200..800&family=Playball&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
@@ -22,13 +22,13 @@
             <div class="dieuhuong">
                 <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(243, 243, 243);">
                     <div class="logo">
-                        <a class="navbar-brand d-flex" href="#">
-                          <img src="../image/logo1.jpg" alt="" width="100">
+                        <a class="navbar-brand d-flex" href="index.php">
+                          <img src="views/image/logo1.jpg" alt="" width="100">
                           <span style="font-family: Oxanium, sans-serif; font-weight: 800; padding-top: 34px;">Shoes Fashion</span>
                         </a>
                     </div>
                     <div class="container-fluid menu">
-                      <a class="navbar-brand fs-6" href="#">Trang chủ</a>
+                      <a class="navbar-brand fs-6" href="index.php">Trang chủ</a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
@@ -36,48 +36,57 @@
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                             
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Nike
-                                </a>
+                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục</a>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item fs-6" href="#">Action</a></li>
-                                <li><a class="dropdown-item fs-6" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider fs-6"></li>
-                                <li><a class="dropdown-item fs-6" href="#">Something else here</a></li>
+                                    <?php 
+                                        foreach ($list_category as $category) {
+                                            extract($category);
+                                            $link_category="index.php?act=sanpham&idcate=".$cate_id;
+                                            echo '<li>
+                                                    <a class="dropdown-item fs-6" href="'.$link_category.'">'.$cate_name.'</a>
+                                                </li>';
+                                        }
+                                    ?>
+                                    <!-- <li><a class="dropdown-item fs-6" href="">Air Jocdan</a></li>
+                                    <li><a class="dropdown-item fs-6" href="">Air Force</a></li>
+                                    <li><a class="dropdown-item fs-6" href="">Nike Dunk Low Retro</a></li> -->
                                 </ul>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Converse
+                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Thương hiệu
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item fs-6" href="#">Action</a></li>
-                                    <li><a class="dropdown-item fs-6" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider fs-6"></li>
-                                    <li><a class="dropdown-item fs-6" href="#">Something else here</a></li>
+                                    <?php
+                                        foreach ($list_brand as $brand) {
+                                            extract($brand);
+                                            $link_brand="index.php?act=sanpham_brand&idbrand=".$brand_id;
+                                            echo'
+                                                <li>
+                                                    <a class="dropdown-item fs-6" href="'.$link_brand.'">'.$brand_name.'</a>
+                                                </li>
+                                            ';
+                                            # code...
+                                        }
+                                    ?>
+                                    <!-- <li><a class="dropdown-item fs-6" href="">Action</a></li>
+                                    <li><a class="dropdown-item fs-6" href="">Another action</a></li>
+                                    <li><a class="dropdown-item fs-6" href="">Something else here</a></li> -->
                                 </ul>
                             </li>
 
-                            <li class="nav-item dropdown"> 
-                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Adidas
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item fs-6" href="#">Action</a></li>
-                                    <li><a class="dropdown-item fs-6" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider fs-6"></li>
-                                    <li><a class="dropdown-item fs-6" href="#">Something else here</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                 <a class="nav-link text-black" href="index.php?act=gioithieu">Giới thiệu</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
                           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
+                          <button class="btn btn-outline-success"  type="submit">Search</button>
                         </form>
                       </div>
                     </div>
-                    <div class="d-flex icon" style="">
+                    <div class="d-flex icon" >
                         <li class="nav-item dropdown" style="list-style: none; ">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user fa-lg" style="color: black;"></i>
@@ -101,13 +110,13 @@
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="1000">
-                        <img src="../image/banner1.jpg" class="d-block w-100 " alt="..." style="height: 550px;">
+                        <img src="views/image/banner1.jpg" class="d-block w-100 " alt="..." style="height: 550px;">
                         </div>
                         <div class="carousel-item" data-bs-interval="1000">
-                        <img src="../image/banner3.jpg" class="d-block w-100" alt="..." style="height: 550px;">
+                        <img src="views/image/banner3.jpg" class="d-block w-100" alt="..." style="height: 550px;">
                         </div>
                         <div class="carousel-item" data-bs-interval="1000">
-                        <img src="../image/banner4.jpg" class="d-block w-100" alt="..." style="height: 550px;">
+                        <img src="views/image/banner4.jpg" class="d-block w-100" alt="..." style="height: 550px;">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
