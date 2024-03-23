@@ -30,7 +30,16 @@
                 if(isset($_POST['themmoi']) && ($_POST['themmoi'])){
                    
                        $cate_name=$_POST['cate_name'];
-                       category_insert($cate_name);
+                       
+                       if(!empty($cate_name)){
+                    
+                        $cate_name_unique = category_select_name($cate_name);
+                        if(is_array($cate_name_unique)){
+                            $cate_name_error = "Tên này đã tồn tại";
+                        }else{
+                            category_insert($cate_name);
+                        }
+                    }else $cate_name_error = "Không được để trống !"; 
                    }
                 include 'category/add_cate.php';
                 break;
@@ -47,7 +56,12 @@
                if(isset($_POST['update']) && ($_POST['update'])){
                 $cate_id=$_POST['cate_id'];
                    $cate_name=$_POST['cate_name'];
-                   category_update($cate_id,$cate_name);
+                   category_update($cate_id,$cate_name); 
+                //    if($cate_name!=""){
+                //     $thong_bao= "Không được để trống";
+                //    }else{
+                    
+                //    }
                }
                $list_category = category_select_all();
                include 'category/list_cate.php';
@@ -96,6 +110,7 @@
                 if(isset($_POST['update']) && ($_POST['update'])){
                     $brand_id=$_POST['brand_id'];
                     $brand_name=$_POST['brand_name'];
+                    
                     brand_update($brand_id,$brand_name);
                 }
                 $list_brand = brand_select_all();
