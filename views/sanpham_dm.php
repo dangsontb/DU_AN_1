@@ -1,5 +1,7 @@
+<?php 
+    include "header.php"
+?>
 <main class="container">
-
           <!-- =============================================================== CHÍNH SÁCH ========================================================== -->
             <div class="text-center camket">
                 <div class="row align-items-start">
@@ -30,19 +32,21 @@
 
                   <!-- =================================== LỰA CHỌN ===================================== -->
                     <div class="luachon">
-                        <select class="form-select  align-self-end" aria-label="Default select example">
+                        <select class="form-select  align-self-end" aria-label="Default select example">  
                             <a href=""><option selected>Lựa chọn</option></a>
                             <a href=""></a><option value="1">Mới nhất</option></a>
                             <a href=""></a><option value="2">Giá cao</option></a>
                             <a href=""></a><option value="3">Giá thấp</option></a>
                         </select>
                     </div>
+                    <p class="text-start text-danger fw-bold"><?=$cate_name;?></p>
+
 
                     <!-- ====================================== SẢN PHẨM ======================================= -->
                     <div class="row row-cols-1 row-cols-md-3 g-4 sanpham">
 
                         <?php
-                          foreach ($spnew as $sp) {
+                          foreach ( $list_product as $sp) {
                             extract($sp);
                             $link_product="index.php?act=sanphamct&idsp".$product_id;
                             $hinh = $path_img.$image;
@@ -52,9 +56,9 @@
                                           <img src="'.$hinh.'" class="card-img-top" alt="...">
                                           <div class="card-body">
                                             <h6 class="card-title text-left">'.$name.'</h6>
-                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.$price_sale =number_format(( $price - ( $price *  $sale )/100)).' VNĐ</p>
+                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.$price_sale =(( $price *  $sale )/100).' VNĐ</p>
                                             <div class="gia">
-                                              <del>'.$price = number_format($price).' VNĐ</del>
+                                              <del>'.$price.' VNĐ</del>
                                               <span class="bg-danger text-light rounded-circle giamgia">'.$sale.'%</span>
                                             </div>
                                             <a href="#" class=" muahang">
@@ -66,8 +70,6 @@
                                     </div>';
                           }
                         ?>
-                  
-          
                     </div>
 
                     <!-- ============================================ CHUYỂN TRANG ============================================== -->

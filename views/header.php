@@ -22,7 +22,7 @@
             <div class="dieuhuong">
                 <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(243, 243, 243);">
                     <div class="logo">
-                        <a class="navbar-brand d-flex" href="#">
+                        <a class="navbar-brand d-flex" href="index.php">
                           <img src="views/image/logo1.jpg" alt="" width="100">
                           <span style="font-family: Oxanium, sans-serif; font-weight: 800; padding-top: 34px;">Shoes Fashion</span>
                         </a>
@@ -36,43 +36,57 @@
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                             
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nike</a>
+                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục</a>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item fs-6" href="index.php?act=airjocdan">Air Jocdan</a></li>
-                                <li><a class="dropdown-item fs-6" href="index.php?act=airforce">Air Force</a></li>
-                                <li><a class="dropdown-item fs-6" href="index.php?act=dunklowretro">Nike Dunk Low Retro</a></li>
+                                    <?php 
+                                        foreach ($list_category as $category) {
+                                            extract($category);
+                                            $link_category="index.php?act=sanpham&idcate=".$cate_id;
+                                            echo '<li>
+                                                    <a class="dropdown-item fs-6" href="'.$link_category.'">'.$cate_name.'</a>
+                                                </li>';
+                                        }
+                                    ?>
+                                    <!-- <li><a class="dropdown-item fs-6" href="">Air Jocdan</a></li>
+                                    <li><a class="dropdown-item fs-6" href="">Air Force</a></li>
+                                    <li><a class="dropdown-item fs-6" href="">Nike Dunk Low Retro</a></li> -->
                                 </ul>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Converse
+                                    Thương hiệu
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item fs-6" href="">Action</a></li>
+                                    <?php
+                                        foreach ($list_brand as $brand) {
+                                            extract($brand);
+                                            $link_brand="index.php?act=sanpham_brand&idbrand=".$brand_id;
+                                            echo'
+                                                <li>
+                                                    <a class="dropdown-item fs-6" href="'.$link_brand.'">'.$brand_name.'</a>
+                                                </li>
+                                            ';
+                                            # code...
+                                        }
+                                    ?>
+                                    <!-- <li><a class="dropdown-item fs-6" href="">Action</a></li>
                                     <li><a class="dropdown-item fs-6" href="">Another action</a></li>
-                                    <li><a class="dropdown-item fs-6" href="">Something else here</a></li>
+                                    <li><a class="dropdown-item fs-6" href="">Something else here</a></li> -->
                                 </ul>
                             </li>
 
-                            <li class="nav-item dropdown"> 
-                                <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Adidas
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item fs-6" href="">Action</a></li>
-                                    <li><a class="dropdown-item fs-6" href="">Another action</a></li>
-                                    <li><a class="dropdown-item fs-6" href="">Something else here</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                 <a class="nav-link text-black" href="index.php?act=gioithieu">Giới thiệu</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
                           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
+                          <button class="btn btn-outline-success"  type="submit">Search</button>
                         </form>
                       </div>
                     </div>
-                    <div class="d-flex icon" style="">
+                    <div class="d-flex icon" >
                         <li class="nav-item dropdown" style="list-style: none; ">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user fa-lg" style="color: black;"></i>
