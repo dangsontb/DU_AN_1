@@ -43,8 +43,9 @@
             case 'list_brand':
                 list_brand();
                 break;
-
+            
             case 'add_brand':
+            
                 add_brand();
                 break;
             case 'delete_brand':

@@ -37,8 +37,8 @@
                     include "views/home.php";
                 }
                 break;
+            
             default:
-                include "views/header.php";
                 include "views/home.php";
                 break;
         }
