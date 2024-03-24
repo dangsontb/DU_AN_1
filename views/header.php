@@ -94,6 +94,7 @@
                             <ul class="dropdown-menu" style="width: 50px;">
                                 <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
                                 <li><a class="dropdown-item" href="#">Đăng kí</a></li>
+                                <li><a class="dropdown-item" href="admin/index.php">Trang Admin</a></li>
                             </ul>
                         </li>
                         <li style="list-style: none;">

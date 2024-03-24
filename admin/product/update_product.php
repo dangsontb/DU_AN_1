@@ -13,7 +13,7 @@
                 $img_hh =" NO IMG" ;
             }
         //  print_r($product_by_id);
-        echo  $product_by_id['product_id'];
+
         ?>
         <main class="container_">
         
@@ -103,7 +103,7 @@
                     <input type="hidden" name="product_id" value="<?=$product_by_id['product_id']?>">
                     <input type="submit" name="update" class="btn btn-outline-success fw-medium" value="Cập nhật"></input>
                     <button type="reset" name=""  class="btn btn-outline-info fw-medium">Nhâp lại</button>
-                    <a href="index.php?list_product"  class="btn btn-outline-primary fw-medium">Danh sách</a>
+                    <a href="index.php?act=list_product"  class="btn btn-outline-primary fw-medium">Danh sách</a>
                 </div>
             </form> 
         </main>

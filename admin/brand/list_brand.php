@@ -20,8 +20,8 @@
                             <td><?= $brand_id ?></td>
                             <td><?= $brand_name?> </td>
                             <td>
-                                <a href="index.php?act=edit&id=<?= $brand['brand_id'] ?>" class="btn btn-primary fw-medium">Edit</a>
-                                <a href="index.php?act=delete&id=<?= $brand['brand_id'] ?>" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
+                                <a href="index.php?act=edit_brand&id=<?=$brand_id?>" class="btn btn-outline-primary fw-medium "><i class="far fa-edit"></i></a>
+                                <a href="index.php?act=delete_brand&id=<?=$brand_id?>" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                       

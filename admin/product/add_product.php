@@ -76,7 +76,7 @@
                 <div class="col-12">
                     <input type="submit" name="themmoi" class="btn btn-outline-success fw-medium" value="Thêm mới"></input>
                     <button type="reset" name=""  class="btn btn-outline-info fw-medium">Nhâp lại</button>
-                    <a href="index.php?list_product"  class="btn btn-outline-primary fw-medium">Danh sách</a>
+                    <a href="index.php?act=list_product"  class="btn btn-outline-primary fw-medium">Danh sách</a>
                 </div>
             </form> 
         </main>

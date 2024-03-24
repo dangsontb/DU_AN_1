@@ -20,8 +20,8 @@
                             <td><?= $cate_id ?></td>
                             <td><?= $cate_name?></td>
                             <td>
-                                <a href="index.php?act=edit_cate&id=<?= $category['cate_id'] ?>" class="btn btn-primary fw-medium">Edit</a>
-                                <a href="index.php?act=delete_cate&id=<?= $category['cate_id'] ?>" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a>
+                                <a href="index.php?act=edit_cate&id=<?= $category['cate_id'] ?>" class="btn btn-outline-primary fw-medium "><i class="far fa-edit"></i></a>
+                                <a href="index.php?act=delete_cate&id=<?= $category['cate_id'] ?>" class="btn btn-outline-danger fw-medium" onclick="return confirm('Bạn muốn xóa : <?= $cate_name ?> ?')"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                       

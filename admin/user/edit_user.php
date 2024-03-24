@@ -1,66 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container"> 
-        <header>
-            <h1 class="alert alert-success"><a class="nav-link text-black-50" href="#">Quản Trị Website</a></h1>
-            <nav class="navbar navbar-expand-lg bg-dark  rounded-2 " >
-                <div class="container-fluid ">       
-                    <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                        <ul class="nav navbar-nav   ">
-                            <li class="nav-item  ">
-                                <a class="nav-link text-light " aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="../category/listdm.html">Danh mục</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="./brand/listbrand.html">Thương hiệu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="./product/list_product.html">Sản phẩm</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="./user/list-user.html">Khách hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Bình luận</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Đơn hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Thuộc tính</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Thống kê</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-            </nav>
-            <p class="d-inline-flex gap-1 m-2">
-                <a class="btn btn-secondary" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Quay về trang giao diện
-                </a>
-               
-            </p>
-        </header>
+
 
         <!-- main -->
         <main class="container-fluid">
            <div >
-            <h3 class="alert alert-success text-success"> Thêm mới người dùng</h3>
+            <h3 class="alert alert-success text-success"> Update người dùng</h3>
    
-            <form action="" class="row g-3" method="post" enctype="multipart/form-data">
+            <form action="index.php?act=update_user" class="row g-3" method="post" enctype="multipart/form-data">
                 <div class="col-4">
                     <label class="form-label fw-bolder">ID user </label>
                     <input class="form-control" name='ma_loai' value="auto number" id="disabledInput" type="text" placeholder="" disabled>
@@ -130,7 +75,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <input type="submit" name="themmoi" class="btn btn-outline-success fw-medium" value="Thêm mới"></input>
+                    <input type="submit" name="themmoi" class="btn btn-outline-success fw-medium" value="Update"></input>
                     <button type="reset" name=""  class="btn btn-outline-info fw-medium">Nhâp lại</button>
                     <a href="list-user.html"  class="btn btn-outline-primary fw-medium">Danh sách</a>
                 </div>
@@ -139,6 +84,3 @@
            </div>
         </main>
 
-    </div>
-</body>
-</html>
