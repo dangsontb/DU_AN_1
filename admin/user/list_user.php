@@ -34,8 +34,8 @@
                                 <td><?=$create_at ?></td>
                               
                                 <td>
-                                    <a href="index.php?act=edit_user" class="btn btn-outline-primary fw-medium "><i class="far fa-edit"></i></a>
-                                    <a href="index.php?act=delete_user" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')"><i class="fas fa-trash"></i></a>
+                                    <a href="index.php?act=edit_user&user_id=<?=$user_id ?>" class="btn btn-outline-primary fw-medium "><i class="far fa-edit"></i></a>
+                                    <a href="index.php?act=delete_user&user_id=<?=$user_id ?>" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                             <?php endforeach ?>

@@ -148,11 +148,20 @@
             
             case 'list_user':
                 list_user();
-     
+                
             break;
 
             case 'add_user':
                 add_user();
+                break;
+            case 'delete_user':
+                delete_user();
+                break;
+            case 'edit_user':
+                edit_user();
+                break;
+            case 'update_user';
+                update_user();
                 break;
             default : include "home.php";
         }
