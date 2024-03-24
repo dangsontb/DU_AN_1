@@ -178,13 +178,16 @@ function update_product(){
     
     
     }
-    
+    $list_product = product_select_all() ;  
+    include "product/list_product.php";
 }
 function delete_product(){
     if(isset($_GET['product_id']) &&  ($_GET['product_id']) > 0){
         $product_id = $_GET['product_id'] ;
         product_delele_by_id($product_id);
     } 
+    $list_product = product_select_all() ;
+    include 'product/list_product.php';
 }
 function edit_product(){
     if(isset($_GET['product_id']) &&  ($_GET['product_id']) > 0){

@@ -20,7 +20,7 @@
         pdo_execute($sql,$brand_name,$brand_id);
     }
 
-    function delete_brand($brand_id){
+    function brand_delete($brand_id){
         $sql = "DELETE FROM `brand` WHERE brand_id=".$brand_id;
         pdo_execute($sql);
     }
