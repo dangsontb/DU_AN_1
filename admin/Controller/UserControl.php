@@ -60,3 +60,6 @@ function add_user(){
     }
     include "user/add_user.php";
 }
+function delete(){
+
+}
