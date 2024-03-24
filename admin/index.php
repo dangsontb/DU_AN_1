@@ -6,10 +6,10 @@
     include "../model/user.php";
     include '../model/image_product.php';
 
-    include './ControllerAdmin/ProductControl.php';
-    include './ControllerAdmin/UserControl.php';
-    include './ControllerAdmin/BrandControl.php';
-    include './ControllerAdmin/CateControl.php';
+    include '../controller/ControllerAdmin/ProductControl.php';
+    include '../controller/ControllerAdmin/UserControl.php';
+    include '../controller/ControllerAdmin/BrandControl.php';
+    include '../controller/ControllerAdmin/CateControl.php';
 
 
     include "header.php";

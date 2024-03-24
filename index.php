@@ -5,6 +5,8 @@
     include "model/brand.php";
     include "global.php";
 
+    include "views/header.php";
+
     $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
@@ -13,7 +15,6 @@
         $act = $_GET['act'];
         switch ($act) {
             case 'gioithieu':
-                include "views/header.php";
                 include "views/gioithieu.php";
                 break;
             case 'sanpham':
@@ -42,7 +43,7 @@
                 break;
         }
     }else{
-        include "views/header.php";
+        
         include "views/home.php";
 
     }
