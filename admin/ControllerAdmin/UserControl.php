@@ -1,5 +1,9 @@
 <?php
+function list_user(){
+    $list_user = user_select_all();
+    include "user/list_user.php";
 
+}
 function add_user(){
     if(isset($_POST['themmoi']) && $_POST['themmoi']){
         $name       = $_POST['name'];
@@ -32,6 +36,10 @@ function add_user(){
         }
 
         if(!empty($email)){
+            $user_select_email = user_select_by_email($email);
+            if(is_array($user_select_email)){
+                $error['email'] = "Địa chỉ email đã tồn tại";
+            }
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $error['email'] ="Nhập đúng định dạng email !";
             }

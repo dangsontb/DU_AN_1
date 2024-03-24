@@ -147,7 +147,8 @@
             // --------------------------User----------------------------------    
             
             case 'list_user':
-            include 'user/list_user.php';
+                list_user();
+     
             break;
 
             case 'add_user':

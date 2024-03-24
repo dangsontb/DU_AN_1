@@ -11,7 +11,7 @@
                                 <th></th>
                                 <th>ID </th>
                                 <th>Tên TK</th>
-                                <th>Mật khẩu</th>
+                                
                                 <th>Họ tên</th>
                                 <th>Email</th>
                                 <th>SĐT</th>
@@ -22,24 +22,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <?php foreach($list_user as $user) : extract($user); ?>
                             <tr>
                                 <td><input class="form-check-input" type="checkbox"></td>
-                                <td>1</td>
-                                <td>Dangson</td>
-                                <td>123456 </td>
-                                <td>Đặng Văn Sơn </td>
-                                <td>dangvanson@gmail.com</td>
-                                <td>0339530282</td>
-                                <td>Kiến Xương - Thái Bình</td>
-                                <td>Admin</td>
-                                <td>1/1/1111 </td>
+                                <td><?=$user_id ?></td>
+                                <td><?=$user_name  ?></td>
+                                <td><?=$fullname ?> </td>
+                                <td><?=$email  ?> </td>
+                                <td><?=$phone ?></td>
+                                <td><?=$role ?></td>
+                                <td><?=$create_at ?></td>
+                              
                                 <td>
                                     <a href="index.php?act=edit_user" class="btn btn-outline-primary fw-medium "><i class="far fa-edit"></i></a>
                                     <a href="index.php?act=delete_user" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
-
+                            <?php endforeach ?>
                             
                         </tbody>
                     </table>

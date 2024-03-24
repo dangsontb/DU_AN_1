@@ -12,6 +12,10 @@ function user_select_by_name($user_name){
     $sql = "SELECT * FROM user where user_name = ?";
     return pdo_query_one($sql,$user_name);
 }
+function user_select_by_email($email){
+    $sql = "SELECT * FROM user where email = ?";
+    return pdo_query_one($sql,$email);
+}
 function user_insert( $user_name, $password, $fullname, $email, $phone, $address, $role, $create_at ){
     $sql = "INSERT INTO user(user_name, password, fullname, email, phone, address, role, create_at) values(?,?,?,?,?,?,?,?)";
     pdo_execute($sql, $user_name, $password, $fullname, $email, $phone, $address, $role, $create_at );
