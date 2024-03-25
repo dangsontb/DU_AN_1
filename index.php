@@ -43,6 +43,8 @@
                     include "views/home.php";
                 }
                 break;
+                
+            // -------------------------- User ------------------------------------------------------
             case 'form_login':
            
                 include "views/login.php";
@@ -52,6 +54,12 @@
                 break;
             case 'logout':
                 logout();
+                break;
+            case 'register':
+                include "views/signup.php";
+                break;
+            case 'signup':
+                signup();
                 break;
             default:
 

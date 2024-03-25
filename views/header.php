@@ -106,6 +106,7 @@
                                     <?php }else{?>
                                         <li><a class="dropdown-item" href="index.php?act=form_login">Đăng nhập</a></li>
                                         <li><a class="dropdown-item" href="index.php?act=register">Đăng kí</a></li>
+                                        <li><a class="dropdown-item" href="index.php?act=forgot_password">Quên mật khẩu</a></li>
                                 
                                     <?php } ?>
                             </ul>

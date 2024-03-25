@@ -51,6 +51,9 @@
             case 'delete_brand':
                 delete_brand();
                 break;
+            case 'delete_brand_checkbox':
+                delete_brand_checkbox();
+                break;
             case 'edit_brand':
                 edit_brand();
                 break;  

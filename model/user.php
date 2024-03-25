@@ -20,6 +20,10 @@ function user_insert( $user_name, $password, $fullname, $email, $phone, $address
     $sql = "INSERT INTO user(user_name, password, fullname, email, phone, address, role, create_at) values(?,?,?,?,?,?,?,?)";
     pdo_execute($sql, $user_name, $password, $fullname, $email, $phone, $address, $role, $create_at );
 }
+function customer_insert( $user_name, $password, $fullname, $email, $phone, $address,  $create_at ){
+    $sql = "INSERT INTO user(user_name, password, fullname, email, phone, address,  create_at) values(?,?,?,?,?,?,?)";
+    pdo_execute($sql, $user_name, $password, $fullname, $email, $phone, $address,  $create_at );
+}
 function user_update($user_id, $user_name, $password, $fullname, $email, $phone, $address, $role, $create_at ){
     $sql = "UPDATE user SET user_name=?,password=?,fullname=?,email=?,phone=?,address=?,role=?,create_at=? WHERE user_id =?";
         pdo_execute($sql, $user_name, $password, $fullname, $email, $phone, $address, $role, $create_at, $user_id);

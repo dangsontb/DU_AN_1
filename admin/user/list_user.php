@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container-fluid row">
         
-                <h3 class="alert alert-success text-success"> Danh sách Sản phẩm</h3>
+                <h3 class="alert alert-success text-success"> Danh sách tài khoản</h3>
                 <form action="" method="post">
                     <table class="table table-hover">
                         <thead  class="table-secondary" >
@@ -17,7 +17,8 @@
                                 <th>SĐT</th>
                                 <th>Địa chỉ</th>
                                 <th>Role</th>
-                                <th>Ngày tạo</th>
+                                <!-- <th>Ngày tạo</th> -->
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -30,8 +31,9 @@
                                 <td><?=$fullname ?> </td>
                                 <td><?=$email  ?> </td>
                                 <td><?=$phone ?></td>
-                                <td><?=$role ?></td>
-                                <td><?=$create_at ?></td>
+                                <td><?=$address ?></td>
+                                <td><?=$role == 1 ? 'Admin' : 'Khách' ?></td>
+                                <td></td>
                               
                                 <td>
                                     <a href="index.php?act=edit_user&user_id=<?=$user_id ?>" class="btn btn-outline-primary fw-medium "><i class="far fa-edit"></i></a>

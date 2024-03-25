@@ -17,8 +17,8 @@
                 <input type="submit" name="btn_login" class="form-control btn btn-success mb-3"  value="Đăng nhập">
                 
             
-            <p class="text-center">Bạn chưa có tài khoản ? <a href="dki.html" class="btn-link-style btn-register" style="text-decoration: underline; ">Đăng ký tại đây</a></p>
-            <p class="text-center">Bạn quên mật khẩu ? <a href="quenmk.html" class="btn-link-style btn-register" style="text-decoration: underline; ">tìm mật khẩu</a></p>
+            <p class="text-center">Bạn chưa có tài khoản ? <a href="index.php?act=register" class="btn-link-style btn-register" style="text-decoration: underline; ">Đăng ký tại đây</a></p>
+            <p class="text-center">Bạn quên mật khẩu ? <a href="index.php?act=" class="btn-link-style btn-register" style="text-decoration: underline; ">tìm mật khẩu</a></p>
             </form>
         </div> 
     </div>

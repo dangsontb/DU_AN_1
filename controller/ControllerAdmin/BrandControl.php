@@ -44,3 +44,11 @@ function update_brand(){
     $list_brand = brand_select_all();
     include 'brand/list_brand.php';
 }
+function delete_brand_checkbox(){
+    if(isset($_POST['delete_btn'])){
+        $brand_id = $_POST['brands_id'];
+        brand_delete($brand_id);
+    }
+    $list_brand = brand_select_all();
+    include 'brand/list_brand.php';
+}

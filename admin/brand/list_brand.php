@@ -4,6 +4,7 @@
         <main class="container_">
         
                 <h3 class="alert alert-success text-success"> Danh sách thương hiệu</h3>
+                <form action="index.php?act=delete_brand_checkbox" method="post">
                 <table class="table table-hover">
                     <thead  class="table-secondary" >
                         <tr>
@@ -16,7 +17,7 @@
                     <tbody>
                         <?php foreach ($list_brand as $brand) : extract($brand); ?>
                         <tr>
-                            <td><input class="form-check-input" type="checkbox"></td>
+                            <td><input name="brands_id[]" value="<?= $brand_id ?>" class="form-check-input" type="checkbox"></td>
                             <td><?= $brand_id ?></td>
                             <td><?= $brand_name?> </td>
                             <td>
@@ -29,11 +30,11 @@
                     </tbody>
                     
                 </table>
-                <form action="" method="post">
+              
                     <div class="form-group">
-                        <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
+                        <!-- <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button> -->
                         <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
-                        <a   class="btn btn-outline-danger fw-medium">Xóa mục đã chọn</a>
+                        <input type="submit" name="delete_btn"  class="btn btn-outline-danger fw-medium" value="Xóa mục đã chọn">
                         <a href="index.php?act=add_brand"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
                     </div>
                 </form>

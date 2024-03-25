@@ -5,7 +5,7 @@
            <div >
             <h3 class="alert alert-success text-success"> Thêm mới người dùng</h3>
    
-            <form action="" class="row g-3" method="post" >
+            <form action="index.php?act=add_user" class="row g-3" method="post" >
                
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Tên tài khoản</label>
