@@ -20,7 +20,7 @@
         $act = $_GET['act'];
         switch ($act) {
             case 'gioithieu':
-                // include "views/header.php";
+           
                 include "views/gioithieu.php";
                 break;
             case 'sanpham':
@@ -44,7 +44,7 @@
                 }
                 break;
             case 'form_login':
-                // include "views/header.php";ư
+           
                 include "views/login.php";
                 break;
             case 'login':
@@ -54,12 +54,12 @@
                 logout();
                 break;
             default:
-                // include "views/header.php";
+
                 include "views/home.php";
                 break;
         }
     }else{
-        // include "views/header.php";
+       
         include "views/home.php";
 
     }
