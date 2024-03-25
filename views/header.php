@@ -92,9 +92,22 @@
                                 <i class="fas fa-user fa-lg" style="color: black;"></i>
                             </a>
                             <ul class="dropdown-menu" style="width: 50px;">
-                                <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-                                <li><a class="dropdown-item" href="#">Đăng kí</a></li>
-                                <li><a class="dropdown-item" href="admin/index.php">Trang Admin</a></li>
+                                <?php 
+                                if(isset($_SESSION['user'])){
+                                    extract($_SESSION['user']);
+                                ?>
+                                    <?php if($role==1){ ?>
+                                        <li><a class="dropdown-item" href="admin/index.php">Trang Admin</a></li>    
+                                    <?php } ?>
+
+                                    <li><a class="dropdown-item" href="index.php?act=change_password">Đổi mật khẩu</a></li>
+                                    <li><a class="dropdown-item" href="index.php?act=logout">Thoát</a></li>
+                                    
+                                    <?php }else{?>
+                                        <li><a class="dropdown-item" href="index.php?act=form_login">Đăng nhập</a></li>
+                                        <li><a class="dropdown-item" href="index.php?act=register">Đăng kí</a></li>
+                                
+                                    <?php } ?>
                             </ul>
                         </li>
                         <li style="list-style: none;">

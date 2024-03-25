@@ -35,3 +35,7 @@ function user_delete($user_id){
         pdo_execute($sql, $user_id);
     } 
 }
+function user_select_login($user_name,$password){
+    $sql = "SELECT * FROM user where user_name = ? and password = ?";
+    return pdo_query_one($sql,$user_name,$password);
+}

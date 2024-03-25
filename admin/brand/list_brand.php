@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container_">
         
-                <h3 class="alert alert-success text-success"> Danh sách danh mục</h3>
+                <h3 class="alert alert-success text-success"> Danh sách thương hiệu</h3>
                 <table class="table table-hover">
                     <thead  class="table-secondary" >
                         <tr>

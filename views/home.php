@@ -31,10 +31,10 @@
                   <!-- =================================== LỰA CHỌN ===================================== -->
                     <div class="luachon">
                         <select class="form-select  align-self-end" aria-label="Default select example">
-                            <a href=""><option selected>Lựa chọn</option></a>
-                            <a href=""></a><option value="1">Mới nhất</option></a>
-                            <a href=""></a><option value="2">Giá cao</option></a>
-                            <a href=""></a><option value="3">Giá thấp</option></a>
+                            <option selected>Lựa chọn</option>
+                            <option><a href="index.php?act=product_new">Mới nhất</a></option>
+                            <a href=""></a><option >Giá cao</option></a>
+                            <a href=""></a><option>Giá thấp</option></a>
                         </select>
                     </div>
 

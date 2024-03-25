@@ -1,20 +1,26 @@
 <?php
+    session_start();
+    ob_start();
     include "model/pdo.php";
     include "model/product.php";
     include "model/category.php";
     include "model/brand.php";
+    include "model/user.php";
     include "global.php";
-
-    include "views/header.php";
+    include "controller/ControllerHome/HomeControl.php";
 
     $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
+
+    include "views/header.php";
+
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
         $act = $_GET['act'];
         switch ($act) {
             case 'gioithieu':
+                // include "views/header.php";
                 include "views/gioithieu.php";
                 break;
             case 'sanpham':
@@ -37,13 +43,23 @@
                     include "views/home.php";
                 }
                 break;
-            
+            case 'form_login':
+                // include "views/header.php";ư
+                include "views/login.php";
+                break;
+            case 'login':
+                login();   
+                break;
+            case 'logout':
+                logout();
+                break;
             default:
+                // include "views/header.php";
                 include "views/home.php";
                 break;
         }
     }else{
-        
+        // include "views/header.php";
         include "views/home.php";
 
     }
