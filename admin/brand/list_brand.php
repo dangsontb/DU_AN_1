@@ -32,7 +32,7 @@
                 </table>
               
                     <div class="form-group">
-                        <!-- <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button> -->
+                        <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
                         <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
                         <input type="submit" name="delete_btn"  class="btn btn-outline-danger fw-medium" value="Xóa mục đã chọn">
                         <a href="index.php?act=add_brand"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
@@ -40,3 +40,14 @@
                 </form>
               
         </main>
+        
+<script>
+// JavaScript function to select all categories
+function selectAll() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = true;
+    });
+}
+</script>
+
