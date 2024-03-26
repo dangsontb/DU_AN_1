@@ -7,7 +7,7 @@
                 <div class="form-group mb-3">
                     <label  class="fw-bold">Tên đăng nhập:</label>
                     <input type="text" name="user_name" class="form-control" id="email" placeholder="" >
-                    <div class="text-danger"><?= isset($erorr['user_name']) ? $erorr['user_name'] : '' ?></div>
+                    <div class="text-danger"><?= isset($error['user_name']) ? $error['user_name'] : '' ?></div>
                 </div>
                 <div class="form-group mb-3">
                     <label for="password" class="fw-bold">Mật khẩu:</label>

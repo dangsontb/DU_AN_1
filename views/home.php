@@ -44,7 +44,7 @@
                         <?php
                           foreach ($spnew as $sp) {
                             extract($sp);
-                            $link_product="index.php?act=sanphamct&idsp".$product_id;
+                            $link_product="index.php?act=product_detail&product_id=".$product_id;
                             $hinh = $path_img.$image;
                             echo '<div class="col name">
                                       <a href="'.$link_product.'">

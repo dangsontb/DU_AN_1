@@ -8,6 +8,7 @@
     include "model/user.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
+    include "controller/ControllerHome/ProductControl.php";
 
     $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
@@ -23,6 +24,7 @@
            
                 include "views/gioithieu.php";
                 break;
+            // ---------------------------------PRODUCT----------------------------------------------
             case 'sanpham':
                 if(isset($_GET['idcate'])&&($_GET['idcate']>0)){
                     $cate_id=$_GET['idcate'];
@@ -43,6 +45,10 @@
                     include "views/home.php";
                 }
                 break;
+            case 'product_detail':
+                product_detail();
+                
+                break;
                 
             // -------------------------- User ------------------------------------------------------
             case 'form_login':
@@ -61,6 +67,7 @@
             case 'signup':
                 signup();
                 break;
+            
             default:
 
                 include "views/home.php";

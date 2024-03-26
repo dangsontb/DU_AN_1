@@ -24,11 +24,11 @@
         if(is_array($brand_id)){
             foreach($brand_id as $id){
                 $sql = "DELETE FROM `brand` WHERE brand_id=".$id;
-            pdo_execute($sql);
+                pdo_execute($sql);
             }       
         }else{
             $sql = "DELETE FROM `brand` WHERE brand_id=".$brand_id;
-        pdo_execute($sql);
+            pdo_execute($sql);
         }
         
     }

@@ -73,7 +73,7 @@ function product_select_name($name){
 }
 
 function product_select_by_id($product_id){
-    $sql = "select * from product  where product_id  = ? ";
+    $sql = "SELECT * from product  where product_id  = ? ";
     return pdo_query_one($sql, $product_id);
 }
 
@@ -101,3 +101,11 @@ function product_update($product_id, $name, $price, $image, $description, $sale,
    
  }
 
+ function product_detail_id($product_id){
+    $sql = "    SELECT p.*, c.cate_id, c.cate_name, b.brand_id, b.brand_name FROM product p 
+                JOIN categories c ON p.cate_id = c.cate_id 
+                JOIN brand b ON p.brand_id = b.brand_id 
+                WHERE p.product_id =  ?"; 
+    return pdo_query_one($sql,$product_id);
+    
+}
