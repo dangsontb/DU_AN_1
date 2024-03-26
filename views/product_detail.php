@@ -79,7 +79,7 @@
                             <br>
 							<div class="form-group"> 
 								<label for="soluong">Số lượng đặt mua:</label>
-								<input type="number" class="form-control" id="soluong" name="soluong">
+								<input type="number" value="1" class="form-control" id="soluong" name="soluong" style="width: 25%;">
 							</div><br>
 							<button type="button" class="btn btn-danger"  style="width: 600px; height: 50px; text-align: center;">Mua ngay</button>
 							

@@ -1,0 +1,176 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.controller{
+    margin: auto;
+}
+
+
+
+/* ========================================== CSS HEADER ============================================ */
+nav{
+  background-color: rgb(243, 243, 243);
+}
+.logo{
+  margin-left: 40px;
+  margin-right: 80px;
+}
+.dieuhuong{
+  height: 107px
+}
+.menu{
+  margin-left: 50px;
+}
+.dropdown-menu {
+  --bs-dropdown-min-width: 7rem;
+}
+.icon{
+  margin: 0px 50px 0px 20px;
+}
+@media only screen and (max-width: 46.1875em){
+  .dieuhuong{
+      height: 190px;
+  }
+ 
+}
+
+/* ============================================== CSS HEADER ============================================= */
+
+
+.camket{
+  margin: 78px 0px 60px 0px;
+}
+.boxright{
+  float: right;
+  width: 75%;
+}
+.luachon{
+  position: relative;
+  margin-bottom: 70px;
+}
+.luachon select{
+  border: 1px solid black;
+  position: absolute;
+  right: 0px;
+  width: 40%;
+  padding: 8px;
+}
+.sanpham{
+  margin-bottom: 60px;
+}
+.name a{
+text-decoration: none;
+color: rgb(0, 0, 0);
+}
+.item{
+    border: none;
+    box-shadow: 0px 0px 3px 0px rgb(191, 191, 191);
+
+}
+.item:hover{
+    box-shadow: 1px 0px 5px 1px rgb(175, 175, 175);
+    border-radius: 8px;
+}
+.card-img-top {
+  height: 280px;
+}
+h6{
+  font-size: small;
+}
+.gia_ht{
+  margin-bottom: 5px;
+
+}
+.gia{
+  margin-bottom: 8px;
+}
+del{
+  font-size: small;
+  color: rgb(165, 165, 165);
+  margin-right: 4px;
+}
+.giamgia{
+  padding: 3px;
+  font-size:small
+}
+
+.muahang:hover{
+  color: rgb(70, 70, 70);
+
+}
+.chuyentrang{
+    margin-bottom: 80px;
+}
+.boxleft{
+    float: left;
+    width: 20%;
+    margin-bottom: 30px;
+}
+.price{
+margin-top: 78px;
+background-color:#EFEFEF;
+padding: 20px 4px 20px 10px;
+}
+.price h6{
+text-align: center;
+padding-bottom: 8px;
+}
+.size{
+margin-top: 20px;
+background-color:#EFEFEF;
+padding: 20px 0px 20px 10px;
+}
+.size h6{
+text-align: center;
+padding-bottom: 8px;
+}
+.sphot{
+margin-top: 20px;
+background-color:#EFEFEF;
+padding: 20px 12px 20px 10px;
+}
+.sphot h6{
+text-align: center;
+padding-bottom: 8px;
+}
+.hot{
+text-decoration: none;
+color: black;
+display: flex;
+margin-bottom: 10px;
+}
+.hot:hover{
+background-color: white;
+}
+.hot img{
+width: 32px;
+height: 30px;
+margin-right: 8px;
+}
+.hot span{
+font-size: small;
+margin-top: 4px;
+}
+.kichthuoc .form-check{
+  margin-bottom: 10px;
+}
+footer{
+  height: 400px;
+  clear: both;
+  background-color: rgba(192, 192, 192, 0.253);
+
+}
+
+.chinhsach{
+  padding: 50px 50px 30px 50px;
+  text-align: left;
+  font-weight: 500;
+  color: #4d1e1e;
+
+}
+.chinhsach h4{
+  font-weight: 700;
+}
