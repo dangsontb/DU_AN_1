@@ -57,7 +57,7 @@
             }
         
             if(!empty($sale) ){
-                if($sale < 1 && $sale > 99 ){
+                if($sale < 1 || $sale > 99 ){
                     $error['sale'] = "Giảm giá phải lớn hơn và nhỏ hơn 100";
                 }
             }else{
@@ -196,4 +196,16 @@ function edit_product(){
     $list_category = category_select_all();
     $list_brand    = brand_select_all();
     include 'product/update_product.php';
+}
+function delete_product_by_checkbox(){
+    if(isset($_POST['delete_btn']) ){
+        if(isset($_POST['products_id'])){
+            $products_id = $_POST['products_id'];
+            if(!empty($products_id)){
+                product_delele_by_id($products_id);
+            }
+        }
+    } 
+    $list_product = product_select_all() ;
+    include 'product/list_product.php';
 }

@@ -26,7 +26,10 @@
             case 'delete_cate':
                 delete_cate();
                 break;
-
+            case 'delete_cate_checkbox':
+                delete_cate_checkbox();
+                break;
+            
             case 'add_cate':
                 add_cate();
                 break;
@@ -80,6 +83,9 @@
             case 'delete_product':
                 delete_product();         
                 break;  
+            case 'delete_product_by_checkbox':
+                delete_product_by_checkbox();         
+                break;  
 
             // --------------------------User----------------------------------    
             
@@ -94,6 +100,9 @@
             case 'delete_user':
                 delete_user();
                 break;
+            case 'delete_user_by_checkbox':
+                delete_user_by_checkbox();
+                break;   
             case 'edit_user':
                 edit_user();
                 break;

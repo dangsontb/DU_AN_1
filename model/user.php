@@ -31,7 +31,7 @@ function user_update($user_id, $user_name, $password, $fullname, $email, $phone,
 function user_delete($user_id){
     if(is_array($user_id)){
         foreach ($user_id as $id) {
-            $sql = "DELETE FROM user WHERE user = ?";
+            $sql = "DELETE FROM user WHERE user_id = ?";
             pdo_execute($sql, $id);
         }  
     }else  {

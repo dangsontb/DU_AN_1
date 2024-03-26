@@ -6,11 +6,22 @@ function list_cate(){
 }
 function delete_cate(){
     if(isset($_GET['id']) &&  ($_GET['id']) > 0){
-        delete_category($_GET['id']);
+        category_delete($_GET['id']);
     } 
     $list_category = category_select_all();
-
     include "category/list_cate.php";
+}
+function delete_cate_checkbox(){  
+        if(isset($_POST['delete_btn']) ){
+            if(isset($_POST['categories_id'])){
+                $categories_id = $_POST['categories_id'];
+                if(!empty($categories_id)){
+                    category_delete($categories_id);
+                }
+            }
+        } 
+        $list_category = category_select_all();
+        include 'category/list_cate.php';
 }
 function add_cate(){
     if(isset($_POST['themmoi']) && ($_POST['themmoi'])){
@@ -24,6 +35,7 @@ function add_cate(){
             $cate_name_error = "Tên này đã tồn tại";
         }else{
             category_insert($cate_name);
+            header("location: index.php?act=list_category");
         }
     }else $cate_name_error = "Không được để trống !"; 
     }

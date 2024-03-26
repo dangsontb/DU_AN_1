@@ -9,34 +9,34 @@
                
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Tên tài khoản</label>
-                    <input type="text" class="form-control" name='name'>
+                    <input type="text" class="form-control" name='name' value="<?= !empty($_POST['name']) ? $_POST['name'] : false ?>">
                     <p class="text-danger"> <?= isset($error['user_name'])? $error['user_name'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Mật khẩu</label>
-                    <input type="password" class="form-control" name='pass' >
+                    <input type="password" class="form-control" name='pass' value="<?= !empty($_POST['pass']) ? $_POST['pass'] : false ?>">
                     <p class="text-danger"> <?= isset($error['pass'])? $error['pass'] :'' ?></p>
                 </div>
                 
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Họ tên</label>
-                    <input type="text" class="form-control" name='fullname'>
+                    <input type="text" class="form-control" name='fullname' value="<?= !empty($_POST['fullname']) ? $_POST['fullname'] : false ?>">
                     <p class="text-danger"> <?= isset($error['fullname'])? $error['fullname'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Email</label>
-                    <input type="email" class="form-control" name='email'>
+                    <input type="email" class="form-control" name='email' value="<?= !empty($_POST['email']) ? $_POST['email'] : false ?>">
                     <p class="text-danger"> <?= isset($error['email'])? $error['email'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Số điện thoại</label>
-                    <input type="tel" value="" class="form-control" name='tel'>
+                    <input type="tel"  class="form-control" name='tel' value="<?= !empty($_POST['tel']) ? $_POST['tel'] : false ?>">
                     <p class="text-danger"> <?= isset($error['tel'])? $error['tel'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Địa chỉ</label>
-                    <input type="text" value="" class="form-control" name='address'>
+                    <input type="text"  class="form-control" name='address' value="<?= !empty($_POST['address']) ? $_POST['address'] : false ?>">
                     <p class="text-danger"> <?= isset($error['address'])? $error['address'] :'' ?></p>
                 </div>
                 <div class="col-4">

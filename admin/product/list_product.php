@@ -3,6 +3,7 @@
         <main class="container_">
         
                 <h3 class="alert alert-success text-success"> Danh sách Sản phẩm</h3>
+                <form action="index.php?act=delete_product_by_checkbox" method="post">
                 <table class="table table-hover">
                     <thead  class="table-secondary" >
                         <tr>
@@ -25,7 +26,7 @@
                             $img= '../'.$GLOBALS['path_img'].$image;
                         ?>
                         <tr class="">
-                            <td><input class="form-check-input" type="checkbox"></td>
+                            <td><input class="form-check-input" name="products_id[]" value="<?= $product_id ?>" type="checkbox"></td>
                             <td><?= $product_id?></td>
                             <td> <?= $name?></td>
                             <td> <?= $price?> </td>
@@ -44,13 +45,27 @@
                     </tbody>
                     
                 </table>
-                <form action="" method="post">
+               
                     <div class="form-group">
-                        <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
+                        <button name="" id="btnclick" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
                         <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
-                        <a   class="btn btn-outline-danger fw-medium">Xóa mục đã chọn</a>
+                        <input type="submit" name="delete_btn"  class="btn btn-outline-danger fw-medium" value="Xóa mục đã chọn">
                         <a href="index.php?act=add_product"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
                     </div>
                 </form>
               
         </main>
+        <script>
+          
+          document.getElementById('btnclick').addEventListener('click',  function(event) {
+              event.preventDefault();
+              
+              console.log("đã check");
+              var checkboxes = document.querySelectorAll('.form-check-input');
+              console.log(checkboxes)
+              for (var i = 0; i < checkboxes.length; i++) {
+                  checkboxes[i].checked = true;
+                
+              }
+          });        
+      </script>

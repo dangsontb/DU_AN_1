@@ -12,7 +12,7 @@
                 </div>
                 <div class="mb-3">
                     <label  class="form-label fw-bolder" >Tên danh mục</label>
-                    <input type="text" class="form-control" name='cate_name'>
+                    <input type="text" class="form-control" name='cate_name' value="<?= !empty($_POST['cate_name']) ? $_POST['cate_name'] : false ?>">
                     <p class="text-danger"> <?= isset($cate_name_error)? $cate_name_error :'' ?></p>
                 </div>
 

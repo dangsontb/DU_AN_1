@@ -9,12 +9,12 @@
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Tên sản phẩm</label>
-                    <input type="text" class="form-control" name='name'>
+                    <input type="text" class="form-control" name='name' value="<?= !empty($_POST['name']) ? $_POST['name'] : false ?>">
                     <p class="text-danger"> <?= isset($error['name'])? $error['name'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Giá sản phẩm</label>
-                    <input type="number" class="form-control" name='price' value="0">
+                    <input type="number" class="form-control" name='price' value="<?= !empty($_POST['price']) ? $_POST['price'] : false ?>">
                     <p class="text-danger"> <?= isset($error['price'])? $error['price'] :'' ?></p>
                 </div>
                 
@@ -26,17 +26,17 @@
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Lượt xem</label>
-                    <input type="number" class="form-control" name='view'>
+                    <input type="number" class="form-control" name='view' value="<?= !empty($_POST['view']) ? $_POST['view'] : false ?>">
                     <p class="text-danger"> <?= isset($error['view'])? $error['view'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Giảm giá</label>
-                    <input type="number" class="form-control" name='sale'>
+                    <input type="number" class="form-control" name='sale' value="<?= !empty($_POST['sale']) ? $_POST['sale'] : false ?>">
                     <p class="text-danger"> <?= isset($error['sale'])? $error['sale'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Ngày nhập</label>
-                    <input type="date" value="" class="form-control" name='create_at'>
+                    <input type="date" value="" class="form-control" name='create_at' value="<?= !empty($_POST['create_at']) ? $_POST['create_at'] : false ?>">
                     <p class="text-danger"> <?= isset($error['create_at'])? $error['create_at'] :'' ?></p>
                 </div>
                 <div class="col-4">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-12">
                     <label  class="form-label fw-bolder" >Mô tả</label>
-                    <textarea class="form-control" name="description" placeholder="" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <textarea class="form-control" name="description" placeholder="" id="floatingTextarea2" style="height: 100px" ><?= !empty($_POST['description']) ? $_POST['description'] : false ?></textarea>
                    
                     <p class="text-danger"> <?= isset($error['description'])? $error['description'] :'' ?></p>
                 </div>

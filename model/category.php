@@ -19,8 +19,15 @@
         $sql = "UPDATE categories set cate_name = ? where cate_id =?";
         pdo_execute($sql,$cate_name,$cate_id);
     }
-    function delete_category($cate_id){
-        $sql = "DELETE  FROM categories WHERE cate_id=".$cate_id;
-        pdo_execute($sql);
+    function category_delete($cate_id){
+        if(is_array($cate_id)){
+            foreach($cate_id as $id){
+                $sql = "DELETE  FROM categories WHERE cate_id=".$id;
+                pdo_execute($sql);
+            }
+        }else{
+            $sql = "DELETE  FROM categories WHERE cate_id=".$cate_id;
+            pdo_execute($sql);
+        }
     }
 ?>

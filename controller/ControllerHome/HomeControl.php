@@ -10,7 +10,6 @@ function login(){
         $password  = $_POST['password'];
         $error = [];
         if(!empty($user_name) && !empty($password)){
-
             $user = user_select_login($user_name,$password);   
             if(!is_array($user)){   
                 $error['user_name'] = " Tài khoản hoặc mật khẩu không chính xác ";

@@ -15,6 +15,7 @@ function add_brand(){
                 $brand_name_error = "Tên này đã tồn tại";
             }else{
                 brand_insert($brand_name);
+                header("location: index.php?act=list_brand");
             }
         }else $brand_name_error = "Không được để trống !";                 
     }
@@ -45,10 +46,14 @@ function update_brand(){
     include 'brand/list_brand.php';
 }
 function delete_brand_checkbox(){
-    if(isset($_POST['delete_btn'])){
-        $brand_id = $_POST['brands_id'];
-        brand_delete($brand_id);
-    }
+    if(isset($_POST['delete_btn']) ){
+        if(isset($_POST['brands_id'])){
+            $brands_id = $_POST['brands_id'];
+            if(!empty($brands_id)){
+                brand_delete($brands_id);
+            }
+        }
+    } 
     $list_brand = brand_select_all();
     include 'brand/list_brand.php';
 }

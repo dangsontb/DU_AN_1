@@ -11,7 +11,7 @@
                 </div>
                 <div class="mb-3">
                     <label  class="form-label fw-bolder" >Tên Brand</label>
-                    <input type="text" class="form-control" name='brand_name'>
+                    <input type="text" class="form-control" name='brand_name' value="<?= !empty($_POST['brand_name']) ? $_POST['brand_name'] : false  ?>">
                     <p class="text-danger"> <?= isset($brand_name_error)? $brand_name_error :'' ?></p>
                 </div>
 

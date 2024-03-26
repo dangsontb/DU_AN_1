@@ -64,6 +64,7 @@ function add_user(){
 
         if(empty($error)){
             user_insert($name, $pass, $fullname, $email, $tel, $address, $role, $create_at );
+            header("location: index.php?act=list_user");
         }
     }
     include "user/add_user.php";
@@ -76,6 +77,19 @@ function delete_user(){
     $list_user = user_select_all();
     include "user/list_user.php";
 }
+function delete_user_by_checkbox(){
+    if(isset($_POST['delete_btn']) ){
+        if(isset($_POST['users_id'])){
+            $user_id = $_POST['users_id'];
+            if(!empty($user_id)){
+                user_delete($user_id);
+            }
+        }
+    } 
+    $list_user = user_select_all();
+    include "user/list_user.php";
+}
+
 function edit_user(){
     if(isset($_GET['user_id']) &&  ($_GET['user_id']) > 0){
         $user_id = $_GET['user_id'] ;

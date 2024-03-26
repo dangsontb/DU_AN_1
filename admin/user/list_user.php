@@ -4,7 +4,7 @@
         <main class="container-fluid row">
         
                 <h3 class="alert alert-success text-success"> Danh sách tài khoản</h3>
-                <form action="" method="post">
+                <form action="index.php?act=delete_user_by_checkbox" method="post">
                     <table class="table table-hover">
                         <thead  class="table-secondary" >
                             <tr>
@@ -25,7 +25,7 @@
                         <tbody>
                             <?php foreach($list_user as $user) : extract($user); ?>
                             <tr>
-                                <td><input class="form-check-input" type="checkbox"></td>
+                                <td><input class="form-check-input" name="users_id[]"  value="<?= $user_id ?>" type="checkbox"></td>
                                 <td><?=$user_id ?></td>
                                 <td><?=$user_name  ?></td>
                                 <td><?=$fullname ?> </td>
@@ -46,10 +46,29 @@
                     </table>
             
                     <div class="form-group">
-                        <button name="" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
+                        <button name=""  id="btnclick" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
                         <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
-                        <button  class="btn btn-outline-danger fw-medium">Xóa mục đã chọn</button>
+                        <input type="submit" name="delete_btn"  class="btn btn-outline-danger fw-medium" value="Xóa mục đã chọn">
                         <a href="index.php?act=add_user"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
                     </div>
                 </form>  
         </main>
+        <script>
+          
+            document.getElementById('btnclick').addEventListener('click',  function(event) {
+                event.preventDefault();
+                
+                console.log("đã check");
+                var checkboxes = document.querySelectorAll('.form-check-input');
+                console.log(checkboxes)
+                for (var i = 0; i < checkboxes.length; i++) {
+                    checkboxes[i].checked = true;
+                    if (checkboxes[i].checked) {
+                        console.log("đã check: " + checkboxes[i].value);
+                        
+                    } else {
+                        console.log("fail check");
+                    }
+                }
+            });        
+        </script>

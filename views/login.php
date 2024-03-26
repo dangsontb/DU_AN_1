@@ -6,12 +6,12 @@
             <form action="index.php?act=login" method="post">
                 <div class="form-group mb-3">
                     <label  class="fw-bold">Tên đăng nhập:</label>
-                    <input type="text" name="user_name" class="form-control" id="email" placeholder="" >
+                    <input type="text" name="user_name" class="form-control"  placeholder="Nhập tài khoản" value="<?= !empty($_POST['user_name']) ? $_POST['user_name'] : false ?>" >
                     <div class="text-danger"><?= isset($error['user_name']) ? $error['user_name'] : '' ?></div>
                 </div>
                 <div class="form-group mb-3">
                     <label for="password" class="fw-bold">Mật khẩu:</label>
-                    <input name="password" type="password" class="form-control" id="password" >
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" value="<?= !empty($_POST['cate_name']) ? $_POST['cate_name'] : false ?>" >
                 </div>
                 
                 <input type="submit" name="btn_login" class="form-control btn btn-success mb-3"  value="Đăng nhập">
