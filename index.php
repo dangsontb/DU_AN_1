@@ -29,7 +29,6 @@
                 if(isset($_GET['idcate'])&&($_GET['idcate']>0)){
                     $cate_id=$_GET['idcate'];
                     $list_product=loadall_sanpham_cate("",$cate_id);
-                    $cate_name=load_name_cate($cate_id);
                     include "views/sanpham_dm.php";
                 }else{
                     include "views/home.php";

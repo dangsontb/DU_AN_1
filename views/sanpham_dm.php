@@ -37,7 +37,6 @@
                             <a href=""></a><option value="3">Giá thấp</option></a>
                         </select>
                     </div>
-                    <p class="text-start text-danger fw-bold"><?=$cate_name;?></p>
 
 
                     <!-- ====================================== SẢN PHẨM ======================================= -->

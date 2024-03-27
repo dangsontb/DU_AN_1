@@ -25,13 +25,24 @@ function product_insert($name, $price, $image, $description, $sale, $create_at, 
     pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
 }
 
+//======================================================= Ngát =====================================================================
+function loadall_sanpham_home() {    
+    $sanpham_1trang =!empty( $_GET['sanpham_1trang'])? $_GET['sanpham_1trang']:3; 
+    $trang=!empty( $_GET['trang'])? $_GET['trang']:1;
+    $vitri_batdau = ($trang - 1) * $sanpham_1trang;
 
-
-function loadall_sanpham_home(){
-    $sql="SELECT * FROM `product` WHERE 1 ORDER BY product_id DESC LIMIT 0,9";
-    $listsanpham = pdo_query($sql);
-    return $listsanpham;
+    $tong_sanpham = pdo_query_value("SELECT COUNT(*) FROM product");
+    $tong_trang = ceil($tong_sanpham / $sanpham_1trang);
+    if (isset($_GET['trang']) && is_numeric($_GET['trang']) && $_GET['trang'] > 0) {
+        $trang_hientai = (int) $_GET['trang'];
+        if ($trang_hientai > $tong_trang) {
+            $trang_hientai = $tong_trang; // Giữ ở trang cuối nếu trang yêu cầu vượt quá giới hạn
+        }
+    }
+    $sql = "SELECT * FROM `product` ORDER BY product_id DESC LIMIT $sanpham_1trang OFFSET $vitri_batdau";
+    return pdo_query($sql);
 }
+
 
 function loadall_sanpham_cate($keyw="",$cate_id=0){
     $sql="SELECT * FROM `product` WHERE 1";
@@ -68,6 +79,11 @@ function loadall_product_top10(){
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+
+//======================================================= Ngát =====================================================================
+
+
+
 function product_select_name($name){
     $sql = "SELECT * from product where name = ?";
     return pdo_query_one($sql,$name);
