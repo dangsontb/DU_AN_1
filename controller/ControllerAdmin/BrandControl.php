@@ -61,6 +61,7 @@ function delete_brand_checkbox(){
             $brands_id = $_POST['brands_id'];
             if(!empty($brands_id)){
                 brand_delete($brands_id);
+                header("location: index.php?act=list_brand");
             }
         }
     } 
