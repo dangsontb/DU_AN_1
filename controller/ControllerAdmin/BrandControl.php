@@ -6,10 +6,10 @@ function list_brand(){
     }else{
         $page = $_GET['page'];
     }
-    $quantity = 5;
+    $quantity = 6;
     $brands = brand_select_all();
     $list_brand = brand_select_page($page, $quantity);
-    $show_number_pages = show_number_pages($brands , $quantity);
+    $show_number_pages = brand_number_pages($brands , $quantity);
     include "brand/list_brand.php";
     echo $show_number_pages;
 }
@@ -34,9 +34,10 @@ function add_brand(){
 function delete_brand(){
     if(isset($_GET['id']) &&  ($_GET['id']) > 0){
         brand_delete($_GET['id']);
+        header("location: index.php?act=list_brand");
     } 
-    $list_brand = brand_select_all();
-    include 'brand/list_brand.php';
+    // $list_brand = brand_select_all();
+    // include 'brand/list_brand.php';
 }
 function edit_brand(){
     if(isset($_GET['id']) &&  ($_GET['id']) > 0){
@@ -48,12 +49,10 @@ function edit_brand(){
 function update_brand(){
     if(isset($_POST['update']) && ($_POST['update'])){
         $brand_id=$_POST['brand_id'];
-        $brand_name=$_POST['brand_name'];
-        
+        $brand_name=$_POST['brand_name'];   
         brand_update($brand_id,$brand_name);
+        header("location: index.php?act=list_brand");
     }
-    $list_brand = brand_select_all();
-    include 'brand/list_brand.php';
 }
 function delete_brand_checkbox(){
     if(isset($_POST['delete_btn']) ){

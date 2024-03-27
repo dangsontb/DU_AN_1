@@ -1,9 +1,9 @@
 <?php
     function brand_select_all(){
-        $sql = "SELECT * from brand";
+        $sql = "SELECT * from brand order by brand_id ";
         return pdo_query($sql);
     }
-    function show_number_pages($list_brands, $quantity_brand){
+    function brand_number_pages($list_brands, $quantity_brand){
         $total_brand = count($list_brands);
         return ceil($total_brand/$quantity_brand);
     }
