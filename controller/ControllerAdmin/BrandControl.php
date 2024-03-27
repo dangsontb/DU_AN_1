@@ -1,8 +1,17 @@
 <?php
 
 function list_brand(){
-    $list_brand = brand_select_all();
+    if(!isset($_GET['page']) || $_GET['page'] < 1){
+        $page= 1;
+    }else{
+        $page = $_GET['page'];
+    }
+    $quantity = 5;
+    $brands = brand_select_all();
+    $list_brand = brand_select_page($page, $quantity);
+    $show_number_pages = show_number_pages($brands , $quantity);
     include "brand/list_brand.php";
+    echo $show_number_pages;
 }
 function add_brand(){
     if(isset($_POST['themmoi']) && $_POST['themmoi']){
@@ -15,6 +24,7 @@ function add_brand(){
                 $brand_name_error = "Tên này đã tồn tại";
             }else{
                 brand_insert($brand_name);
+                
                 header("location: index.php?act=list_brand");
             }
         }else $brand_name_error = "Không được để trống !";                 
