@@ -18,6 +18,7 @@ function product_select_full(){
                                     join brand b on p.brand_id = b.brand_id  ";
     return pdo_query($sql);
 }
+  
 
 function product_insert($name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id){
     $sql = "INSERT INTO product(name, price, image, description, sale, create_at, view, cate_id, brand_id) VALUES (?,?,?,?,?,?,?,?,?)";
