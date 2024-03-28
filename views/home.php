@@ -82,13 +82,19 @@
                               $prev_page = $_GET['trang'] - 1;
 
                           ?>
-                          <a class="page-link" href="?trang=<?= $prev_page ?>" aria-label="Previous">
+                          <a class="page-link " href="?trang=<?= $prev_page ?>" aria-label="Previous">
                           <span aria-hidden="true">&laquo;</span>
                           </a>
                         <?php }?>
                         </li>
-                        <?php for ($i=1; $i <= $tong_sanpham ; $i++) { ?>
-                          <li class="page-item"><a class="page-link" href="?trang=<?=$i?>"><?=$i?></a></li>
+                        <?php for ($i=1; $i <= $tong_sanpham ; $i++) {
+                            if(empty($_GET['trang'])  ){
+                              $page =1;
+                            }else{
+                              $page = $_GET['trang'];
+                            }
+                          ?>
+                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" href="?trang=<?=$i?>"><?=$i?></a></li>
                         <?php } ?>
                         
 

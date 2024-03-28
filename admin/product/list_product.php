@@ -54,14 +54,14 @@
                                 $prev_page = $page - 1;
                             
                         ?>
-                        <a class="page-link" href="?act=list_product&page=<?= $prev_page ?>" aria-label="Previous">
+                        <a class="page-link " href="?act=list_product&page=<?= $prev_page ?>" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                         <?php }?>
                         </li>
                         <?php if(isset($total_pages)): ?>
                             <?php for($i=1 ;  $i <= $total_pages; $i++) : ?>
-                            <li class="page-item"><a class="page-link" href="?act=list_product&page=<?= $i ?>"><?= $i?></a></li>
+                            <li class="page-item"><a class="page-link <?= $page == $i ? 'active' : ''  ?>" href="?act=list_product&page=<?= $i ?>"><?= $i?></a></li>
                             <!-- <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=2">2</a></li>
                             <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=3">3</a></li> -->
                             

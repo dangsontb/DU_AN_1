@@ -46,7 +46,7 @@
                         </li>
                         <?php if(isset($total_pages)): ?>
                             <?php for($i=1 ;  $i <= $total_pages; $i++) : ?>
-                            <li class="page-item"><a class="page-link" href="index.php?act=list_category&page=<?= $i ?>"><?= $i?></a></li>
+                            <li class="page-item"><a class="page-link <?= $page == $i ? 'active' : ''  ?>" href="index.php?act=list_category&page=<?= $i ?>"><?= $i?></a></li>
                             <!-- <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=2">2</a></li>
                             <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=3">3</a></li> -->
                             

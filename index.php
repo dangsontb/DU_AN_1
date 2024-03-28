@@ -7,6 +7,7 @@
     include "model/brand.php";
     include "model/user.php";
     include "model/size.php";
+    include "model/comment.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
@@ -48,6 +49,10 @@
             case 'product_detail':
                 product_detail();
                 
+                break;
+            case 'comment':
+                
+                comment_insert();
                 break;
                 
             // -------------------------- User ------------------------------------------------------
