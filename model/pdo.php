@@ -22,6 +22,7 @@
             $conn = pdo_get_connection();
             $stmt = $conn -> prepare($sql);
             $stmt -> execute($sql_args);
+            
         }
         catch(PDOException $e){
             throw $e;
@@ -82,5 +83,8 @@
         } finally {
             unset($conn);
         }
+    }
+    function insert_id(){
+        return pdo_get_connection() -> lastInsertId();
     }
 ?>

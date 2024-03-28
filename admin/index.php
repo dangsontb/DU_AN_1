@@ -66,8 +66,7 @@
                 break;  
             // --------------------------PRODUCT----------------------------------
             case 'list_product':         
-                $list_product = product_select_all() ;
-                include 'product/list_product.php';
+                list_product();
                 break;
             case 'add_product':
                

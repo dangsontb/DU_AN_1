@@ -30,6 +30,44 @@
                     </tbody>
                     
                 </table>
+
+                <div aria-label="Page navigation example" class="chuyentrang">
+                        <ul class="pagination justify-content-center" >
+                            <li class="page-item">
+                            <?php 
+
+                                if(isset($page) && $page > 1){
+                                    $prev_page = $page - 1;
+                               
+                            ?>
+                            <a class="page-link" href="index.php?act=list_brand&page=<?= $prev_page ?>" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                            <?php }?>
+                            </li>
+                            <?php if(isset($show_number_pages)): ?>
+                                <?php for($i=1 ;  $i <= $show_number_pages; $i++) : ?>
+                                <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=<?= $i ?>"><?= $i?></a></li>
+                                <!-- <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=2">2</a></li>
+                                <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=3">3</a></li> -->
+                               
+                                <?php endfor ?>
+                            <?php endif ?>
+                            <li>
+                            <?php 
+                                if(isset($page)  && isset($show_number_pages) && $show_number_pages > $page ){
+                                    if($page <  $show_number_pages){
+                                        $next_page = $page + 1;
+                                    }
+                                             
+                            ?> 
+                                <a class="page-link" href="index.php?act=list_brand&page=<?= $next_page ?>" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            <?php }?>
+                            </li>
+                        </ul>
+                    </div>
               
                     <div class="form-group">
                         <button name="" id="btnclick"   class="btn btn-outline-primary fw-medium">Chọn tất cả</button>

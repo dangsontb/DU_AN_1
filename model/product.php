@@ -25,49 +25,6 @@ function product_insert($name, $price, $image, $description, $sale, $create_at, 
     pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
 }
 
-
-
-function loadall_sanpham_home(){
-    $sql="SELECT * FROM `product` WHERE 1 ORDER BY product_id DESC LIMIT 0,9";
-    $listsanpham = pdo_query($sql);
-    return $listsanpham;
-}
-
-function loadall_sanpham_cate($keyw="",$cate_id=0){
-    $sql="SELECT * FROM `product` WHERE 1";
-    if($keyw!=""){
-        $sql.=" AND product_name like '%".$keyw."%'";
-    }
-    if($cate_id>0){
-        $sql.=" AND cate_id ='".$cate_id."'";
-    }
-    $sql.=" ORDER BY product_id DESC";
-    $listsanpham=pdo_query($sql);
-    return $listsanpham;
-}
-function load_name_cate($cate_id){
-        $sql="SELECT * FROM `categories` WHERE cate_id=".$cate_id;
-        $dm=pdo_query_one($sql);
-        extract($dm);
-        return $cate_name;
-}
-function loadall_sanpham_brand($keyw="",$brand_id=0){
-    $sql="SELECT * FROM `product` WHERE 1";
-    if($keyw!=""){
-        $sql.=" AND product_name like '%".$keyw."%'";
-    }
-    if($brand_id>0){
-        $sql.=" AND brand_id ='".$brand_id."'";
-    }
-    $sql.=" ORDER BY product_id DESC";
-    $listsanpham=pdo_query($sql);
-    return $listsanpham;
-}
-function loadall_product_top10(){
-    $sql="SELECT * FROM `product` WHERE 1 ORDER BY view DESC LIMIT 0,10";
-    $listsanpham = pdo_query($sql);
-    return $listsanpham;
-}
 function product_select_name($name){
     $sql = "SELECT * from product where name = ?";
     return pdo_query_one($sql,$name);
@@ -110,3 +67,67 @@ function product_update($product_id, $name, $price, $image, $description, $sale,
     return pdo_query_one($sql,$product_id);
     
 }
+function product_select_pages($page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT * from product order by product_id limit $start, $quantity";
+    return pdo_query($sql);
+}
+
+//======================================================= Ngát =====================================================================
+function loadall_sanpham_home() {    
+    $sanpham_1trang =!empty( $_GET['sanpham_1trang'])? $_GET['sanpham_1trang']:3; 
+    $trang=!empty( $_GET['trang'])? $_GET['trang']:1;
+    $vitri_batdau = ($trang - 1) * $sanpham_1trang;
+
+    $tong_sanpham = pdo_query_value("SELECT COUNT(*) FROM product");
+    $tong_trang = ceil($tong_sanpham / $sanpham_1trang);
+    if (isset($_GET['trang']) && is_numeric($_GET['trang']) && $_GET['trang'] > 0) {
+        $trang_hientai = (int) $_GET['trang'];
+        if ($trang_hientai > $tong_trang) {
+            $trang_hientai = $tong_trang; // Giữ ở trang cuối nếu trang yêu cầu vượt quá giới hạn
+        }
+    }
+    $sql = "SELECT * FROM `product` ORDER BY product_id DESC LIMIT $sanpham_1trang OFFSET $vitri_batdau";
+    return pdo_query($sql);
+}
+
+
+function loadall_sanpham_cate($keyw="",$cate_id=0){
+    $sql="SELECT * FROM `product` WHERE 1";
+    if($keyw!=""){
+        $sql.=" AND product_name like '%".$keyw."%'";
+    }
+    if($cate_id>0){
+        $sql.=" AND cate_id ='".$cate_id."'";
+    }
+    $sql.=" ORDER BY product_id DESC";
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function load_name_cate($cate_id){
+        $sql="SELECT * FROM `categories` WHERE cate_id=".$cate_id;
+        $dm=pdo_query_one($sql);
+        extract($dm);
+        return $cate_name;
+}
+function loadall_sanpham_brand($keyw="",$brand_id=0){
+    $sql="SELECT * FROM `product` WHERE 1";
+    if($keyw!=""){
+        $sql.=" AND product_name like '%".$keyw."%'";
+    }
+    if($brand_id>0){
+        $sql.=" AND brand_id ='".$brand_id."'";
+    }
+    $sql.=" ORDER BY product_id DESC";
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_product_top10(){
+    $sql="SELECT * FROM `product` WHERE 1 ORDER BY view DESC LIMIT 0,10";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
+
+//======================================================= Ngát =====================================================================
+
+
