@@ -165,9 +165,12 @@ function update_product(){
     
         if(empty($error)){
             move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-            
-
             product_update($product_id_update, $name_update, $price_update, $image_update, $description_update, $sale_update, $create_at_update, $view_update, $cate_id_update, $brand_id_update);
+            header("location: ?act=list_product");
+        }else{
+            header("location: ?act=edit_product&product_id=".$product_id_update);
+            $product_by_id = product_select_by_id($cate_id_update);
+            include 'product/update_product.php';
         }
         // if(!empty($image_description)){
         //     if(!in_array($image_description_tail, $tails)  && filesize($image_description) > 8192){
@@ -179,8 +182,8 @@ function update_product(){
     
     
     }
-    $list_product = product_select_all() ;  
-    include "product/list_product.php";
+    // $list_product = product_select_all() ;  
+    // include "product/list_product.php";
 }
 function delete_product(){
     if(isset($_GET['product_id']) &&  ($_GET['product_id']) > 0){

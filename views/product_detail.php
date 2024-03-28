@@ -65,16 +65,9 @@
 							</span>
 							<div class="row">
 								<label class="col-2" for="soluong">Size:</label>
-                          
-                                <input  type="text" class="btn btn-light col-2" value="36">
-                                <button type="text" class="btn btn-light col-2">37</button>
-                                <button type="text" class="btn btn-light col-2">38</button>
-                                <button type="text" class="btn btn-light col-2">39</button>
-                                <button type="text" class="btn btn-light col-2">40</button>
-                                <button type="text" class="btn btn-light col-2">41</button>
-                                <button type="text" class="btn btn-light col-2">42</button>
-                                <button type="text" class="btn btn-light col-2">43</button>
-							
+                                <?php foreach($sizes as $size) :?>
+                                    <input  type="button" class="btn btn-light col-2" name="size" value="<?= $size['size_number'] ?>">
+                                <?php endforeach ?>
 							</div>
                             <br>
 							<div class="form-group"> 
