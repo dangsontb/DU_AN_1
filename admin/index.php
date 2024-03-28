@@ -86,6 +86,16 @@
                 delete_product_by_checkbox();         
                 break;  
 
+                case 'search':
+                    if(isset($_POST['btn_submit']) && ($_POST['btn_submit'])){
+                        $keyword = $_POST['keyword'];
+                    }else{
+                        $keyword = "";
+                    }
+                   $product = loadall_sanpham_brand($keyword);
+                    include './views/search.php';
+                    break;
+
             // --------------------------User----------------------------------    
             
             case 'list_user':

@@ -57,7 +57,7 @@
             }
         
             if(!empty($sale) ){
-                if($sale < 1 || $sale > 99 ){
+                if($sale > 100 ){
                     $error['sale'] = "Giảm giá phải lớn hơn và nhỏ hơn 100";
                 }
             }else{
