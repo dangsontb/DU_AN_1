@@ -57,7 +57,7 @@
                             if(isset($page)  && isset($total_pages) && $total_pages > $page ){
                                 if($page <  $total_pages){
                                     $next_page = $page + 1;
-                                }
+                                } 
                                             
                         ?> 
                             <a class="page-link" href="index.php?act=list_category&page=<?= $next_page ?>" aria-label="Next">

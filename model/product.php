@@ -25,6 +25,54 @@ function product_insert($name, $price, $image, $description, $sale, $create_at, 
     pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
 }
 
+function product_select_name($name){
+    $sql = "SELECT * from product where name = ?";
+    return pdo_query_one($sql,$name);
+}
+
+function product_select_by_id($product_id){
+    $sql = "SELECT * from product  where product_id  = ? ";
+    return pdo_query_one($sql, $product_id);
+}
+
+
+function product_update($product_id, $name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id){
+    if($image != ''){
+        $sql = "UPDATE product SET name=?,price=?,image=?,description=?,sale=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
+        pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id, $product_id);
+    }else{
+        $sql = "UPDATE product SET name=?,price=?,description=?,sale=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
+        pdo_execute($sql,$name, $price,  $description, $sale, $create_at, $view, $cate_id, $brand_id, $product_id);
+    }
+}
+ function product_delele_by_id($product_id){
+    if(is_array($product_id)){
+        foreach ($product_id as $id) {
+            $sql = "DELETE FROM product WHERE product_id = ?";
+            pdo_execute($sql, $id);
+        }
+        
+    }else  {
+        $sql = "DELETE FROM product WHERE product_id = ?";
+        pdo_execute($sql, $product_id);
+    } 
+   
+ }
+
+ function product_detail_id($product_id){
+    $sql = "    SELECT p.*, c.cate_id, c.cate_name, b.brand_id, b.brand_name FROM product p 
+                JOIN categories c ON p.cate_id = c.cate_id 
+                JOIN brand b ON p.brand_id = b.brand_id 
+                WHERE p.product_id =  ?"; 
+    return pdo_query_one($sql,$product_id);
+    
+}
+function product_select_pages($page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT * from product order by product_id limit $start, $quantity";
+    return pdo_query($sql);
+}
+
 //======================================================= Ngát =====================================================================
 function loadall_sanpham_home() {    
     $sanpham_1trang =!empty( $_GET['sanpham_1trang'])? $_GET['sanpham_1trang']:3; 
@@ -83,46 +131,3 @@ function loadall_product_top10(){
 //======================================================= Ngát =====================================================================
 
 
-
-function product_select_name($name){
-    $sql = "SELECT * from product where name = ?";
-    return pdo_query_one($sql,$name);
-}
-
-function product_select_by_id($product_id){
-    $sql = "SELECT * from product  where product_id  = ? ";
-    return pdo_query_one($sql, $product_id);
-}
-
-
-function product_update($product_id, $name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id){
-    if($image != ''){
-        $sql = "UPDATE product SET name=?,price=?,image=?,description=?,sale=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
-        pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id, $product_id);
-    }else{
-        $sql = "UPDATE product SET name=?,price=?,description=?,sale=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
-        pdo_execute($sql,$name, $price,  $description, $sale, $create_at, $view, $cate_id, $brand_id, $product_id);
-    }
-}
- function product_delele_by_id($product_id){
-    if(is_array($product_id)){
-        foreach ($product_id as $id) {
-            $sql = "DELETE FROM product WHERE product_id = ?";
-            pdo_execute($sql, $id);
-        }
-        
-    }else  {
-        $sql = "DELETE FROM product WHERE product_id = ?";
-        pdo_execute($sql, $product_id);
-    } 
-   
- }
-
- function product_detail_id($product_id){
-    $sql = "    SELECT p.*, c.cate_id, c.cate_name, b.brand_id, b.brand_name FROM product p 
-                JOIN categories c ON p.cate_id = c.cate_id 
-                JOIN brand b ON p.brand_id = b.brand_id 
-                WHERE p.product_id =  ?"; 
-    return pdo_query_one($sql,$product_id);
-    
-}

@@ -45,13 +45,50 @@
                     </tbody>
                     
                 </table>
+                <div aria-label="Page navigation example" class="chuyentrang">
+                    <ul class="pagination justify-content-center" >
+                        <li class="page-item">
+                        <?php 
+
+                            if(isset($page) && $page > 1){
+                                $prev_page = $page - 1;
+                            
+                        ?>
+                        <a class="page-link" href="?act=list_product&page=<?= $prev_page ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                        <?php }?>
+                        </li>
+                        <?php if(isset($total_pages)): ?>
+                            <?php for($i=1 ;  $i <= $total_pages; $i++) : ?>
+                            <li class="page-item"><a class="page-link" href="?act=list_product&page=<?= $i ?>"><?= $i?></a></li>
+                            <!-- <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=2">2</a></li>
+                            <li class="page-item"><a class="page-link" href="index.php?act=list_brand&page=3">3</a></li> -->
+                            
+                            <?php endfor ?>
+                        <?php endif ?>
+                        <li>
+                        <?php 
+                            if(isset($page)  && isset($total_pages) && $total_pages > $page ){
+                                if($page <  $total_pages){
+                                    $next_page = $page + 1;
+                                } 
+                                            
+                        ?> 
+                            <a class="page-link" href="?act=list_product&page=<?= $next_page ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        <?php }?>
+                        </li>
+                    </ul>
+                </div>
                
-                    <div class="form-group">
-                        <button name="" id="btnclick" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
-                        <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
-                        <input type="submit" name="delete_btn"  class="btn btn-outline-danger fw-medium" value="Xóa mục đã chọn">
-                        <a href="index.php?act=add_product"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
-                    </div>
+                <div class="form-group">
+                    <button name="" id="btnclick" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
+                    <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
+                    <input type="submit" name="delete_btn"  class="btn btn-outline-danger fw-medium" value="Xóa mục đã chọn">
+                    <a href="index.php?act=add_product"  class="btn btn-outline-success fw-medium">Nhập thêm</a>
+                </div>
                 </form>
               
         </main>

@@ -80,6 +80,7 @@
                 move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
         
                 product_insert($name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
+                header("location: ?act=list_product");
             }
             // if(!empty($image_description)){
             //     if(!in_array($image_description_tail, $tails)  && filesize($image_description) > 8192){
@@ -185,6 +186,7 @@ function delete_product(){
     if(isset($_GET['product_id']) &&  ($_GET['product_id']) > 0){
         $product_id = $_GET['product_id'] ;
         product_delele_by_id($product_id);
+        header("location: ?act=list_product");
     } 
     $list_product = product_select_all() ;
     include 'product/list_product.php';
@@ -203,9 +205,23 @@ function delete_product_by_checkbox(){
             $products_id = $_POST['products_id'];
             if(!empty($products_id)){
                 product_delele_by_id($products_id);
+               header("location: ?act=list_product");
             }
         }
     } 
-    $list_product = product_select_all() ;
+    // $list_product = product_select_all() ;
+    // include 'product/list_product.php';
+}
+function list_product(){
+    if(!isset($_GET['page']) || !is_numeric($_GET['page']) || $_GET['page'] < 1 ){
+        $page = 1;
+    }else{
+        $page = $_GET['page'];
+    }
+    $quantity = 3;
+    $product_select_all = product_select_all();
+    $list_product = product_select_pages($page , $quantity);
+    $total_pages =  ceil(count($product_select_all) / $quantity);
     include 'product/list_product.php';
+    // var_dump($list_product) ;
 }

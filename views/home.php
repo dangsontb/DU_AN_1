@@ -80,7 +80,7 @@
                             <span aria-hidden="true">&laquo;</span>
                           </a>
                         </li>
-                        <?php for ($i=1; $i <= $tong_trang ; $i++) { ?>
+                        <?php for ($i=1; $i <= $tong_sanpham ; $i++) { ?>
                           <li class="page-item"><a class="page-link" href="?sanpham_1trang=<?=$sanpham_1trang?>&trang=<?=$i?>"><?=$i?></a></li>
                         <?php } ?>
                         
