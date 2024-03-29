@@ -103,18 +103,57 @@
                         </blockquote>
                     </div>
                 </div> -->
-                <?php foreach($list_comment as $comment):?>
-                    <div><?= $comment['user_name'] ?></div>
-                    <span><?= $comment['date'] ?></span>
-                    <div><?= $comment['content'] ?></div>
-                <?php endforeach?>
+              
+                </div>
+                <!-- <?php foreach($list_comment as $comment):?>
+                    <div class="shadow-sm px-3 mb-2 bg-body-tertiary rounded">
+                    <p class="fw-medium"> <?= $comment['user_name'] ?> 
+                    <small class="fw-light mx-3"><?= $comment['date'] ?></small></p>
+                    <p class="mx-3"><?= $comment['content'] ?></p>
+                    </div>
+                 
+                <?php endforeach?> -->
                 <!-- <div class="w-25 p-3 bg-body-secondary rounded-2">
                     <div class="d-inline-flex p-2 ">
                         I'm an inline flexbox container!aaaaaaaaaaaaaaaaa
                     </div>
                 </div> -->
+                <!-- hiển thị  -->
+                <div class="card-body">
+                    <?php foreach($list_comment as $comment):?>
+                    <div class="review">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                        <meta itemprop="datePublished" content="01-01-2016"><?= $comment['date'] ?>
 
+                        <?php for ($i = 1; $i <= $comment['rating']; $i++) {
+                                echo '<span class="review_rating fa fa-star"></span>';
+                            } ?>
+
+                        by <b><?= $comment['user_name'] ?></b>
+                        <p class="blockquote">
+                        <p class="mb-0"><?= $comment['content'] ?></p>
+                        </p>
+                        <hr>
+                    </div>
+                    <?php endforeach?>
+                  
+
+                </div>
+               
+                <h4>Để lại bình luận</h4>        `   
                 <form action="index.php?act=comment" method="post">
+                    <div class="rating">
+                        <input type="radio" name="rating" value="5" id="5" checked>
+                        <label for="5">☆</label>
+                        <input type="radio" name="rating" value="4" id="4">
+                        <label for="4">☆</label>
+                        <input type="radio" name="rating" value="3" id="3">
+                        <label for="3">☆</label>
+                        <input type="radio" name="rating" value="2" id="2">
+                        <label for="2">☆</label>
+                        <input type="radio" name="rating" value="1" id="1">
+                        <label for="1">☆</label>
+                    </div>
                     <input type="hidden" name="product_id" value="<?= $product_id?>">
                     <div class="mb-3 mt-3">
                     <label for="comment">Comments:</label>

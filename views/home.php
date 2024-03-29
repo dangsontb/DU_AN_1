@@ -30,11 +30,12 @@
 
                   <!-- =================================== LỰA CHỌN ===================================== -->
                     <div class="luachon">
-                        <select class="form-select  align-self-end" aria-label="Default select example">
-                            <option selected>Lựa chọn</option>
-                            <option><a href="index.php?act=product_new">Mới nhất</a></option>
-                            <a href=""></a><option >Giá cao</option></a>
-                            <a href=""></a><option>Giá thấp</option></a>
+                     
+                        <select class="form-select  align-self-end select-filter" id="select-filter" aria-label="Default select example">
+                            <option value="0">---Lọc theo---</option>
+                            <option value="?product=new">Sản phẩm cũ</option>
+                            <option value="?price=asc">Giá tăng dần</option>
+                            <option value="?price=new">Giá giảm dần</option>
                         </select>
                     </div>
 
@@ -116,4 +117,5 @@
                 </div>
             </div>
         </div>
-        </main>
+      </main>
+

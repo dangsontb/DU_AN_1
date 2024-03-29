@@ -1,15 +1,15 @@
 <?php
 
 
-function comments_insert($content, $date, $user_id, $product_id){
-    $sql = "INSERT INTO comments(content, date, user_id, product_id) VALUES (?,?,?,?)";
-    pdo_execute($sql, $content, $date, $user_id, $product_id);
+function comments_insert($content, $date,$rating, $user_id, $product_id){
+    $sql = "INSERT INTO comments(content, date, rating, user_id, product_id) VALUES (?,?,?,?,?)";
+    pdo_execute($sql, $content, $date, $rating, $user_id, $product_id);
 }
 
-function comments_update($comment_id, $content, $date, $user_id, $product_id){
-    $sql = "UPDATE comments SET content=?, date=?, user_id=?, product_id=? WHERE comment_id=?";
-    pdo_execute($sql, $content, $date, $user_id, $product_id, $comment_id);
-}
+// function comments_update($comment_id, $content, $date, $user_id, $product_id){
+//     $sql = "UPDATE comments SET content=?, date=?, user_id=?, product_id=? WHERE comment_id=?";
+//     pdo_execute($sql, $content, $date, $user_id, $product_id, $comment_id);
+// }
 
 function comments_delete($comment_id){
     $sql = "DELETE FROM comments WHERE comment_id=?";
