@@ -110,10 +110,11 @@ function load_name_cate($cate_id){
         extract($dm);
         return $cate_name;
 }
+//======================================================= Hieu =====================================================================
 function loadall_sanpham_brand($keyw="",$brand_id=0){
     $sql="SELECT * FROM `product` WHERE 1";
     if($keyw!=""){
-        $sql.=" AND product_name like '%".$keyw."%'";
+        $sql.=" AND product.name like '%".$keyw."%'";
     }
     if($brand_id>0){
         $sql.=" AND brand_id ='".$brand_id."'";
@@ -128,6 +129,22 @@ function loadall_product_top10(){
     return $listsanpham;
 }
 
-//======================================================= Ngát =====================================================================
+
+//======================================================= Hieu =====================================================================
+
+// function product_select_keyw($keyw){
+//     $sql = "SELECT p.*, c.cate_name, b.brand_name
+//             FROM product p
+//             JOIN categories c ON p.cate_id = c.cate_id
+//             JOIN brand b ON p.brand_id = b.brand_id where 1 ";
+//     if(isset($keyw)){
+//         // $sql .= " and p.name LIKE '%".$keyw."%' OR c.cate_name LIKE '%".$keyw."%' OR b.brand_name LIKE '%".$keyw."%  ";
+//         $sql .= " and p.name LIKE '%".$keyw."%'  ";
+//     }
+//     // $sql.=" ORDER BY p.product_id DESC";
+//     $listsanpham=pdo_query($sql);
+//     return $listsanpham;
+// }
+    
 
 
