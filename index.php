@@ -1,16 +1,22 @@
 <?php
     session_start();
     ob_start();
+
     include "model/pdo.php";
     include "model/product.php";
     include "model/category.php";
     include "model/brand.php";
     include "model/user.php";
     include "model/size.php";
+    //include "model/cart.php";
     include "model/comment.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
+
+    if (!isset($_SESSION['giohang']))
+    $_SESSION['giohang'] = [];
+
 
     $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
@@ -51,7 +57,6 @@
                 
                 break;
             case 'comment':
-                
                 comment_insert();
                 break;
                 
@@ -72,7 +77,77 @@
             case 'signup':
                 signup();
                 break;
-            
+
+
+
+            // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
+            case 'viewcart':
+                include "views/cart/viewcart.php";
+                break;
+
+            case 'addtocart':
+                // Lấy dữ liệu từ form
+                if (isset($_POST['addtocart'])) {
+                    $id_product = $_POST['product_id'];
+                    $tensp = $_POST['tensp'];
+                    $hinh = $_POST['hinh'];
+                    $gia = $_POST['gia'];
+                    
+                    if(isset($_POST['soluong'])&&($_POST['soluong'])>1){
+                        $sl=$_POST['soluong'];
+                    }else{
+                        $soluong=1;
+                    }
+                    $check=0;
+                    //Kiểm tra sản phẩm có tồn tại trong giỏ hàng k
+                    //Nếu có -> Cập nhập số lượng
+                    $i=0; // Định vị xem mk ở sản phẩm nào
+                    foreach ($_SESSION['giohang'] as $sp) {
+                        if ($sp[1]===$tensp) {
+                            $soluongmoi=$soluong + $item[4];
+                            $_SESSION['giohang'][$i][4]+=$soluongmoi;
+                            $check=1;
+                            break;
+                        }
+                        $i++;
+                    }
+
+                    if($check==0){ //Không: add sản phẩm mới
+
+                        //Khởi tạo mảng con trước khi đưa vào giỏ hàng
+                        $item=array($id_produc,$tensp,$hinh,$gia,$soluong);
+                        $_SESSION['giohang'][]=$item;
+                        // $spadd= [$id_product, $tensp , $hinh, $gia,  $soluong];
+                        // array_push($_SESSION['giohang'], $spadd);
+                    }
+                }
+                header("location: index.php?act=viewcart");
+
+                //include "views/cart/viewcart.php";
+                break;
+
+            case 'delete_cart':
+                if(isset($_GET['i'])){
+                    $i=$_GET['i'];
+                    array_splice($_SESSION['giohang'],$i,1);
+                }else{
+                    $_SESSION['giohang']=[];
+                }
+                header('location: index.php?act=viewcart');
+
+                //     if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0))
+                //         array_splice($_SESSION['giohang'],$_GET['i'],1);
+                // }else{
+                //     if(isset( $_SESSION['giohang'])) unset( $_SESSION['giohang']);
+                // }
+
+
+                // if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
+                //     header("location: index.php?act=viewcart");
+                // }else{
+                //     header("location: index.php");
+                break;
+    
             default:
 
                 include "views/home.php";

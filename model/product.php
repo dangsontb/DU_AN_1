@@ -76,7 +76,7 @@ function product_select_pages($page, $quantity){
 //======================================================= Ngát =====================================================================
 function loadall_sanpham_home() {    
     // $sanpham_1trang =!empty( $_GET['sanpham_1trang'])? $_GET['sanpham_1trang']:3; 
-    $sanpham_1trang = 1; 
+    $sanpham_1trang = 9; 
     $trang=!empty( $_GET['trang'])? $_GET['trang']:1;
     $vitri_batdau = ($trang - 1) * $sanpham_1trang;
 
@@ -88,7 +88,7 @@ function loadall_sanpham_home() {
             $trang_hientai = $tong_trang; // Giữ ở trang cuối nếu trang yêu cầu vượt quá giới hạn
         }
     }
-    $sql = "SELECT * FROM `product` ORDER BY product_id DESC LIMIT $sanpham_1trang OFFSET $vitri_batdau";
+    $sql = "SELECT * FROM `product` WHERE 1 ORDER BY product_id DESC LIMIT $sanpham_1trang OFFSET $vitri_batdau";
     return pdo_query($sql);
 }
 function count_product(){

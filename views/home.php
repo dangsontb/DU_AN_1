@@ -46,42 +46,43 @@
                             extract($sp);
                             $link_product="index.php?act=product_detail&product_id=".$product_id;
                             $hinh = $path_img.$image;
+                            $sale_price=$price - ( $price *  $sale )/100;
+                            $price_sale =number_format(( $price - ( $price *  $sale )/100));
                             echo '<div class="col name">
                                       <a href="'.$link_product.'">
                                         <div class="card h-100 item">
                                           <img src="'.$hinh.'" class="card-img-top" alt="...">
                                           <div class="card-body">
                                             <h6 class="card-title text-left">'.$name.'</h6>
-                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.$price_sale =number_format(( $price - ( $price *  $sale )/100)).' VNĐ</p>
+                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.$price_sale.' VNĐ</p>
                                             <div class="gia">
                                               <del>'.$price = number_format($price).' VNĐ</del>
                                               <span class="bg-danger text-light rounded-circle giamgia">'.$sale.'%</span>
                                             </div>
-                                            <a href="#" class=" muahang">
-                                              <i class="fas fa-cart-plus fa-lg"></i>
-                                            </a>
+                                            <form action="index.php?act=addtocart" method="post">
+                                                <input type="hidden" name="product_id" value="'.$product_id.'">
+                                                <input type="hidden" name="tensp" value="'.$name.'">
+                                                <input type="hidden" name="gia" value="'.$sale_price.'">
+                                                <input type="hidden" name="hinh" value="'.$image.'">
+                                                <button type="submit" class="muahang" name="addtocart"><i class="fas fa-cart-plus fa-lg"></i></button>
+                                            </form>
                                           </div>
                                         </div>
                                       </a>
                                     </div>';
                           }
                         ?>
-                  
-          
                     </div>
-
                     <!-- ============================================ CHUYỂN TRANG ============================================== -->
-                    
+
                    
                     <div aria-label="Page navigation example" class="chuyentrang">
                       <ul class="pagination justify-content-center" >
                         <li class="page-item">
                         <?php 
-
                           if(isset($_GET['trang']) && $_GET['trang'] > 1){
                               $prev_page = $_GET['trang'] - 1;
-
-                          ?>
+                        ?>
                           <a class="page-link " href="?trang=<?= $prev_page ?>" aria-label="Previous">
                           <span aria-hidden="true">&laquo;</span>
                           </a>
