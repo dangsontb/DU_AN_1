@@ -88,7 +88,7 @@ function loadall_sanpham_home() {
             $trang_hientai = $tong_trang; // Giữ ở trang cuối nếu trang yêu cầu vượt quá giới hạn
         }
     }
-    $sql = "SELECT * FROM `product` ORDER BY product_id DESC LIMIT $sanpham_1trang OFFSET $vitri_batdau";
+    $sql = "SELECT * FROM `product` WHERE 1 ORDER BY product_id DESC LIMIT $sanpham_1trang OFFSET $vitri_batdau";
     return pdo_query($sql);
 }
 function count_product(){

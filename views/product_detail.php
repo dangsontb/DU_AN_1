@@ -8,6 +8,7 @@
     $img = "uploads/". $image;
   
     // echo  $GLOBALS['path_img'];
+    $new_price=$price - ( $price *  $sale )/100;
 
 ?>
 <main role="main" class="container">
@@ -69,12 +70,19 @@
                                 <?php endforeach ?>
                             </div>
                             <br>
-                            <div class="form-group"> 
-                                <label for="soluong">Số lượng đặt mua:</label>
-                                <input type="number" value="1" class="form-control" id="soluong" name="soluong" style="width: 25%;">
-                            </div><br>
-                            <button type="button" class="btn btn-danger"  style="width: 600px; height: 50px; text-align: center;">Mua ngay</button>
-                            
+                            <form action="index.php?act=addtocart" method="post">
+                                <div class="form-group"> 
+                                    <label for="soluong">Số lượng đặt mua:</label>
+                                    <input type="number" value="1" class="form-control" id="soluong" name="soluong" style="width: 25%;">
+                                </div><br>
+
+
+                                <input type="hidden" name="id" value="<?=$product_detail_id['product_id']?>">
+                                <input type="hidden" name="tensp" value="<?=$product_detail_id['name']?>">
+                                <input type="hidden" name="gia" value="<?=$new_price?>">
+                                <input type="hidden" name="hinh" value="<?=$product_detail_id['image']?>">
+                                <input type="submit" class="btn btn-danger"  style="width: 600px; height: 50px; text-align: center;" value="Đặt hàng" name="addtocart">
+                            </form>
                             
                             
                             <!-- <div class="col-6">

@@ -58,9 +58,13 @@
                                               <del>'.$price.' VNĐ</del>
                                               <span class="bg-danger text-light rounded-circle giamgia">'.$sale.'%</span>
                                             </div>
-                                            <a href="#" class=" muahang">
-                                              <i class="fas fa-cart-plus fa-lg"></i>
-                                            </a>
+                                            <form action="index.php?act=addtocart" method="post">
+                                                <input type="hidden" name="id" value="'.$product_id.'">
+                                                <input type="hidden" name="tensp" value="'.$name.'">
+                                                <input type="hidden" name="gia" value="'.$price.'">
+                                                <input type="hidden" name="hinh" value="'.$image.'">
+                                                <input type="submit" class="muahang" name="addtocart" value="Đặt hàng">
+                                            </form>
                                           </div>
                                         </div>
                                       </a>
