@@ -85,6 +85,19 @@
             case 'signup':
                 signup();
                 break;
+
+                case 'search':
+                    if(isset($_POST['btn_submit'])){
+                        $keyword = $_POST['keyword'];
+
+                    }else{
+                        $keyword = "";
+                    }
+                   $product = loadall_sanpham_brand($keyword);
+                    include './views/search.php';
+                    // echo $keyword;die;
+                    break;
+
             
             default:
 
