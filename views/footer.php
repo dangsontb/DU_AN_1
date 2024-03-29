@@ -1,4 +1,4 @@
-<footer>
+<footer class="mt-5">
                 <div class="container text-center">
                     <div class="row align-items-start">
                       <div class="col chinhsach">
@@ -25,5 +25,27 @@
                     </div>
                 </div>
         </footer>
+
+ 
 </body>
+<script>
+    // $(document).ready(function(){
+        //   var active = location.search; 
+        //   $('#select-filter option[value="'+active+'"]').attr('selected','selected');
+        // })
+        
+        $('.select-filter').change(function(){
+          
+          var value = $(this).find(':selected').val();
+          
+          //alert(value);
+          if(value!=0){
+            var url = value;
+            // alert(url);
+            window.location.replace(url); 
+          }else{
+            alert('Hãy lọc sản phẩm');
+          }
+        })
+    </script>
 </html>

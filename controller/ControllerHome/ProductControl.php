@@ -32,14 +32,18 @@ function comment_insert(){
             $content = $_POST['content'];
             $user_id = $_SESSION['user']['user_id']; 
             $date = date("d-m-Y");
+            $rating = $_POST['rating'];
             $product_id = $_POST['product_id'];
             if(!empty($content)){             
-                comments_insert($content, $date, $user_id, $product_id);
+                comments_insert($content, $date, $rating, $user_id, $product_id);
                 header("Location: ?act=product_detail&product_id=".$product_id);
             }else{
                 header("Location: ?act=product_detail&product_id=".$product_id);
             }
         }
+        
+    }else{
+        header("Location: ?act=login");
         
     }
 }
