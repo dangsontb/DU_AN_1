@@ -75,11 +75,12 @@ function product_select_pages($page, $quantity){
 
 //======================================================= Ngát =====================================================================
 function loadall_sanpham_home() {    
-    $sanpham_1trang =!empty( $_GET['sanpham_1trang'])? $_GET['sanpham_1trang']:3; 
+    // $sanpham_1trang =!empty( $_GET['sanpham_1trang'])? $_GET['sanpham_1trang']:3; 
+    $sanpham_1trang = 1; 
     $trang=!empty( $_GET['trang'])? $_GET['trang']:1;
     $vitri_batdau = ($trang - 1) * $sanpham_1trang;
 
-    $tong_sanpham = pdo_query_value("SELECT COUNT(*) FROM product");
+    $tong_sanpham = count_product();
     $tong_trang = ceil($tong_sanpham / $sanpham_1trang);
     if (isset($_GET['trang']) && is_numeric($_GET['trang']) && $_GET['trang'] > 0) {
         $trang_hientai = (int) $_GET['trang'];
@@ -90,7 +91,9 @@ function loadall_sanpham_home() {
     $sql = "SELECT * FROM `product` ORDER BY product_id DESC LIMIT $sanpham_1trang OFFSET $vitri_batdau";
     return pdo_query($sql);
 }
-
+function count_product(){
+    return  pdo_query_value("SELECT COUNT(*) FROM product");
+}
 
 function loadall_sanpham_cate($keyw="",$cate_id=0){
     $sql="SELECT * FROM `product` WHERE 1";

@@ -76,19 +76,40 @@
                     <div aria-label="Page navigation example" class="chuyentrang">
                       <ul class="pagination justify-content-center" >
                         <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
+                        <?php 
+
+                          if(isset($_GET['trang']) && $_GET['trang'] > 1){
+                              $prev_page = $_GET['trang'] - 1;
+
+                          ?>
+                          <a class="page-link " href="?trang=<?= $prev_page ?>" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
                           </a>
+                        <?php }?>
                         </li>
-                        <?php for ($i=1; $i <= $tong_sanpham ; $i++) { ?>
-                          <li class="page-item"><a class="page-link" href="?sanpham_1trang=<?=$sanpham_1trang?>&trang=<?=$i?>"><?=$i?></a></li>
+                        <?php for ($i=1; $i <= $tong_sanpham ; $i++) {
+                            if(empty($_GET['trang'])  ){
+                              $page =1;
+                            }else{
+                              $page = $_GET['trang'];
+                            }
+                          ?>
+                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" href="?trang=<?=$i?>"><?=$i?></a></li>
                         <?php } ?>
                         
 
                         <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
+                        <?php 
+                            if(isset($_GET['trang'])  && isset($tong_sanpham) && $tong_sanpham > $_GET['trang'] ){
+                                if($_GET['trang'] <  $tong_sanpham){
+                                    $next_page = $_GET['trang'] + 1;
+                                } 
+                                            
+                        ?> 
+                            <a class="page-link" href="?trang=<?= $next_page ?>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
-                          </a>
+                            </a>
+                        <?php }?>
                         </li>
                       </ul>
                     </div>

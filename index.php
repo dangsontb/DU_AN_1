@@ -6,6 +6,8 @@
     include "model/category.php";
     include "model/brand.php";
     include "model/user.php";
+    include "model/size.php";
+    include "model/comment.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
@@ -14,7 +16,7 @@
     $list_category=category_select_all();
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
-
+    $tong_sanpham  = count_product();
     include "views/header.php";
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
@@ -47,6 +49,10 @@
             case 'product_detail':
                 product_detail();
                 
+                break;
+            case 'comment':
+                
+                comment_insert();
                 break;
                 
             // -------------------------- User ------------------------------------------------------
