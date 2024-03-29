@@ -1,6 +1,6 @@
 <div class="boxleft" style="margin-bottom: 20px;">
                   <!-- ======================================== GIÁ===================================== -->
-                    <div class="price">
+                    <!-- <div class="price">
                         <h6>Mức giá</h6>
                         <form action="" class="chu">
                             <div class="form-check">
@@ -24,10 +24,10 @@
                                 <label class="form-check-label" for="flexCheckDefault">Dưới 2,000,000 VNĐ</label>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
               
                     <!-- ======================================= SIZE====================================== -->
-                    <div class="size">
+                    <!-- <div class="size">
                         <h6>Kích thước</h6>
                         <form action="" class="kichthuoc">
                             <div class="form-check">
@@ -67,7 +67,7 @@
                                 <label class="form-check-label" for="flexCheckDefault">Size 43</label>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
               
                     <!-- ========================================== SẢN PHẨM HOT ========================================= -->
                     <div class="sphot">

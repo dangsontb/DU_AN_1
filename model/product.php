@@ -76,7 +76,7 @@ function product_select_pages($page, $quantity){
 //======================================================= Ngát =====================================================================
 function loadall_sanpham_home() {    
     // $sanpham_1trang =!empty( $_GET['sanpham_1trang'])? $_GET['sanpham_1trang']:3; 
-    $sanpham_1trang = 1; 
+    $sanpham_1trang = 9; 
     $trang=!empty( $_GET['trang'])? $_GET['trang']:1;
     $vitri_batdau = ($trang - 1) * $sanpham_1trang;
 

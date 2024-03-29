@@ -88,7 +88,9 @@
                           </a>
                         <?php }?>
                         </li>
-                        <?php for ($i=1; $i <= $tong_sanpham ; $i++) {
+                        <?php 
+                        $tong_trang =$tong_sanpham/9;
+                        for ($i=1; $i <= $tong_trang ; $i++) {
                             if(empty($_GET['trang'])  ){
                               $page =1;
                             }else{
@@ -101,8 +103,8 @@
 
                         <li class="page-item">
                         <?php 
-                            if(isset($_GET['trang'])  && isset($tong_sanpham) && $tong_sanpham > $_GET['trang'] ){
-                                if($_GET['trang'] <  $tong_sanpham){
+                            if(isset($_GET['trang'])  && isset($tong_trang) && $tong_trang > $_GET['trang'] ){
+                                if($_GET['trang'] <  $tong_trang){
                                     $next_page = $_GET['trang'] + 1;
                                 } 
                                             

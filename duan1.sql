@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 21, 2024 lúc 06:15 AM
+-- Thời gian đã tạo: Th3 29, 2024 lúc 12:26 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -37,9 +37,10 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
-(5, 'abc'),
 (1, 'Adidas'),
-(2, 'Nike');
+(66, 'Bitis'),
+(2, 'Nike'),
+(44, 'Puma');
 
 -- --------------------------------------------------------
 
@@ -57,7 +58,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`cate_id`, `cate_name`) VALUES
-(2, 'Dép'),
+(36, 'Dép'),
 (1, 'Giày');
 
 -- --------------------------------------------------------
@@ -67,12 +68,23 @@ INSERT INTO `categories` (`cate_id`, `cate_name`) VALUES
 --
 
 CREATE TABLE `comments` (
-  `conmment_id` int(11) NOT NULL,
-  `title` varchar(50) NOT NULL,
+  `comment_id` int(11) NOT NULL,
   `content` text NOT NULL,
+  `date` varchar(50) NOT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `content`, `date`, `user_id`, `product_id`) VALUES
+(7, 'ưqewqeqewqeqqqqqqqqqqqqq', '28-03-2024', 18, 42),
+(8, 'qưeqw', '28-03-2024', 18, 42),
+(9, 'eqweqw', '28-03-2024', 18, 42),
+(10, 'qưeqweqe', '28-03-2024', 18, 42),
+(11, 'đâs', '28-03-2024', 18, 42);
 
 -- --------------------------------------------------------
 
@@ -110,7 +122,53 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `name`, `price`, `image`, `description`, `sale`, `create_at`, `view`, `cate_id`, `brand_id`) VALUES
-(1, 'Giày chạy bộ', 10000, 'anh1.png', 'abc', 10, '2024-03-21', 1, 1, 1);
+(42, 'Giày nike air jordan_1', 1999999, 'air-jordan-1-NIke.jpg', ' Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 2, '2024-03-29', 2, 1, 2),
+(43, 'Giày nike air jordan legacy', 2999999, 'air-jordan-legacy-312-low-older-shoes-giày.png', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 10, '2024-03-29', 12345, 1, 2),
+(44, 'Giày Nike af1_mix', 1000000, 'giày 2.png', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 1, '2024-03-29', 12345, 1, 2),
+(45, 'Giày Nike AF1', 999000, 'giày 3.png', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 1, '2024-03-29', 12345, 1, 2),
+(46, 'Dép Jordan sophia ', 800000, 'jordan-sophia-slides-dép.jpg', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 4, '2024-03-29', 1234, 36, 2),
+(47, 'Dép Jordan hixu', 998000, 'dép.png', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 4, '2024-03-29', 1234, 36, 2),
+(48, 'Dép Jordan hex mule', 720000, 'jordan-hex-mule-shoes-dép.png', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 2, '2024-03-29', 1234, 36, 2),
+(49, 'Giày Samba OG', 2100000, 'Giay_Samba_OG_trang_B75806_01_standard_giày.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 2, '2024-03-29', 1234, 1, 1),
+(50, 'Giày Stan Smith', 1890000, 'Giay_Stan_Smith_trang_FX7519_01_standard_giày.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 2, '2024-03-29', 1234, 1, 1),
+(51, 'Giày Supper_star', 3200000, 'Giay_Superstar_Slip-On_trang_IE0399_01_giày.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 2, '2024-03-29', 1234, 1, 1),
+(52, 'Gioày Forum_Mid', 1500000, 'Giay_Forum_Mid_trang_IG3754_01_giày.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 1, '2024-03-29', 1234, 1, 1),
+(53, 'Dép  hex mule', 599000, 'Dep_Xo_Ngon_adilette_Comfort_trang_dép.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004\r\n', 1, '2024-03-29', 1234, 36, 1),
+(54, 'Dép DJi_Boi', 700000, 'Dep_DJi_Boi_adilette_dép.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 1, '2024-03-29', 1234, 36, 1),
+(55, 'Dép Adidas Adiletee', 300000, 'Dep_adilette_22_Mau_xanh_da_troi_dép.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 1, '2024-03-29', 1234, 36, 1),
+(56, 'Dép Mule SupperStar', 989000, 'Giay_Mule_Superstar_trang_IF6184_01_dép.avif', 'Angling for a sportier mule? The Jordan Hex Mule uses the same edgy design made iconic by the Hex Slide to bring a closed-toe option perfect for the changing seasons.\r\n\r\nColour Shown: Ozone Blue/Ozone Blue\r\nStyle: DX6405-004', 1, '2024-03-29', 1234, 36, 1),
+(57, 'Giày Puma roma classics', 1989999, 'Roma-Classics-giayf.avif', '\r\nCool Cat 2.0 PS Little Kids\' Sandals\r\nAverage: 3.7 / 5\r\n$14.99\r\n$30.00\r\nOr 4 payments of $3.75 byLearn more about Afterpay\r\nAfterpay\r\nColor\r\nBridal Rose-Rose Gold\r\nCool Dark Gray-PUMA BlackCool Dark Gray-PUMA Black\r\nPUMA Black-PUMA White-KNOCKOUT PINKPUMA Black-PUMA White-KNOCKOUT PINK\r\nBridal Rose-Rose GoldBridal Rose-Rose Gold\r\nPUMA Navy-PUMA White-For All Time RedPUMA Navy-PUMA White-For All Time Red\r\nSPEND $125+, GET 30% OFF WITH CODE: SPRING\r\n\r\nSelect fit\r\nSelect Size Group\r\n\r\nLITTLE KIDS\r\nSize\r\n11\r\nSize\r\n12\r\nSize\r\n13\r\nSize\r\n1\r\nSize\r\n2\r\nSize\r\n3\r\n\r\nSIZE GUIDE\r\nQUANTITY\r\n1\r\n\r\n1\r\n\r\nADD TO CART\r\n\r\nADD TO WISHLIST\r\nFree returns on all qualifying orders.\r\n\r\n\r\nFind out estimated arrival\r\nDescription\r\nGet your little one ready for fun in the sun with the Cool Cat 2.0 slides. They\'re made with a soft cushioned footbed and a padded strap, ensuring a comfortable fit for young feet.\r\nStyle: 390884_04\r\nColor: Bridal Rose-Rose Gold\r\n\r\nREAD MORE\r\nShipping and Returns\r\nFree standard shipping on orders over $60 before tax, plus free returns on all qualifying orders.', 1, '2024-03-29', 1234, 1, 44),
+(58, 'Giày Puma Suede Multi', 3000000, 'RS-X-Suede-Multi-Sneakers.avif', '\r\nCool Cat 2.0 PS Little Kids\' Sandals\r\nAverage: 3.7 / 5\r\n$14.99\r\n$30.00\r\nOr 4 payments of $3.75 byLearn more about Afterpay\r\nAfterpay\r\nColor\r\nBridal Rose-Rose Gold\r\nCool Dark Gray-PUMA BlackCool Dark Gray-PUMA Black\r\nPUMA Black-PUMA White-KNOCKOUT PINKPUMA Black-PUMA White-KNOCKOUT PINK\r\nBridal Rose-Rose GoldBridal Rose-Rose Gold\r\nPUMA Navy-PUMA White-For All Time RedPUMA Navy-PUMA White-For All Time Red\r\nSPEND $125+, GET 30% OFF WITH CODE: SPRING\r\n\r\nSelect fit\r\nSelect Size Group\r\n\r\nLITTLE KIDS\r\nSize\r\n11\r\nSize\r\n12\r\nSize\r\n13\r\nSize\r\n1\r\nSize\r\n2\r\nSize\r\n3\r\n\r\nSIZE GUIDE\r\nQUANTITY\r\n1\r\n\r\n1\r\n\r\nADD TO CART\r\n\r\nADD TO WISHLIST\r\nFree returns on all qualifying orders.\r\n\r\n\r\nFind out estimated arrival\r\nDescription\r\nGet your little one ready for fun in the sun with the Cool Cat 2.0 slides. They\'re made with a soft cushioned footbed and a padded strap, ensuring a comfortable fit for young feet.\r\nStyle: 390884_04\r\nColor: Bridal Rose-Rose Gold\r\n\r\nREAD MORE\r\nShipping and Returns\r\nFree standard shipping on orders over $60 before tax, plus free returns on all qualifying orders.', 10, '2024-03-29', 1234, 1, 44),
+(59, 'Dép supper', 699000, 'jordan-super-dép.png', '\r\nCool Cat 2.0 PS Little Kids\' Sandals\r\nAverage: 3.7 / 5\r\n$14.99\r\n$30.00\r\nOr 4 payments of $3.75 byLearn more about Afterpay\r\nAfterpay\r\nColor\r\nBridal Rose-Rose Gold\r\nCool Dark Gray-PUMA BlackCool Dark Gray-PUMA Black\r\nPUMA Black-PUMA White-KNOCKOUT PINKPUMA Black-PUMA White-KNOCKOUT PINK\r\nBridal Rose-Rose GoldBridal Rose-Rose Gold\r\nPUMA Navy-PUMA White-For All Time RedPUMA Navy-PUMA White-For All Time Red\r\nSPEND $125+, GET 30% OFF WITH CODE: SPRING\r\n\r\nSelect fit\r\nSelect Size Group\r\n\r\nLITTLE KIDS\r\nSize\r\n11\r\nSize\r\n12\r\nSize\r\n13\r\nSize\r\n1\r\nSize\r\n2\r\nSize\r\n3\r\n\r\nSIZE GUIDE\r\nQUANTITY\r\n1\r\n\r\n1\r\n\r\nADD TO CART\r\n\r\nADD TO WISHLIST\r\nFree returns on all qualifying orders.\r\n\r\n\r\nFind out estimated arrival\r\nDescription\r\nGet your little one ready for fun in the sun with the Cool Cat 2.0 slides. They\'re made with a soft cushioned footbed and a padded strap, ensuring a comfortable fit for young feet.\r\nStyle: 390884_04\r\nColor: Bridal Rose-Rose Gold\r\n\r\n\r\nREAD MORE\r\nShipping and Returns\r\nFree standard shipping on orders over $60 before tax, plus free returns on all qualifying orders.', 1, '2024-03-29', 1234, 36, 44),
+(60, 'Dép Puma Sandal', 500000, 'RS-Sandal.avif', '\r\nCool Cat 2.0 PS Little Kids\' Sandals\r\nAverage: 3.7 / 5\r\n$14.99\r\n$30.00\r\nOr 4 payments of $3.75 byLearn more about Afterpay\r\nAfterpay\r\nColor\r\nBridal Rose-Rose Gold\r\nCool Dark Gray-PUMA BlackCool Dark Gray-PUMA Black\r\nPUMA Black-PUMA White-KNOCKOUT PINKPUMA Black-PUMA White-KNOCKOUT PINK\r\nBridal Rose-Rose GoldBridal Rose-Rose Gold\r\nPUMA Navy-PUMA White-For All Time RedPUMA Navy-PUMA White-For All Time Red\r\nSPEND $125+, GET 30% OFF WITH CODE: SPRING\r\n\r\nSelect fit\r\nSelect Size Group\r\n\r\nLITTLE KIDS\r\nSize\r\n11\r\nSize\r\n12\r\nSize\r\n13\r\nSize\r\n1\r\nSize\r\n2\r\nSize\r\n3\r\n\r\nSIZE GUIDE\r\nQUANTITY\r\n1\r\n\r\n1\r\n\r\nADD TO CART\r\n\r\nADD TO WISHLIST\r\nFree returns on all qualifying orders.\r\n\r\n\r\nFind out estimated arrival\r\nDescription\r\nGet your little one ready for fun in the sun with the Cool Cat 2.0 slides. They\'re made with a soft cushioned footbed and a padded strap, ensuring a comfortable fit for young feet.\r\nStyle: 390884_04\r\nColor: Bridal Rose-Rose Gold\r\n\r\nREAD MORE\r\nShipping and Returns\r\nFree standard shipping on orders over $60 before tax, plus free returns on all qualifying orders.\r\n', 1, '2024-03-29', 1234, 36, 44),
+(61, 'Giày Biti\'s Hunter Street Mid ', 2000000, '33159d6f77497a9b2757270dd945e5cf.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 1, '2024-03-29', 2234, 1, 66),
+(62, 'Dép Biti\'s Sandal OR', 800000, '662785d12c6311e325b83792fcb01932.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 1, '2024-03-29', 2234, 36, 66),
+(63, 'Dép Biti\'s Sandal Black', 699000, '777692a08f5da7794385d1139c9989d1.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 1, '2024-03-29', 2234, 36, 66),
+(64, 'Giày Biti\'s Hunter OR', 3500000, 'a9627c2c8259d882ebe08d00c5beaa87.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 4, '2024-03-29', 1234, 1, 66),
+(65, 'Dép Biti\'s Sandal White', 2500000, 'ccd5df2095a25b3e72dc2308a6331c46.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 1, '2024-03-29', 1234, 36, 66);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `size`
+--
+
+CREATE TABLE `size` (
+  `size_id` int(11) NOT NULL,
+  `size_number` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `size`
+--
+
+INSERT INTO `size` (`size_id`, `size_number`) VALUES
+(1, 38),
+(2, 39),
+(3, 40),
+(4, 41),
+(5, 42),
+(6, 43);
 
 -- --------------------------------------------------------
 
@@ -124,10 +182,32 @@ CREATE TABLE `user` (
   `password` int(11) NOT NULL,
   `fullname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phone` varchar(11) NOT NULL,
   `address` varchar(50) NOT NULL,
-  `role` bit(1) DEFAULT b'1',
+  `role` tinyint(1) DEFAULT 0,
   `create_at` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `password`, `fullname`, `email`, `phone`, `address`, `role`, `create_at`) VALUES
+(18, 'dangvanson', 11111111, 'Đặng Sơn TB', 'dangvanson210297@gmail.com', '0987654321', 'thái bình', 0, '26-03-24');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `variation`
+--
+
+CREATE TABLE `variation` (
+  `variation_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `size_id` int(11) NOT NULL,
+  `variation_image` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `create_at` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -152,7 +232,7 @@ ALTER TABLE `categories`
 -- Chỉ mục cho bảng `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`conmment_id`),
+  ADD PRIMARY KEY (`comment_id`),
   ADD KEY `fk_comment` (`product_id`),
   ADD KEY `fk_comment2` (`user_id`);
 
@@ -172,12 +252,27 @@ ALTER TABLE `product`
   ADD KEY `fk_product2` (`cate_id`);
 
 --
+-- Chỉ mục cho bảng `size`
+--
+ALTER TABLE `size`
+  ADD PRIMARY KEY (`size_id`),
+  ADD UNIQUE KEY `size_number` (`size_number`);
+
+--
 -- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `user_name` (`user_name`),
   ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Chỉ mục cho bảng `variation`
+--
+ALTER TABLE `variation`
+  ADD PRIMARY KEY (`variation_id`),
+  ADD KEY `fk_variation1` (`product_id`),
+  ADD KEY `fk_variation2` (`size_id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -187,19 +282,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `conmment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `image_product`
@@ -211,13 +306,25 @@ ALTER TABLE `image_product`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
+-- AUTO_INCREMENT cho bảng `size`
+--
+ALTER TABLE `size`
+  MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT cho bảng `variation`
+--
+ALTER TABLE `variation`
+  MODIFY `variation_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -236,6 +343,13 @@ ALTER TABLE `comments`
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_product1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`brand_id`),
   ADD CONSTRAINT `fk_product2` FOREIGN KEY (`cate_id`) REFERENCES `categories` (`cate_id`);
+
+--
+-- Các ràng buộc cho bảng `variation`
+--
+ALTER TABLE `variation`
+  ADD CONSTRAINT `fk_variation1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  ADD CONSTRAINT `fk_variation2` FOREIGN KEY (`size_id`) REFERENCES `size` (`size_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
