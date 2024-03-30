@@ -47,13 +47,14 @@
                             extract($sp);
                             $link_product="index.php?act=sanphamct&idsp".$product_id;
                             $hinh = $path_img.$image;
+                            $price_sale =(( $price *  $sale )/100);
                             echo '<div class="col name">
                                       <a href="'.$link_product.'">
                                         <div class="card h-100 item">
                                           <img src="'.$hinh.'" class="card-img-top" alt="...">
                                           <div class="card-body">
                                             <h6 class="card-title text-left">'.$name.'</h6>
-                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.$price_sale =(( $price *  $sale )/100).' VNĐ</p>
+                                            <p class="card-text text-left text-danger fw-semibold gia_ht">'.number_format($price_sale).' VNĐ</p>
                                             <div class="gia">
                                               <del>'.$price.' VNĐ</del>
                                               <span class="bg-danger text-light rounded-circle giamgia">'.$sale.'%</span>
@@ -61,7 +62,7 @@
                                             <form action="index.php?act=addtocart" method="post">
                                                 <input type="hidden" name="id" value="'.$product_id.'">
                                                 <input type="hidden" name="tensp" value="'.$name.'">
-                                                <input type="hidden" name="gia" value="'.$price.'">
+                                                <input type="hidden" name="gia" value="'.$price_sale.'">
                                                 <input type="hidden" name="hinh" value="'.$image.'">
                                                 <input type="submit" class="muahang" name="addtocart" value="Đặt hàng">
                                             </form>

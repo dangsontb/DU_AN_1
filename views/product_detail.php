@@ -12,7 +12,7 @@
 
 ?>
 <main role="main" class="container">
-    <?php var_dump($product_detail_id); ?>
+    <!-- <?php var_dump($product_detail_id); ?> -->
         <div class="container mt-4">
             <div id="thongbao" class="alert alert-danger d-none face" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -73,15 +73,13 @@
                             <form action="index.php?act=addtocart" method="post">
                                 <div class="form-group"> 
                                     <label for="soluong">Số lượng đặt mua:</label>
-                                    <input type="number" value="1" class="form-control" id="soluong" name="soluong" style="width: 25%;">
+                                    <input type="number" value="1"  class="form-control" id="soluong" name="soluong" style="width: 20%;">
                                 </div><br>
-
-
-                                <input type="hidden" name="id" value="<?=$product_detail_id['product_id']?>">
+                                <input type="hidden" name="product_id" value="<?=$product_detail_id['product_id']?>">
                                 <input type="hidden" name="tensp" value="<?=$product_detail_id['name']?>">
                                 <input type="hidden" name="gia" value="<?=$new_price?>">
                                 <input type="hidden" name="hinh" value="<?=$product_detail_id['image']?>">
-                                <input type="submit" class="btn btn-danger"  style="width: 600px; height: 50px; text-align: center;" value="Đặt hàng" name="addtocart">
+                                <input type="submit" name="addtocart" class="btn btn-danger"  style="width: 600px; height: 50px; text-align: center;" value="Đặt hàng" >
                             </form>
                             
                             

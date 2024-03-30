@@ -34,18 +34,19 @@
         //   $('#select-filter option[value="'+active+'"]').attr('selected','selected');
         // })
         
-        $('.select-filter').change(function(){
+       function changeFilter() {
+          // alert("HHHHHHH")
           
-          var value = $(this).find(':selected').val();
+          var value = document.querySelector('#select-filter').value;
           
           //alert(value);
           if(value!=0){
-            var url = value;
+            var url = "http://localhost/du_an_1/index.php" + value;
             // alert(url);
-            window.location.replace(url); 
+            window.location.href =  url; 
           }else{
             alert('Hãy lọc sản phẩm');
           }
-        })
+        }
     </script>
 </html>

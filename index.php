@@ -60,6 +60,7 @@
                 if(isset($_GET['idbrand'])&&($_GET['idbrand']>0)){
                     $brand_id=$_GET['idbrand'];
                     $list_product=loadall_sanpham_brand("",$brand_id);
+                    
                     include "views/sanpham_brand.php";
                 }else{
                     include "views/home.php";
@@ -90,10 +91,6 @@
             case 'signup':
                 signup();
                 break;
-
-<<<<<<< HEAD
-
-
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
                 include "views/cart/viewcart.php";
@@ -107,11 +104,12 @@
                     $hinh = $_POST['hinh'];
                     $gia = $_POST['gia'];
                     
-                    if(isset($_POST['soluong'])&&($_POST['soluong'])>1){
-                        $sl=$_POST['soluong'];
+                    if(isset($_POST['soluong']) && $_POST['soluong'] > 0){
+                        $soluong=$_POST['soluong'];
                     }else{
                         $soluong=1;
                     }
+                   
                     $check=0;
                     //Kiểm tra sản phẩm có tồn tại trong giỏ hàng k
                     //Nếu có -> Cập nhập số lượng
@@ -129,7 +127,7 @@
                     if($check==0){ //Không: add sản phẩm mới
 
                         //Khởi tạo mảng con trước khi đưa vào giỏ hàng
-                        $item=array($id_produc,$tensp,$hinh,$gia,$soluong);
+                        $item=array($id_product,$tensp,$hinh,$gia,$soluong);
                         $_SESSION['giohang'][]=$item;
                         // $spadd= [$id_product, $tensp , $hinh, $gia,  $soluong];
                         // array_push($_SESSION['giohang'], $spadd);
@@ -161,24 +159,7 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-    
-=======
-                case 'search':
-                    if(isset($_POST['btn_submit'])){
-                        $keyword = $_POST['keyword'];
-
-                    }else{
-                        $keyword = "";
-                    }
-                   $product = loadall_sanpham_brand($keyword);
-                    include './views/search.php';
-                    // echo $keyword;die;
-                    break;
-
-            
->>>>>>> f4d9d5cc5d5b27b4d8c50555873b1f6f2e56c49d
             default:
-
                 include "views/home.php";
                 break;
         }
