@@ -66,6 +66,13 @@
                     include "views/home.php";
                 }
                 break;
+            case 'keyword':
+                if(isset($_POST['submit'])){
+                    $keyw = $_POST['keyw'];
+                    $product = product_select_keyw($keyw);
+                }
+                include "views/search.php";
+                break;
             case 'product_detail':
                 product_detail();
                 
