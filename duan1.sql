@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 29, 2024 lúc 12:26 PM
+-- Thời gian đã tạo: Th3 30, 2024 lúc 07:28 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -71,6 +71,7 @@ CREATE TABLE `comments` (
   `comment_id` int(11) NOT NULL,
   `content` text NOT NULL,
   `date` varchar(50) NOT NULL,
+  `rating` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -79,12 +80,13 @@ CREATE TABLE `comments` (
 -- Đang đổ dữ liệu cho bảng `comments`
 --
 
-INSERT INTO `comments` (`comment_id`, `content`, `date`, `user_id`, `product_id`) VALUES
-(7, 'ưqewqeqewqeqqqqqqqqqqqqq', '28-03-2024', 18, 42),
-(8, 'qưeqw', '28-03-2024', 18, 42),
-(9, 'eqweqw', '28-03-2024', 18, 42),
-(10, 'qưeqweqe', '28-03-2024', 18, 42),
-(11, 'đâs', '28-03-2024', 18, 42);
+INSERT INTO `comments` (`comment_id`, `content`, `date`, `rating`, `user_id`, `product_id`) VALUES
+(7, 'ưqewqeqewqeqqqqqqqqqqqqq', '28-03-2024', 2, 18, 42),
+(8, 'qưeqw', '28-03-2024', 3, 18, 42),
+(9, 'eqweqw', '28-03-2024', 4, 18, 42),
+(10, 'qưeqweqe', '28-03-2024', 5, 18, 42),
+(11, 'đâs', '28-03-2024', 1, 18, 42),
+(12, 'sadsadsad', '30-03-2024', 5, 18, 65);
 
 -- --------------------------------------------------------
 
@@ -294,7 +296,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `image_product`
