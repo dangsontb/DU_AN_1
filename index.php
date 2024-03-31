@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-    
-</body>
-</html>
+
 <?php
     session_start();
 
@@ -26,6 +15,8 @@
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
+    include "controller/ControllerHome/FilterControl.php";
+
 
     if (!isset($_SESSION['giohang']))
     $_SESSION['giohang'] = [];
@@ -80,7 +71,12 @@
             case 'comment':
                 comment_insert();
                 break;
-                
+            // ----------------------------------filter---------------------------------
+
+            case 'productOld':
+                productOld();
+                break;
+
             // -------------------------- User ------------------------------------------------------
             case 'form_login':
            

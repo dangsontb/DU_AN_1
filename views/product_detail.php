@@ -142,11 +142,27 @@
                         <hr>
                     </div>
                     <?php endforeach?>
-                  
-
+<!--                   
+                    <div aria-label="Page navigation example" class="chuyentrang">
+                        <ul class="pagination justify-content-center" >
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                    </div> -->
                 </div>
                
-                <h4>Để lại bình luận</h4>        `   
+                <h4>Để lại bình luận</h4>        
                 <form action="index.php?act=comment" method="post">
                     <div class="rating">
                         <input type="radio" name="rating" value="5" id="5" checked>
