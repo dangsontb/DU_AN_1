@@ -77,7 +77,7 @@
                                 foreach ($product_top10 as $sp) {
                                     extract($sp);
                                     $link_product="index.php?act=product_detail&product_id=".$product_id;
-                                    $img=$path_img.$image;
+                                    $img=$GLOBALS['path_img'].$image;
                                     echo '<a href="'.$link_product.'" class="hot">
                                                 <img src="'.$img.'" class="img-thumbnail" alt="...">
                                                 <span>'.$name.'</span>

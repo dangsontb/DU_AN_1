@@ -10,5 +10,6 @@ function productOld(){
     $total_product_old = product_select_old();
     $list_product = product_select_page_old($page , $quantity);
     $total_pages =  ceil(count($total_product_old) / $quantity);
+    $product_top10=loadall_product_top10();
     include "views/product_old.php";
 }
