@@ -31,7 +31,8 @@
                   <!-- =================================== LỰA CHỌN ===================================== -->
                     <div class="luachon">
                      
-                        <select class="form-select  align-self-end select-filter" id="select-filter" aria-label="Default select example">
+                        <select class="form-select  align-self-end select-filter" id="select-filter" aria-label="Default select example"
+                         onchange="changeFilter()">
                             <option value="0">---Lọc theo---</option>
                             <option value="?product=new">Sản phẩm cũ</option>
                             <option value="?price=asc">Giá tăng dần</option>
@@ -65,7 +66,7 @@
                                                 <input type="hidden" name="tensp" value="'.$name.'">
                                                 <input type="hidden" name="gia" value="'.$sale_price.'">
                                                 <input type="hidden" name="hinh" value="'.$image.'">
-                                                <button type="submit" class="muahang" name="addtocart"><i class="fas fa-cart-plus fa-lg"></i></button>
+                                                <button type="submit" class=" muahang" name="addtocart"><i class="fas fa-cart-plus fa-lg"></i></button>
                                             </form>
                                           </div>
                                         </div>
@@ -90,7 +91,7 @@
                         <?php }?>
                         </li>
                         <?php 
-                        $tong_trang =$tong_sanpham/9;
+                        $tong_trang =ceil($tong_sanpham/9);
                         for ($i=1; $i <= $tong_trang ; $i++) {
                             if(empty($_GET['trang'])  ){
                               $page =1;

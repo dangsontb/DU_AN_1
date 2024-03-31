@@ -81,9 +81,9 @@
                                  <a class="nav-link text-black" href="index.php?act=gioithieu">Giới thiệu</a>
                             </li>
                         </ul>
-                        <form class="d-flex" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success"  type="submit"><i class="fas fa-search"></i></button>
+                        <form action="?act=keyword" method="post" class="d-flex" role="search">
+                          <input name="keyw" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success" name="submit"  type="submit"><i class="fas fa-search"></i></button>
                         </form>
                       </div>
                     </div>

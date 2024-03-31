@@ -6,13 +6,13 @@
 
 <!-- <?php 
 echo "<pre>";
-print_r($_SESSION['giohang']);
+var_dump($_SESSION['giohang']);
 
 
 ?> -->
 
               <?php if (!empty($_SESSION['giohang'])) {
-                            $tong = 0;
+                            $tong_cart = 0;
                             $tongsp=0;
                             $i = 0;
                            
@@ -30,17 +30,22 @@ print_r($_SESSION['giohang']);
                   </tr>
                 </thead>
                 <tbody>
+                  
                   <?php 
+          
                     foreach ($_SESSION['giohang'] as $item) {
+                      
                       $thanhtien=($item['3']) *($item['4']) ;
                       $tongtien=number_format(($item['3']) *($item['4']));
-                      $tong+=$thanhtien;
+                      $tong_cart +=$thanhtien;
+                      $tong = number_format($tong_cart);
                       $dongia=number_format($item['3']);
                       $tongsp+=$item['4'];
+                     
                       echo '<tr>
                               <td>'.($i+1).'</id>
                               <td>'.$item['1'].'</id>
-                              <td>'.$item['2'].'</id>
+                              <td> <img src="./uploads/'.$item['2'].'" width="60" alt=""></id>
                               <td>'. $dongia.'</id>
                               <td>'.$item['4'].'</id>
                               <td>'.$tongtien.'</id>

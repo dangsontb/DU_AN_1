@@ -135,19 +135,19 @@ function loadall_product_top10(){
 
 //======================================================= Hieu =====================================================================
 
-// function product_select_keyw($keyw){
-//     $sql = "SELECT p.*, c.cate_name, b.brand_name
-//             FROM product p
-//             JOIN categories c ON p.cate_id = c.cate_id
-//             JOIN brand b ON p.brand_id = b.brand_id where 1 ";
-//     if(isset($keyw)){
-//         // $sql .= " and p.name LIKE '%".$keyw."%' OR c.cate_name LIKE '%".$keyw."%' OR b.brand_name LIKE '%".$keyw."%  ";
-//         $sql .= " and p.name LIKE '%".$keyw."%'  ";
-//     }
-//     // $sql.=" ORDER BY p.product_id DESC";
-//     $listsanpham=pdo_query($sql);
-//     return $listsanpham;
-// }
+function product_select_keyw($keyw){
+    $sql = "SELECT p.*, c.cate_name, b.brand_name
+            FROM product p
+            JOIN categories c ON p.cate_id = c.cate_id
+            JOIN brand b ON p.brand_id = b.brand_id where 1 ";
+    if(isset($keyw)){
+        // $sql .= " and p.name LIKE '%".$keyw."%' OR c.cate_name LIKE '%".$keyw."%' OR b.brand_name LIKE '%".$keyw."%  ";
+        $sql .= " and p.name LIKE '%".$keyw."%'  ";
+    }
+    // $sql.=" ORDER BY p.product_id DESC";
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
     
 
 
