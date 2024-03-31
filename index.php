@@ -91,7 +91,6 @@
                 signup();
                 break;
 
-<<<<<<< HEAD
 
 
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
@@ -162,21 +161,6 @@
                 //     header("location: index.php");
                 break;
     
-=======
-                case 'search':
-                    if(isset($_POST['btn_submit'])){
-                        $keyword = $_POST['keyword'];
-
-                    }else{
-                        $keyword = "";
-                    }
-                   $product = loadall_sanpham_brand($keyword);
-                    include './views/search.php';
-                    // echo $keyword;die;
-                    break;
-
-            
->>>>>>> f4d9d5cc5d5b27b4d8c50555873b1f6f2e56c49d
             default:
 
                 include "views/home.php";
