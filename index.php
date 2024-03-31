@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-    
-</body>
-</html>
+
 <?php
     session_start();
 
@@ -26,6 +15,8 @@
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
+    include "controller/ControllerHome/FilterControl.php";
+
 
     if (!isset($_SESSION['giohang']))
     $_SESSION['giohang'] = [];
@@ -80,7 +71,14 @@
             case 'comment':
                 comment_insert();
                 break;
-                
+            // ----------------------------------filter---------------------------------
+
+            case 'productOld':
+               
+                productOld();
+              
+                break;
+
             // -------------------------- User ------------------------------------------------------
             case 'form_login':
            
@@ -99,6 +97,11 @@
                 signup();
                 break;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 962342823ecc25d05d0a99c41b1a7e2855270779
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
                 include "views/cart/viewcart.php";
@@ -167,6 +170,7 @@
                 // }else{
                 //     header("location: index.php");
                 break;
+<<<<<<< HEAD
              
             case 'thanhtoan':
                 if ((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])) {
@@ -194,6 +198,9 @@
                 break;
 
 
+=======
+    
+>>>>>>> 962342823ecc25d05d0a99c41b1a7e2855270779
             default:
                 include "views/home.php";
                 break;

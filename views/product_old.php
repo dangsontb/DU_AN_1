@@ -44,10 +44,10 @@
                     <div class="row row-cols-1 row-cols-md-3 g-4 sanpham">
 
                         <?php
-                          foreach ($spnew as $sp) {
+                          foreach ($list_product as $sp) {
                             extract($sp);
                             $link_product="index.php?act=product_detail&product_id=".$product_id;
-                            $hinh = $path_img.$image;
+                            $hinh = $GLOBALS['path_img'].$image;
                             $sale_price=$price - ( $price *  $sale )/100;
                             $price_sale =number_format(( $price - ( $price *  $sale )/100));
                             echo '<div class="col name">
@@ -75,43 +75,43 @@
                           }
                         ?>
                     </div>
-                    <!-- ============================================ CHUYỂN TRANG ============================================== -->
+                    <!-- ============================================ CHUYỂN PAGE ============================================== -->
 
                    
-                    <div aria-label="Page navigation example" class="chuyentrang">
+                    <div aria-label="Page navigation example" class="chuyenpage">
                       <ul class="pagination justify-content-center" >
                         <li class="page-item">
                         <?php 
-                          if(isset($_GET['trang']) && $_GET['trang'] > 1){
-                              $prev_page = $_GET['trang'] - 1;
+                          if(isset($_GET['page']) && $_GET['page'] > 1){
+                              $prev_page = $_GET['page'] - 1;
                         ?>
-                          <a class="page-link " href="?trang=<?= $prev_page ?>" aria-label="Previous">
+                          <a class="page-link " href="?page=<?= $prev_page ?>" aria-label="Previous">
                           <span aria-hidden="true">&laquo;</span>
                           </a>
                         <?php }?>
                         </li>
                         <?php 
-                        $tong_trang =ceil($tong_sanpham/9);
-                        for ($i=1; $i <= $tong_trang ; $i++) {
-                            if(empty($_GET['trang'])  ){
+                        // $total_pages =ceil($total_product_old/9);
+                        for ($i=1; $i <= $total_pages ; $i++) {
+                            if(empty($_GET['page'])  ){
                               $page =1;
                             }else{
-                              $page = $_GET['trang'];
+                              $page = $_GET['page'];
                             }
                           ?>
-                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" href="?trang=<?=$i?>"><?=$i?></a></li>
+                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" href="?act=productOld&page=<?=$i?>"><?=$i?></a></li>
                         <?php } ?>
                         
 
                         <li class="page-item">
                         <?php 
-                            if(isset($_GET['trang'])  && isset($tong_trang) && $tong_trang > $_GET['trang'] ){
-                                if($_GET['trang'] <  $tong_trang){
-                                    $next_page = $_GET['trang'] + 1;
+                            if(isset($_GET['page'])  && isset($total_pages) && $total_pages > $_GET['page'] ){
+                                if($_GET['page'] <  $total_pages){
+                                    $next_page = $_GET['page'] + 1;
                                 } 
                                             
                         ?> 
-                            <a class="page-link" href="?trang=<?= $next_page ?>" aria-label="Next">
+                            <a class="page-link" href="?page=<?= $next_page ?>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         <?php }?>
