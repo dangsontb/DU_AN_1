@@ -31,6 +31,7 @@
             unset($conn);
         }
     }
+
     // Truy vấn nhiều dữ liệu
     function pdo_query($sql){
         $sql_args = array_slice(func_get_args(),1);
@@ -85,6 +86,23 @@
         }
     }
     function insert_id(){
+        
         return pdo_get_connection() -> lastInsertId();
     }
+
+    // function insert_id($sql)
+    // {
+    //     $sql_args = array_slice(func_get_args(), 1);
+    //     try {
+    //         $conn = pdo_get_connection();
+    //         $stmt = $conn->prepare($sql);
+    //         $stmt->execute($sql_args);
+    //         return $conn->lastInsertId();
+    //     } catch (PDOException $e) {
+    //         throw $e;
+    //     } finally {
+    //         unset($conn);
+    //     }
+    // }
+   
 ?>

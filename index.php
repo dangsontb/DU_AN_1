@@ -21,7 +21,7 @@
     include "model/brand.php";
     include "model/user.php";
     include "model/size.php";
-    //include "model/cart.php";
+    include "model/cart.php";
     include "model/comment.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
@@ -31,7 +31,7 @@
     $_SESSION['giohang'] = [];
 
 
-    $spnew=loadall_sanpham_home();
+    $spnew=product_select_all();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
@@ -98,12 +98,7 @@
             case 'signup':
                 signup();
                 break;
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 6bf12487ee2394c4dabecac8a6ebebeba8ea56ef
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
                 include "views/cart/viewcart.php";
@@ -172,10 +167,33 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-<<<<<<< HEAD
-    
-=======
->>>>>>> 6bf12487ee2394c4dabecac8a6ebebeba8ea56ef
+             
+            case 'thanhtoan':
+                if ((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])) {
+                    // Lấy dữ liệu
+                    $tongdonhang=$_POST['tongdonhang'];
+                    $name=$_POST['name'];
+                    $address=$_POST['address'];
+                    $email=$_POST['email'];
+                    $phone=$_POST['phone'];
+                    $pttt=$_POST['pttt'];
+                    $ma_donhang="SHN".rand(0,999999);
+                    //Tạo đơn hàng và trả về đơn hàng;
+                    //$id_product,$tensp,$hinh,$gia,$soluong
+                    $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$name,$address,$email,$phone);
+                    
+                    $_SESSION['id_donhang']=$id_donhang;
+                    if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'] )>0)){
+                        foreach ($_SESSION['giohang']  as $item) {
+                            addtocarrt($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
+                        }
+                        unset($_SESSION['giohang']);
+                    }
+                }
+                include "views/cart/viewbill.php";
+                break;
+
+
             default:
                 include "views/home.php";
                 break;
