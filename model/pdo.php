@@ -85,12 +85,15 @@
             unset($conn);
         }
     }
+
+
+    
     function insert_id(){
         
         return pdo_get_connection() -> lastInsertId();
     }
 
-    // function insert_id($sql)
+    // function pdo_execute_return_lastInsertId($sql)
     // {
     //     $sql_args = array_slice(func_get_args(), 1);
     //     try {

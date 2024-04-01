@@ -1,31 +1,16 @@
 <br><br>
 <div class="container">
-    <h4>ID đơn hàng: <?=$id_donhang?></h4>
   <h2 class="mt-4 ">Đơn Hàng</h2>
     <div class="card mb-4">
-        <div class="card-header cart text-primary fw-bold text-white">Thông tin đơn hàng</div>
-        <div class="card-body">
-            <table class="table table-bordered">
-                <tr>
-                    <td>Mã đơn hàng:</td>
-                    <td><span class="fw-bold">PHVH-<?= $ma_donhang ?></span></td>
-                </tr>
-                <!-- <tr>
-                    <td>Trạng thái:</td>
-                    <td>
-                        <span class="fw-bold">
-                            <?php
-                            if ($status_pay == 1) {
-                                echo "Đã thanh toán";
-                            } else {
-                                echo "Chưa thanh toán";
-                            }
-                            ?>
-                        </span>
-                    </td>
-                </tr>  -->
-            </table>
-        </div>
+      <div class="card-header cart text-primary fw-bold text-white">Thông tin đơn hàng</div>
+      <div class="card-body">
+          <table class="table table-bordered">
+              <tr>
+                  <td>Mã đơn hàng:</td>
+                  <td><span class="fw-bold"><?= $ma_donhang ?></span></td>
+              </tr>
+          </table>
+      </div>
     </div>
 
     <div >
@@ -51,11 +36,10 @@
           </div>
         </div>
       </div>
-
-
-  <div>
     <div>
-      <?php if (!empty($Showcar)) {
+      
+    <div>
+      <?php if (!empty($_SESSION['giohang'])) {
                     $tong = 0;
                     $tongsp=0;
                     $i = 0;
@@ -74,25 +58,22 @@
         </thead>
         <tbody>
           <?php 
-          if(isset($_SESSION['id_donhang'])&&($_SESSION['id_donhang'])>0){
-            $Showcart=getShowcart($id_donhang);
-            foreach ($Showcar as $item) {
-              $thanhtien=$item['soluong'] * $item['dongia'];
+            foreach ($_SESSION['giohang'] as $item) {
+              $thanhtien=$item['3'] * $item['4'];
               $tong+=$thanhtien;
               $tongsp+=$item['4'];
             echo '<tr>
                     <td>'.($i+1).'</id>
-                    <td>'.$item['ten_sanpham'].'</id>
-                    <td> <img src="./uploads/'.$item['hinhanh'].'" width="60" alt=""></id>
-                    <td>'.number_format($item['dongia']).'</id>
-                    <td>'.$item['soluong'].'</id>
+                    <td>'.$item['1'].'</id>
+                    <td> <img src="./uploads/'.$item['2'].'" width="60" alt=""></id>
+                    <td>'.number_format($item['3']).'</id>
+                    <td>'.$item['4'].'</id>
                     <td>'.number_format($thanhtien).'</id>
                   </tr>';
             $i++;
-            }
           } ?>
         </tbody>
-      </table>
+      </table> 
     </div>
 
     <div style="margin-top: 100px;">
@@ -106,8 +87,7 @@
     <div class="col-md-4">
       <?php }?>
     </div>
-  </div>
-
+</div>
   
 
       <!-- Thông tin đặt hàng -->

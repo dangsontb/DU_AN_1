@@ -97,11 +97,6 @@
                 signup();
                 break;
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 962342823ecc25d05d0a99c41b1a7e2855270779
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
                 include "views/cart/viewcart.php";
@@ -170,7 +165,6 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-<<<<<<< HEAD
              
             case 'thanhtoan':
                 if ((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])) {
@@ -183,12 +177,12 @@
                     $pttt=$_POST['pttt'];
                     $ma_donhang="SHN".rand(0,999999);
                     //Tạo đơn hàng và trả về đơn hàng;
-                    //$id_product,$tensp,$hinh,$gia,$soluong
                     $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$name,$address,$email,$phone);
                     
-                    $_SESSION['id_donhang']=$id_donhang;
-                    if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'] )>0)){
+                    
+                    if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
                         foreach ($_SESSION['giohang']  as $item) {
+                                //$id_product,$tensp,$hinh,$gia,$soluong
                             addtocarrt($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
                         }
                         unset($_SESSION['giohang']);
@@ -198,9 +192,6 @@
                 break;
 
 
-=======
-    
->>>>>>> 962342823ecc25d05d0a99c41b1a7e2855270779
             default:
                 include "views/home.php";
                 break;
