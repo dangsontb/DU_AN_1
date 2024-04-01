@@ -29,14 +29,14 @@
                 <div class="boxright">
 
                   <!-- =================================== LỰA CHỌN ===================================== -->
-                    <div class="luachon">
+                    <!-- <div class="luachon">
                         <select class="form-select  align-self-end" aria-label="Default select example">  
                             <a href=""><option selected>Lựa chọn</option></a>
                             <a href=""></a><option value="1">Mới nhất</option></a>
                             <a href=""></a><option value="2">Giá cao</option></a>
                             <a href=""></a><option value="3">Giá thấp</option></a>
                         </select>
-                    </div>
+                    </div> -->
 
 
                     <!-- ====================================== SẢN PHẨM ======================================= -->
@@ -76,21 +76,41 @@
 
                     <!-- ============================================ CHUYỂN TRANG ============================================== -->
                     <div aria-label="Page navigation example" class="chuyentrang">
-                        <ul class="pagination justify-content-center" >
+                    <ul class="pagination justify-content-center" >
                           <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
+                            <?php 
+                              if(isset($page) && $page > 1){
+                                  $prev_page = $page - 1;
+                            ?>
+                              <a class="page-link " href="?act=sanpham&idcate=<?=$brand_id?>&page=<?= $prev_page ?>" aria-label="Previous">
                               <span aria-hidden="true">&laquo;</span>
-                            </a>
+                              </a>
+                            <?php }?>
                           </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <?php 
+                         
+                            for ($i=1; $i <= $total_pages ; $i++) {
+
+                              $page = isset($page) && !empty($page) ? $page : 1;
+                          ?>
+                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" 
+                            href="?act=sanpham&idcate=<?=$brand_id?>&page=<?=$i?>"><?=$i?></a></li>
+                          <?php } ?>
+
                           <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
+                            <?php 
+                              if(isset($page)  && isset($total_pages) && $total_pages > $page  ){
+                                if($page <  $total_pages){
+                                    $next_page = $page + 1;
+                                }                  
+                            ?> 
+                              <a class="page-link" href="?act=sanpham&idcate=<?=$brand_id?>&page=<?= $next_page ?>" aria-label="Next">
                               <span aria-hidden="true">&raquo;</span>
-                            </a>
+                              </a>
+                            <?php }?>
                           </li>
                         </ul>
+                    </div>
                     </div>
                 </div>
             </div>
