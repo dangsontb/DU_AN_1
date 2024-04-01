@@ -2,8 +2,8 @@
     function taodonhang($ma_donhang,$tongdonhang,$pttt,$name,$address,$email,$phone){
         $sql="INSERT INTO `oder`(`ma_donhang`, `tong_donhang`, `phuongthuc_thanhtoan`, `name`, `address`, `email`, `tel`) 
                 VALUES ('$ma_donhang','$tongdonhang','$pttt','$name','$address','$email','$phone')";
-        pdo_execute($sql);
-        return  insert_id();
+        //pdo_execute($sql);
+        return  insert_id($sql);
         
     }
 
