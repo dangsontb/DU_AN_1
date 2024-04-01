@@ -76,13 +76,13 @@
 
                     <!-- ============================================ CHUYỂN TRANG ============================================== -->
                     <div aria-label="Page navigation example" class="chuyentrang">
-                    <ul class="pagination justify-content-center" >
+                      <ul class="pagination justify-content-center" >
                           <li class="page-item">
                             <?php 
                               if(isset($page) && $page > 1){
                                   $prev_page = $page - 1;
                             ?>
-                              <a class="page-link " href="?act=sanpham&idcate=<?=$brand_id?>&page=<?= $prev_page ?>" aria-label="Previous">
+                              <a class="page-link " href="?act=sanpham&idcate=<?=$cate_id?>&page=<?= $prev_page ?>" aria-label="Previous">
                               <span aria-hidden="true">&laquo;</span>
                               </a>
                             <?php }?>
@@ -94,7 +94,7 @@
                               $page = isset($page) && !empty($page) ? $page : 1;
                           ?>
                           <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" 
-                            href="?act=sanpham&idcate=<?=$brand_id?>&page=<?=$i?>"><?=$i?></a></li>
+                            href="?act=sanpham&idcate=<?=$cate_id?>&page=<?=$i?>"><?=$i?></a></li>
                           <?php } ?>
 
                           <li class="page-item">
@@ -104,7 +104,7 @@
                                     $next_page = $page + 1;
                                 }                  
                             ?> 
-                              <a class="page-link" href="?act=sanpham&idcate=<?=$brand_id?>&page=<?= $next_page ?>" aria-label="Next">
+                              <a class="page-link" href="?act=sanpham&idcate=<?=$cate_id?>&page=<?= $next_page ?>" aria-label="Next">
                               <span aria-hidden="true">&raquo;</span>
                               </a>
                             <?php }?>

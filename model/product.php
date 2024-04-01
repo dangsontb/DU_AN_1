@@ -117,6 +117,13 @@ function product_select_page_category($cate_id ,$page, $quantity){
             limit $start, $quantity";
     return pdo_query($sql, $cate_id);
 }
+function product_select_page_keyword($keyw ,$page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT * FROM product 
+            where name LIKE '%".$keyw."%' 
+            limit $start, $quantity";
+    return pdo_query($sql);
+}
 
 
 //======================================================= Ngát =====================================================================

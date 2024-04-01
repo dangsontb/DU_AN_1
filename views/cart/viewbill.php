@@ -1,7 +1,43 @@
 <br><br>
 <div class="container">
-  <h2 class="mt-4">Giỏ Hàng</h2>
-  <div style="width: 70%; float: left;">
+  <h2 class="mt-4 ">Đơn Hàng</h2>
+    <div class="card mb-4">
+      <div class="card-header cart text-primary fw-bold text-white">Thông tin đơn hàng</div>
+      <div class="card-body">
+          <table class="table table-bordered">
+              <tr>
+                  <td>Mã đơn hàng:</td>
+                  <td><span class="fw-bold"><?= $ma_donhang ?></span></td>
+              </tr>
+          </table>
+      </div>
+    </div>
+
+    <div >
+      <input type="hidden" name="tongdonhang" value="<?=$tong?>">
+      <div class="card">
+        <div class="card-header cart text-primary fw-bold text-white">Thông tin đặt hàng</div>
+        <div class="card-body">
+          <div class="wrap-infocart mar-t5">
+            <span>Họ tên người đặt: </span>
+            <input name="name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận"  value="<?= $name ?>">
+          </div>
+          <div class="wrap-infocart mar-t5">
+            <span>Địa chỉ: </span>
+            <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng"  value="<?= $address ?>">
+          </div>
+          <div class="wrap-infocart mar-t5">
+            <span>Email: </span>
+            <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận"  value="<?= $email?>">
+          </div>
+          <div class="wrap-infocart mar-t5">
+            <span>Điện thoại: </span>
+            <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận"  value="<?= $phone?>">
+          </div>
+        </div>
+      </div>
+    <div>
+      
     <div>
       <?php if (!empty($_SESSION['giohang'])) {
                     $tong = 0;
@@ -18,7 +54,6 @@
             <th>Đơn giá</th>
             <th>Số lượng</th>
             <th>Thành tiền</th>
-            <th>Hành động</th>
           </tr>
         </thead>
         <tbody>
@@ -34,16 +69,11 @@
                     <td>'.number_format($item['3']).'</id>
                     <td>'.$item['4'].'</id>
                     <td>'.number_format($thanhtien).'</id>
-                    <td>
-                      <a href="index.php?act=delete_cart&i='.$i.'"><i class="fas fa-trash fa-sm" style="color: #b80000;"></i></a>
-                    </td>
                   </tr>';
             $i++;
           } ?>
         </tbody>
-      </table>
-      <a href="index.php"><button class="btn btn-primary btn-block mt-3">Tiếp tục mua hàng</button></a>
-      <a href="index.php?act=delete_cart"><button class="btn btn-primary btn-block mt-3">Xóa giỏ hàng</button></a>
+      </table> 
     </div>
 
     <div style="margin-top: 100px;">
@@ -55,47 +85,42 @@
     </div>
 
     <div class="col-md-4">
-      <?php }else {?>
-        <h5 class="text-danger">Giỏ hàng trống. Vui lòng chọn thêm sản phẩm!</h5>
-        <a href="index.php"><button class="btn btn-primary btn-block mt-3">Tiếp tục mua hàng</button></a>
       <?php }?>
     </div>
-  </div>
-
-
+</div>
+  
 
       <!-- Thông tin đặt hàng -->
-  <div style="width: 28%; float: right; margin-top: 30px">
-    <form action="index.php?act=thanhtoan" method="post">
+  <!-- <div style="width: 28%; float: right; margin-top: 30px">
       <input type="hidden" name="tongdonhang" value="<?=$tong?>">
       <div class="card">
         <div class="card-header cart text-primary fw-bold text-white">Thông tin đặt hàng</div>
         <div class="card-body">
           <div class="wrap-infocart mar-t5">
             <span>Họ tên người đặt: </span>
-            <input name="name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" required>
+            <input name="name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận"  value="<?= $name ?>">
           </div>
           <div class="wrap-infocart mar-t5">
             <span>Địa chỉ: </span>
-            <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng" required>
+            <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng"  value="<?= $address ?>">
           </div>
           <div class="wrap-infocart mar-t5">
             <span>Email: </span>
-            <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận" required>
+            <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận"  value="<?= $email?>">
           </div>
           <div class="wrap-infocart mar-t5">
             <span>Điện thoại: </span>
-            <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận" required>
+            <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận"  value="<?= $phone?>">
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- phương thức thanh toán -->
-      <div class="card mt-4 mb-4">
-        <div class="card-header cart text-primary fw-bold text-white">Phương thức thanh toán</div>
+      <!-- <div class="card mt-4 mb-4">
+        <div class="card-header cart text-primary fw-bold">Phương thức thanh toán</div>
         <div class="card-body">
           <div class="payment-option">
-            <input class="form-check-input" type="radio" name="pttt" id="inlineRadio1" value="1" checked required>
+            <input class="form-check-input" type="radio" name="pttt" id="inlineRadio1" value="1">
             <label for="inlineRadio1">Thanh toán khi nhận hàng</label>
           </div>
           <div class="payment-option">
@@ -108,9 +133,7 @@
           </div>
         </div>
       </div>
-      <a href=""><input type="submit" class="btn btn-primary btn-block mt-3" name="thanhtoan" value="Thanh toán"></a>
-    </form>
-  </div>
+  </div> -->
 </div>
 <style>
      /* Style for the card containing the "Thông tin đặt hàng" section */
@@ -128,7 +151,7 @@
         padding: 8px 0px;
     }
      .card {
-         margin-bottom: 20px;
+         margin-bottom: 100px;
          border: 1px solid #ccc;
          border-radius: 5px;
          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

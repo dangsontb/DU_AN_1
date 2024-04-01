@@ -106,3 +106,6 @@ function signup(){
     }
     include "views/signup.php";
 }
+function change_password(){
+    
+}

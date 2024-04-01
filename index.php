@@ -10,7 +10,7 @@
     include "model/brand.php";
     include "model/user.php";
     include "model/size.php";
-    //include "model/cart.php";
+    include "model/cart.php";
     include "model/comment.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
@@ -22,7 +22,7 @@
     $_SESSION['giohang'] = [];
 
 
-    $spnew=loadall_sanpham_home();
+    $spnew=product_select_all();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
@@ -71,8 +71,17 @@
             case 'keyword':
                 if(isset($_POST['submit'])){
                     $keyw = $_POST['keyw'];
-                    $product = product_select_keyw($keyw);
                 }
+                if(!isset($_GET['page']) || !is_numeric($_GET['page']) || $_GET['page'] <= 1 ){
+                    $page = 1;
+                }else{
+                    $page = $_GET['page'];
+                }
+                isset($_GET['keyword']) ? $keyw = $_GET['keyword'] : '';
+                $quantity = 9;
+                $total_product_keyword=product_select_keyw($keyw);
+                $list_product=product_select_page_keyword($keyw ,$page, $quantity);
+                $total_pages = ceil(count($total_product_keyword) / $quantity);
                 include "views/search.php";
                 break;
             case 'product_detail':
@@ -112,9 +121,9 @@
             case 'signup':
                 signup();
                 break;
-
-
-
+            case 'change_password':
+                include 'views/change_password.php';
+                break;
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
                 include "views/cart/viewcart.php";
@@ -183,7 +192,33 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-    
+             
+            case 'thanhtoan':
+                if ((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])) {
+                    // Lấy dữ liệu
+                    $tongdonhang=$_POST['tongdonhang'];
+                    $name=$_POST['name'];
+                    $address=$_POST['address'];
+                    $email=$_POST['email'];
+                    $phone=$_POST['phone'];
+                    $pttt=$_POST['pttt'];
+                    $ma_donhang="SHN".rand(0,999999);
+                    //Tạo đơn hàng và trả về đơn hàng;
+                    $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$name,$address,$email,$phone);
+                    
+                    
+                    if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
+                        foreach ($_SESSION['giohang']  as $item) {
+                                //$id_product,$tensp,$hinh,$gia,$soluong
+                            addtocarrt($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
+                        }
+                        unset($_SESSION['giohang']);
+                    }
+                }
+                include "views/cart/viewbill.php";
+                break;
+
+
             default:
                 include "views/home.php";
                 break;

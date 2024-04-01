@@ -221,7 +221,7 @@ function list_product(){
     }else{
         $page = $_GET['page'];
     }
-    $quantity = 3;
+    $quantity = 6;
     $product_select_all = product_select_all();
     $list_product = product_select_pages($page , $quantity);
     $total_pages =  ceil(count($product_select_all) / $quantity);

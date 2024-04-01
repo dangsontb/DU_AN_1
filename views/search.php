@@ -42,7 +42,7 @@
                     <div class="row row-cols-1 row-cols-md-3 g-4 sanpham">
 
                         <?php
-                          foreach ($product as $sp) {
+                          foreach ($list_product as $sp) {
                             extract($sp);
                             $link_product="index.php?act=product_detail&product_id=".$product_id;
                             $hinh = $path_img.$image;
@@ -74,17 +74,36 @@
                     <div aria-label="Page navigation example" class="chuyentrang">
                         <ul class="pagination justify-content-center" >
                           <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
+                            <?php 
+                              if(isset($page) && $page > 1){
+                                  $prev_page = $page - 1;
+                            ?>
+                              <a class="page-link " href="?act=keyword&keyword=<?=$keyw?>&page=<?= $prev_page ?>" aria-label="Previous">
                               <span aria-hidden="true">&laquo;</span>
-                            </a>
+                              </a>
+                            <?php }?>
                           </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <?php 
+                         
+                            for ($i=1; $i <= $total_pages ; $i++) {
+
+                              $page = isset($page) && !empty($page) ? $page : 1;
+                          ?>
+                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" 
+                            href="?act=keyword&keyword=<?=$keyw?>&page=<?=$i?>"><?=$i?></a></li>
+                          <?php } ?>
+
                           <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
+                            <?php 
+                              if(isset($page)  && isset($total_pages) && $total_pages > $page  ){
+                                if($page <  $total_pages){
+                                    $next_page = $page + 1;
+                                }                  
+                            ?> 
+                              <a class="page-link" href="?act=keyword&keyword=<?=$keyw?>&page=<?= $next_page ?>" aria-label="Next">
                               <span aria-hidden="true">&raquo;</span>
-                            </a>
+                              </a>
+                            <?php }?>
                           </li>
                         </ul>
                     </div>
