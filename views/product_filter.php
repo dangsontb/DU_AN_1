@@ -82,36 +82,35 @@
                       <ul class="pagination justify-content-center" >
                         <li class="page-item">
                         <?php 
-                          if(isset($_GET['page']) && $_GET['page'] > 1){
-                              $prev_page = $_GET['page'] - 1;
+                          if(isset($page) && $page > 1){
+                              $prev_page = $page - 1;
                         ?>
-                          <a class="page-link " href="?page=<?= $prev_page ?>" aria-label="Previous">
+                          <a class="page-link " href="?act=<?= $_GET['act'] == 'productOld' ? 'productOld&' : ($_GET['act'] == 'priceAsc' ? 'priceAsc&' : 'priceDesc&') ?>page=<?= $prev_page ?>" aria-label="Previous">
                           <span aria-hidden="true">&laquo;</span>
                           </a>
                         <?php }?>
                         </li>
-                        <?php 
-                        // $total_pages =ceil($total_product_old/9);
-                        for ($i=1; $i <= $total_pages ; $i++) {
-                            if(empty($_GET['page'])  ){
-                              $page =1;
-                            }else{
-                              $page = $_GET['page'];
-                            }
-                          ?>
-                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" href="?act=productOld&page=<?=$i?>"><?=$i?></a></li>
-                        <?php } ?>
                         
+                        <?php
+                          for ($i = 1; $i <= $total_pages; $i++) {
+                            // Thiết lập trang mặc định nếu không có tham số trang được truyền hoặc tham số trang trống
+                            $page = isset($page) && !empty($page) ? $page : 1;
+                        ?>
+
+                        <li class="page-item">
+                          <a class="page-link <?= $page == $i ? 'active' : '' ?>" href="?act=<?= $_GET['act'] == 'productOld' ? 'productOld' : ($_GET['act'] == 'priceAsc' ? 'priceAsc' : 'priceDesc') ?>&page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                        <?php } ?>
 
                         <li class="page-item">
                         <?php 
-                            if(isset($_GET['page'])  && isset($total_pages) && $total_pages > $_GET['page'] ){
-                                if($_GET['page'] <  $total_pages){
-                                    $next_page = $_GET['page'] + 1;
-                                } 
-                                            
+                          if(isset($page)  && isset($total_pages) && $total_pages > $page  ){
+                            if($page <  $total_pages){
+                                $next_page = $page + 1;
+                            } 
+                                          
                         ?> 
-                            <a class="page-link" href="?page=<?= $next_page ?>" aria-label="Next">
+                            <a class="page-link" href="?act=<?= $_GET['act'] == 'productOld' ? 'productOld&' : ($_GET['act'] == 'priceAsc' ? 'priceAsc&' : 'priceDesc&') ?>page=<?= $next_page ?>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         <?php }?>

@@ -22,6 +22,16 @@ function product_select_old(){
     $sql = "SELECT * FROM  product order by create_at";
     return pdo_query($sql);
 }
+function product_select_price_asc(){
+    $sql = "SELECT *, (price-(price*sale)/100)  as price_sale  FROM  product
+            order by price_sale";
+    return pdo_query($sql);
+}
+function product_select_price_desc(){
+    $sql = "SELECT *, (price-(price*sale)/100)  as price_sale  FROM  product
+            order by price_sale desc";
+    return pdo_query($sql);
+}
   
 
 function product_insert($name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id){
@@ -71,18 +81,50 @@ function product_update($product_id, $name, $price, $image, $description, $sale,
     return pdo_query_one($sql,$product_id);
     
 }
+// Select ra số product trong trang
 function product_select_pages($page, $quantity){
     $start = ($page -1)* $quantity;
-    $sql = "SELECT * from product order by product_id  limit $start, $quantity";
+    $sql = "SELECT * FROM  product order by product_id  limit $start, $quantity";
     return pdo_query($sql);
 }
 
 function product_select_page_old($page, $quantity){
     $start = ($page -1)* $quantity;
-    $sql = "SELECT * FROM  product order by create_at limit $start, $quantity";
+    $sql = "SELECT * FROM  product order by create_at  limit $start, $quantity";
     return pdo_query($sql);
-    // $sql = "SELECT * FROM  product order by create_at limit $start, $quantity";
 }
+function product_select_page_asc($page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT *, (price-(price*sale)/100)  as price_sale  FROM  product
+            order by price_sale limit $start, $quantity";
+    return pdo_query($sql);
+}
+function product_select_page_desc($page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT *, (price-(price*sale)/100)  as price_sale  FROM  product
+            order by price_sale desc limit $start, $quantity";
+    return pdo_query($sql);
+}
+function product_select_page_brand($brand_id ,$page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT *   FROM  product where brand_id  = ?
+            limit $start, $quantity";
+    return pdo_query($sql, $brand_id);
+}
+function product_select_page_category($cate_id ,$page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT *   FROM  product where cate_id  = ?
+            limit $start, $quantity";
+    return pdo_query($sql, $cate_id);
+}
+function product_select_page_keyword($keyw ,$page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT * FROM product 
+            where name LIKE '%".$keyw."%' 
+            limit $start, $quantity";
+    return pdo_query($sql);
+}
+
 
 //======================================================= Ngát =====================================================================
 function loadall_sanpham_home() {    
@@ -124,7 +166,7 @@ function load_name_cate($cate_id){
         extract($dm);
         return $cate_name;
 }
-//======================================================= Hieu =====================================================================
+
 function loadall_sanpham_brand($keyw="",$brand_id=0){
     $sql="SELECT * FROM `product` WHERE 1";
     if($keyw!=""){
