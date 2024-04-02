@@ -90,50 +90,6 @@
 </div>
   
 
-      <!-- Thông tin đặt hàng -->
-  <!-- <div style="width: 28%; float: right; margin-top: 30px">
-      <input type="hidden" name="tongdonhang" value="<?=$tong?>">
-      <div class="card">
-        <div class="card-header cart text-primary fw-bold text-white">Thông tin đặt hàng</div>
-        <div class="card-body">
-          <div class="wrap-infocart mar-t5">
-            <span>Họ tên người đặt: </span>
-            <input name="name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận"  value="<?= $name ?>">
-          </div>
-          <div class="wrap-infocart mar-t5">
-            <span>Địa chỉ: </span>
-            <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng"  value="<?= $address ?>">
-          </div>
-          <div class="wrap-infocart mar-t5">
-            <span>Email: </span>
-            <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận"  value="<?= $email?>">
-          </div>
-          <div class="wrap-infocart mar-t5">
-            <span>Điện thoại: </span>
-            <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận"  value="<?= $phone?>">
-          </div>
-        </div>
-      </div> -->
-
-      <!-- phương thức thanh toán -->
-      <!-- <div class="card mt-4 mb-4">
-        <div class="card-header cart text-primary fw-bold">Phương thức thanh toán</div>
-        <div class="card-body">
-          <div class="payment-option">
-            <input class="form-check-input" type="radio" name="pttt" id="inlineRadio1" value="1">
-            <label for="inlineRadio1">Thanh toán khi nhận hàng</label>
-          </div>
-          <div class="payment-option">
-            <input class="form-check-input" type="radio" name="pttt" id="inlineRadio2" value="2">
-            <label class="form-check-label" for="inlineRadio2">Chuyển khoản ngân hàng</label>
-          </div>
-          <div class="payment-option">
-            <input class="form-check-input" type="radio" name="pttt" id="inlineRadio3" value="3">
-            <label class="form-check-label" for="inlineRadio3">Thanh toán qua Momo</label>
-          </div>
-        </div>
-      </div>
-  </div> -->
 </div>
 <style>
      /* Style for the card containing the "Thông tin đặt hàng" section */

@@ -44,7 +44,7 @@ $count = countcart();
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục</a>
                                 <ul class="dropdown-menu">
-                                    <?php 
+<?php 
                                         foreach ($list_category as $category) {
                                             extract($category);
                                             $link_category="index.php?act=sanpham&idcate=".$cate_id;
@@ -86,12 +86,10 @@ $count = countcart();
                                  <a class="nav-link text-black" href="index.php?act=gioithieu">Giới thiệu</a>
                             </li>
                         </ul>
-        
                         <form action="?act=keyword" method="post" class="d-flex" role="search">
-                          <input name="keyw" class="form-control me-2"  value="" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" name="submit"  type="submit"><i class="fas fa-search"></i></button>
+                          <input name="keyw" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<button class="btn btn-outline-success" name="submit"  type="submit"><i class="fas fa-search"></i></button>
                         </form>
-           
                       </div>
                     </div>
                     <div class="d-flex icon" >
@@ -122,7 +120,7 @@ $count = countcart();
                         <li style="list-style: none;">
                             <a class="nav-link gh" href="index.php?act=viewcart" style="padding:0px 5px 0px 12px;">
                                 <i class="fas fa-cart-plus fa-lg"></i> 
-                                <span class="item-count rounded-circle sl "><?= !empty($count) ? $count : '' ?></span>
+                                <span class="item-count rounded-circle sl"><?= $count ?></span>
                             </a>
                         </li>
                     </div>

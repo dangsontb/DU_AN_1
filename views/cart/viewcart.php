@@ -1,3 +1,11 @@
+<?php
+  if(isset($_SESSION['user'])){
+      $user = $_SESSION['user'];
+      // echo "<pre>";
+      // var_dump($user);
+      extract($user);
+?>
+
 <br><br>
 <div class="container">
   <h2 class="mt-4">Giỏ Hàng</h2>
@@ -72,20 +80,20 @@
         <div class="card-header cart text-primary fw-bold text-white">Thông tin đặt hàng</div>
         <div class="card-body">
           <div class="wrap-infocart mar-t5">
-            <span>Họ tên người đặt: </span>
-            <input name="name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" required>
+            <span>Họ và tên  : </span>
+            <input name="name" type="text" value="<?= $fullname?>" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" required>
           </div>
           <div class="wrap-infocart mar-t5">
             <span>Địa chỉ: </span>
-            <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng" required>
+            <input name="address" type="text" value="<?= $address?>" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng" required>
           </div>
           <div class="wrap-infocart mar-t5">
             <span>Email: </span>
-            <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận" required>
+            <input name="email" type="email" value="<?= $email?>" class="ip-cart ml-166" placeholder="Nhập email người nhận" required>
           </div>
           <div class="wrap-infocart mar-t5">
             <span>Điện thoại: </span>
-            <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận" required>
+            <input name="phone" type="text" value="<?= $phone?>" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận" required>
           </div>
         </div>
       </div>
@@ -112,6 +120,12 @@
     </form>
   </div>
 </div>
+
+<?php }else{
+    header('location: ?act=form_login');
+} ?>
+
+
 <style>
      /* Style for the card containing the "Thông tin đặt hàng" section */
      table{

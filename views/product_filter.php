@@ -66,7 +66,7 @@
                                                 <input type="hidden" name="tensp" value="'.$name.'">
                                                 <input type="hidden" name="gia" value="'.$sale_price.'">
                                                 <input type="hidden" name="hinh" value="'.$image.'">
-                                                <button type="submit" class=" muahang" name="addtocart"><i class="fas fa-cart-plus fa-lg"></i></button>
+                                                <button type="submit" class=" muahang" name="addtocart" style="background-color: white; border:none"><i class="fas fa-cart-plus fa-lg"></i></button>
                                             </form>
                                           </div>
                                         </div>

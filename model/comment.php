@@ -48,6 +48,15 @@ function comments_exist($comment_id){
 function comments_select_by_product($product_id){
     $sql = "SELECT c.*, user_name FROM comments c JOIN product p ON p.product_id=c.product_id
                                                 JOIN  user u on u.user_id  = c.user_id
-            WHERE c.product_id=? ORDER BY date DESC ";
+            WHERE c.product_id=? ORDER BY date asc ";
     return pdo_query($sql, $product_id);
+}
+
+function comments_select_page_product($product_id,$page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT c.*, user_name FROM comments c JOIN product p ON p.product_id=c.product_id
+            JOIN  user u on u.user_id  = c.user_id
+            WHERE c.product_id=? ORDER BY date asc
+            limit $start, $quantity";
+    return pdo_query($sql,$product_id);
 }
