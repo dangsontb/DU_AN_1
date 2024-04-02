@@ -123,7 +123,8 @@
                 signup();
                 break;
             case 'change_password':
-                include 'views/change_password.php';
+                change_password();
+               
                 break;
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
