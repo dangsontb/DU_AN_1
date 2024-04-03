@@ -47,7 +47,7 @@
                             extract($sp);
                             $link_product="index.php?act=sanphamct&idsp".$product_id;
                             $hinh = $path_img.$image;
-                            $price_sale =(( $price *  $sale )/100);
+                            $price_sale =($price -( $price *  $sale )/100);
                             echo '<div class="col name">
                                       <a href="'.$link_product.'">
                                         <div class="card h-100 item">

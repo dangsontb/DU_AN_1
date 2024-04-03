@@ -11,7 +11,6 @@
             </tr>
         </table>
     </div>
-<<<<<<< HEAD
   </div> -->
 
   <div >
@@ -92,87 +91,6 @@
     ?>
   </div>
 </div>
-=======
-
-    <div >
-      <input type="hidden" name="tongdonhang" value="<?=$tong?>">
-      <div class="card">
-        <div class="card-header cart text-primary fw-bold text-white">Thông tin đặt hàng</div>
-        <div class="card-body">
-        <input type="hidden" name="user_id" value="<?= $user_id ?>">
-          <div class="wrap-infocart mar-t5">
-            <span>Họ tên người đặt: </span>
-            <input name="name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận"  value="<?= $name ?>">
-          </div>
-          <div class="wrap-infocart mar-t5">
-            <span>Địa chỉ: </span>
-            <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng"  value="<?= $address ?>">
-          </div>
-          <div class="wrap-infocart mar-t5">
-            <span>Email: </span>
-            <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận"  value="<?= $email?>">
-          </div>
-          <div class="wrap-infocart mar-t5">
-            <span>Điện thoại: </span>
-            <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận"  value="<?= $phone?>">
-          </div>
-        </div>
-      </div>
-    <div>
-      
-    <div>
-      <?php if (!empty($_SESSION['giohang'])) {
-                    $tong = 0;
-                    $tongsp=0;
-                    $i = 0;
-                    
-      ?>
-      <table class="table">
-        <thead>
-          <tr>
-            <th >STT</th>
-            <th>Tên sản phẩm</th>
-            <th>Hình</th>
-            <th>Đơn giá</th>
-            <th>Số lượng</th>
-            <th>Thành tiền</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php 
-            foreach ($_SESSION['giohang'] as $item) {
-              $thanhtien=$item['3'] * $item['4'];
-              $tong+=$thanhtien;
-              $tongsp+=$item['4'];
-            echo '<tr>
-                    <td>'.($i+1).'</id>
-                    <td>'.$item['1'].'</id>
-                    <td> <img src="./uploads/'.$item['2'].'" width="60" alt=""></id>
-                    <td>'.number_format($item['3']).'</id>
-                    <td>'.$item['4'].'</id>
-                    <td>'.number_format($thanhtien).'</id>
-                  </tr>';
-            $i++;
-          } ?>
-        </tbody>
-      </table> 
-    </div>
-
-    <div style="margin-top: 100px;">
-      <h4>Tổng Giỏ Hàng</h4>
-        <ul class="list-group">
-          <li class="list-group-item">Tổng sản phẩm: <span class="float-right text-danger fw-semibold"><?=$tongsp?></span></li>
-          <li class="list-group-item">Tổng giá: <span class="float-right text-danger fw-semibold"><?=number_format($tong)?> VNĐ</span></li>
-        </ul>
-    </div>
-
-    <div class="col-md-4">
-      <?php }?>
-    </div>
-</div>
-  
-
->>>>>>> fa57edc0984afcdd4d5598b23773df28a889c2a7
 </div>
 <style>
      /* Style for the card containing the "Thông tin đặt hàng" section */

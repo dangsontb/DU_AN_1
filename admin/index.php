@@ -6,7 +6,7 @@
     include "../model/user.php";
     include '../model/image_product.php';
     include '../model/comment.php';
-    include "../model/cart.php";
+    include "../model/order_detail.php";
     include "../model/order.php";
     include '../controller/ControllerAdmin/ProductControl.php';
     include '../controller/ControllerAdmin/UserControl.php';
@@ -143,6 +143,10 @@
             // ---------------------------------------Order------------------------------------    
             case 'list_bill':
                 list_order();
+                break;
+            case 'order_detail':
+                order_detail();
+               
                 break;
             default : 
                 include "home.php";

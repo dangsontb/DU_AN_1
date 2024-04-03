@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 01, 2024 lúc 04:42 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.0.30
+-- Thời gian đã tạo: Th4 03, 2024 lúc 06:37 PM
+-- Phiên bản máy phục vụ: 10.4.28-MariaDB
+-- Phiên bản PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,30 +41,6 @@ INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
 (66, 'Bitis'),
 (2, 'Nike'),
 (44, 'Puma');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `cart`
---
-
-CREATE TABLE `cart` (
-  `id` int(11) NOT NULL,
-  `id_order` int(11) NOT NULL,
-  `id_product` int(11) NOT NULL,
-  `soluong` int(11) NOT NULL DEFAULT 0,
-  `dongia` int(11) NOT NULL,
-  `hinhanh` varchar(255) NOT NULL,
-  `ten_sanpham` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `cart`
---
-
-INSERT INTO `cart` (`id`, `id_order`, `id_product`, `soluong`, `dongia`, `hinhanh`, `ten_sanpham`) VALUES
-(69, 213, 42, 1, 1959999, 'air-jordan-1-NIke.jpg', 'Giày nike air jordan_1'),
-(70, 214, 45, 5, 989010, 'giày 3.png', 'Giày Nike AF1');
 
 -- --------------------------------------------------------
 
@@ -105,11 +81,15 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `content`, `date`, `rating`, `user_id`, `product_id`) VALUES
-(7, 'ưqewqeqewqeqqqqqqqqqqqqq', '28-03-2024', 0, 18, 42),
-(8, 'qưeqw', '28-03-2024', 0, 18, 42),
 (9, 'eqweqw', '28-03-2024', 0, 18, 42),
 (10, 'qưeqweqe', '28-03-2024', 0, 18, 42),
-(11, 'đâs', '28-03-2024', 0, 18, 42);
+(11, 'đâs', '28-03-2024', 0, 18, 42),
+(16, 'sadasd', '02-04-2024', 5, 18, 47),
+(17, 'đâsd', '02-04-2024', 5, 18, 52),
+(25, '111', '03-04-2024', 5, 19, 63),
+(26, '1111', '03-04-2024', 5, 19, 63),
+(27, '1111', '03-04-2024', 4, 19, 63),
+(28, '1111', '03-04-2024', 3, 19, 63);
 
 -- --------------------------------------------------------
 
@@ -126,28 +106,53 @@ CREATE TABLE `image_product` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `oder`
+-- Cấu trúc bảng cho bảng `order`
 --
 
-CREATE TABLE `oder` (
+CREATE TABLE `order` (
   `id` int(11) NOT NULL,
   `ma_donhang` varchar(50) NOT NULL,
   `tong_donhang` int(11) NOT NULL,
-  `phuongthuc_thanhtoan` tinyint(1) NOT NULL DEFAULT 1,
+  `phuongthuc_thanhtoan` tinyint(1) NOT NULL DEFAULT 0,
+  `order_name` varchar(50) NOT NULL,
+  `phone` varchar(10) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `id_status` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `tel` varchar(11) NOT NULL
+  `create_at` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `oder`
+-- Đang đổ dữ liệu cho bảng `order`
 --
 
-INSERT INTO `oder` (`id`, `ma_donhang`, `tong_donhang`, `phuongthuc_thanhtoan`, `id_user`, `name`, `address`, `email`, `tel`) VALUES
-(213, 'SHN759034', 1959999, 2, 0, 'ngát phạm', 'hà nội', 'ngat@gmail.com', '0987654321'),
-(214, 'SHN546477', 4945050, 1, 0, 'Thất Tịch', 'HCM', 'ngat@gmail.com', '0123456789');
+INSERT INTO `order` (`id`, `ma_donhang`, `tong_donhang`, `phuongthuc_thanhtoan`, `order_name`, `phone`, `address`, `id_status`, `id_user`, `create_at`) VALUES
+(271, 'SHN387555', 8349997, 1, 'Đặng Văn Sơn', '0986767222', 'Thái bình', 1, 19, '03-04-2024');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `id` int(11) NOT NULL,
+  `id_order` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `soluong` int(11) NOT NULL DEFAULT 0,
+  `dongia` int(11) NOT NULL,
+  `hinhanh` varchar(255) NOT NULL,
+  `ten_sanpham` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `order_detail`
+--
+
+INSERT INTO `order_detail` (`id`, `id_order`, `id_product`, `soluong`, `dongia`, `hinhanh`, `ten_sanpham`) VALUES
+(110, 271, 42, 1, 1959999, 'air-jordan-1-NIke.jpg', 'Giày nike air jordan_1'),
+(111, 271, 44, 1, 990000, 'giày 2.png', 'Giày Nike af1_mix'),
+(112, 271, 43, 2, 2699999, 'air-jordan-legacy-312-low-older-shoes-giày.png', 'Giày nike air jordan legacy');
 
 -- --------------------------------------------------------
 
@@ -224,13 +229,33 @@ INSERT INTO `size` (`size_id`, `size_number`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `status`
+--
+
+CREATE TABLE `status` (
+  `status_id` int(11) NOT NULL,
+  `status_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `status`
+--
+
+INSERT INTO `status` (`status_id`, `status_name`) VALUES
+(1, 'Chưa giao'),
+(2, 'Đang giao'),
+(3, 'Giao thành công');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(50) NOT NULL,
-  `password` int(11) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `fullname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phone` varchar(11) NOT NULL,
@@ -244,7 +269,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `password`, `fullname`, `email`, `phone`, `address`, `role`, `create_at`) VALUES
-(18, 'dangvanson', 11111111, 'Đặng Sơn TB', 'dangvanson210297@gmail.com', '0987654321', 'thái bình', 0, '26-03-24');
+(18, 'dangvanson', 'anhsontb', 'Đặng Sơn TB', 'dangvanson210297@gmail.com', '0987654321', 'thái bình', 0, '26-03-24'),
+(19, 'anhsontb', '12345678', 'Đặng Văn Sơn', 'dangson@gmail.com', '0986767222', 'Thái bình', 0, '2024-03-21');
 
 -- --------------------------------------------------------
 
@@ -273,12 +299,6 @@ ALTER TABLE `brand`
   ADD UNIQUE KEY `Tên thương hiệu` (`brand_name`);
 
 --
--- Chỉ mục cho bảng `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -300,9 +320,17 @@ ALTER TABLE `image_product`
   ADD PRIMARY KEY (`image_product_id`);
 
 --
--- Chỉ mục cho bảng `oder`
+-- Chỉ mục cho bảng `order`
 --
-ALTER TABLE `oder`
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_oder` (`id_user`),
+  ADD KEY `fk_odder2` (`id_status`);
+
+--
+-- Chỉ mục cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -320,6 +348,12 @@ ALTER TABLE `product`
 ALTER TABLE `size`
   ADD PRIMARY KEY (`size_id`),
   ADD UNIQUE KEY `size_number` (`size_number`);
+
+--
+-- Chỉ mục cho bảng `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`status_id`);
 
 --
 -- Chỉ mục cho bảng `user`
@@ -348,12 +382,6 @@ ALTER TABLE `brand`
   MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
-
---
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -363,7 +391,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `image_product`
@@ -372,10 +400,16 @@ ALTER TABLE `image_product`
   MODIFY `image_product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `oder`
+-- AUTO_INCREMENT cho bảng `order`
 --
-ALTER TABLE `oder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=215;
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=273;
+
+--
+-- AUTO_INCREMENT cho bảng `order_detail`
+--
+ALTER TABLE `order_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
@@ -390,10 +424,16 @@ ALTER TABLE `size`
   MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT cho bảng `status`
+--
+ALTER TABLE `status`
+  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `variation`
@@ -411,6 +451,13 @@ ALTER TABLE `variation`
 ALTER TABLE `comments`
   ADD CONSTRAINT `fk_comment` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `fk_comment2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Các ràng buộc cho bảng `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `fk_odder2` FOREIGN KEY (`id_status`) REFERENCES `status` (`status_id`),
+  ADD CONSTRAINT `fk_oder` FOREIGN KEY (`id_user`) REFERENCES `user` (`user_id`);
 
 --
 -- Các ràng buộc cho bảng `product`

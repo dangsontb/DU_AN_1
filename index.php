@@ -10,7 +10,7 @@
     include "model/brand.php";
     include "model/user.php";
     include "model/size.php";
-    include "model/cart.php";
+    include "model/order_detail.php";
     include "model/order.php";
     include "model/comment.php";
     include "global.php";
@@ -64,7 +64,7 @@
                     }
                     $quantity = 3;
                     $total_product_brand=loadall_sanpham_brand("",$brand_id);
-                    $list_product=product_select_page_brand($brand_id ,$page, $quantity);
+                    $list_product_brand=product_select_page_brand($brand_id ,$page, $quantity);
                     $total_pages = ceil(count($total_product_brand) / $quantity);
                     include "views/sanpham_brand.php";
                 }
@@ -210,17 +210,12 @@
                     $status_id = 1;
                     $date = date('d-m-Y');
                     //Tạo đơn hàng và trả về đơn hàng;
-<<<<<<< HEAD
-                    $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$name,$address,$email,$phone);
-=======
-                    $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$status_id,$user_id,$date);
-                
-                    
->>>>>>> fa57edc0984afcdd4d5598b23773df28a889c2a7
+                    $id_donhang=taodonhang($ma_donhang, $tongdonhang, $pttt,$name , $phone , $address , $status_id, $user_id, $date);
+            
                     if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
                         foreach ($_SESSION['giohang']  as $item) {
                                 //$id_product,$tensp,$hinh,$gia,$soluong
-                            addtocarrt($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
+                                add_order_detail($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
                         }
                     }
                 }

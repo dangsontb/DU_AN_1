@@ -12,3 +12,8 @@ function list_order(){
     $total_pages =  ceil(count($total_orders) / $quantity);
     include "order/list_oder.php";
 }
+function order_detail(){
+    $id = $_GET['id'];
+    $list_order_detail = order_detail_by_order_id($id);
+    include "order/order_detail.php";
+}

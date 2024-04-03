@@ -18,9 +18,9 @@ function order_select_pages( $page , $quantity){
     return pdo_query($sql);
 }
 
-function taodonhang($ma_donhang, $tongdonhang, $pttt, $status_id, $user_id, $date){
-    $sql="INSERT INTO `order`( `ma_donhang`, `tong_donhang`, `phuongthuc_thanhtoan`, `id_status`, `id_user`,`create_at`) 
-            VALUES ('$ma_donhang','$tongdonhang','$pttt','$status_id' , '$user_id', '$date')";
+function taodonhang($ma_donhang, $tongdonhang, $pttt,$order_name , $phone , $address , $status_id, $user_id, $date){
+    $sql="INSERT INTO `order`( `ma_donhang`, `tong_donhang`, `phuongthuc_thanhtoan`,`order_name`, `phone`, `address`, `id_status`, `id_user`, `create_at`) 
+            VALUES ('$ma_donhang','$tongdonhang','$pttt','$order_name' , '$phone' , '$address' , '$status_id' , '$user_id', '$date')";
     //pdo_execute($sql);
     return  insert_id($sql);
     

@@ -5,38 +5,32 @@
             <thead  class="table-secondary" >
                 <tr>
                     <th></th>
-                    <th>ID</th>
-                    <th>Khách hàng</th>
-                    <th>Tổng tiền</th>
-                    <th>Trạng thái</th>
-                    <th>Thanh toán</th>     
-                    <th>Ngày mua</th>
+                    <th>Sản phẩm</th>
+                    <th>Ảnh</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Số tiền</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($list_order as $order): extract($order);
-                // echo "<pre>";
-                // var_dump($order);
-                
-                ?>
+
+                    <?php  foreach($list_order_detail as $order_detail) :
+                        extract($order_detail);
+                        // echo "<pre>";
+                        // var_dump($order_detail);
+                        $img= '../'.$GLOBALS['path_img'].$hinhanh;
+                    ?>
+
                     <tr>
-                        <td><input  class="form-check-input" type="checkbox"></td>
-                        <td><?= $id ?></td>
-                        <td><?= $user_name ?></td>
-                        <td><?= number_format($tong_donhang) ?></td>
-                        <td><?= $status_name ?></td>
-                        <td><?= $phuongthuc_thanhtoan == 1 ? 'COD' : "Banking" ?></td>
-                        <td><?= $order[9] ?></td>
-                        
-                        
-                        <td>
-                            <a href="?act=order_detail&id=<?= $id ?>" class="btn btn-primary fw-medium">Chi tiết</a>
-                            <!-- <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a> -->
-                        </td>
+                        <td></td>
+                        <td><?= $ten_sanpham?></td>
+                        <td> <img src="<?=$img ?>" class="img-thumbnail" width="60px" alt="..."> </td>                      
+                        <td><?= $soluong?></td>
+                        <td><?= $dongia?></td>
+                        <td><?=$total =  number_format($soluong * $dongia)?></td>
                     </tr>
-                <?php endforeach ?>
-             
+                    <?php endforeach  ?>
                 
             </tbody>
             

@@ -119,11 +119,7 @@ $count = countcart();
                         <li style="list-style: none;">
                             <a class="nav-link gh" href="index.php?act=viewcart" style="padding:0px 5px 0px 12px;">
                                 <i class="fas fa-cart-plus fa-lg"></i> 
-<<<<<<< HEAD
-                                <span class="item-count rounded-circle sl "><?=$count?></span>
-=======
                                 <span class="item-count rounded-circle sl"><?= $count ?></span>
->>>>>>> fa57edc0984afcdd4d5598b23773df28a889c2a7
                             </a>
                         </li>
                     </div>
