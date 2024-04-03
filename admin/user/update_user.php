@@ -13,34 +13,34 @@
                
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Tên tài khoản</label>
-                    <input type="text" class="form-control" name='name' value="<?= $user_name  ?>">
+                    <input type="text" class="form-control" name='name' value="<?= $user_name  ?>" disabled>
                     <p class="text-danger"> <?= isset($error['user_name'])? $error['user_name'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Mật khẩu</label>
-                    <input type="password" class="form-control" name='pass' value="<?= $password  ?>" >
+                    <input type="password" class="form-control" name='pass' value="<?= $password  ?>" disabled >
                     <p class="text-danger"> <?= isset($error['pass'])? $error['pass'] :'' ?></p>
                 </div>
                 
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Họ tên</label>
-                    <input type="text" class="form-control" name='fullname' value="<?= $fullname  ?>">
+                    <input type="text" class="form-control" name='fullname' value="<?= $fullname  ?>" disabled>
                     <p class="text-danger"> <?= isset($error['fullname'])? $error['fullname'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Email</label>
-                    <input type="email" class="form-control" name='email' value="<?= $email   ?>">
+                    <input type="email" class="form-control" name='email' value="<?= $email   ?>" disabled>
                     <p class="text-danger"> <?= isset($error['email'])? $error['email'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Số điện thoại</label>
-                    <input type="tel"  class="form-control" name='tel' value="<?= $phone  ?>">
+                    <input type="tel"  class="form-control" name='tel' value="<?= $phone  ?>" disabled>
                     <p class="text-danger"> <?= isset($error['tel'])? $error['tel'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Địa chỉ</label>
-                    <input type="text"  class="form-control" name='address' value="<?= $address  ?>">
+                    <input type="text"  class="form-control" name='address' value="<?= $address  ?>" disabled>
                     <p class="text-danger"> <?= isset($error['address'])? $error['address'] :'' ?></p>
                 </div>
                 <div class="col-4">

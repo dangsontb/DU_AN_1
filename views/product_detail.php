@@ -142,24 +142,46 @@
                         <hr>
                     </div>
                     <?php endforeach?>
-<!--                   
-                    <div aria-label="Page navigation example" class="chuyentrang">
-                        <ul class="pagination justify-content-center" >
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
+                    
+                    <div aria-label="Page navigation example" class="chuyenpage">
+                      <ul class="pagination justify-content-center" >
+                        <li class="page-item">
+                        <?php 
+                          if(isset($page) && $page > 1){
+                              $prev_page = $page - 1;
+                        ?>
+                          <a class="page-link " href="?act=product_detail&product_id=<?=$product_id ?>&page=<?= $prev_page ?>" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        <?php }?>
+                        </li>
+                        
+                        <?php
+                          for ($i = 1; $i <= $total_pages; $i++) {
+                            // Thiết lập trang mặc định nếu không có tham số trang được truyền hoặc tham số trang trống
+                            $page = isset($page) && !empty($page) ? $page : 1;
+                        ?>
+
+                        <li class="page-item">
+                          <a class="page-link <?= $page == $i ? 'active' : '' ?>" href="?act=product_detail&product_id=<?=$product_id ?>&page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                        <?php } ?>
+
+                        <li class="page-item">
+                        <?php 
+                          if(isset($page)  && isset($total_pages) && $total_pages > $page  ){
+                            if($page <  $total_pages){
+                                $next_page = $page + 1;
+                            } 
+                                          
+                        ?> 
+                            <a class="page-link" href="?act=product_detail&product_id=<?=$product_id ?>&page=<?= $next_page ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
                             </a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
-                        </ul>
-                    </div> -->
+                        <?php }?>
+                        </li>
+                      </ul>
+                    </div>
                 </div>
                
                 <h4>Để lại bình luận</h4>        

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 30, 2024 lúc 07:28 AM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.0.28
+-- Thời gian đã tạo: Th4 01, 2024 lúc 04:42 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,6 +41,30 @@ INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
 (66, 'Bitis'),
 (2, 'Nike'),
 (44, 'Puma');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `id_order` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `soluong` int(11) NOT NULL DEFAULT 0,
+  `dongia` int(11) NOT NULL,
+  `hinhanh` varchar(255) NOT NULL,
+  `ten_sanpham` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`id`, `id_order`, `id_product`, `soluong`, `dongia`, `hinhanh`, `ten_sanpham`) VALUES
+(69, 213, 42, 1, 1959999, 'air-jordan-1-NIke.jpg', 'Giày nike air jordan_1'),
+(70, 214, 45, 5, 989010, 'giày 3.png', 'Giày Nike AF1');
 
 -- --------------------------------------------------------
 
@@ -81,12 +105,11 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `content`, `date`, `rating`, `user_id`, `product_id`) VALUES
-(7, 'ưqewqeqewqeqqqqqqqqqqqqq', '28-03-2024', 2, 18, 42),
-(8, 'qưeqw', '28-03-2024', 3, 18, 42),
-(9, 'eqweqw', '28-03-2024', 4, 18, 42),
-(10, 'qưeqweqe', '28-03-2024', 5, 18, 42),
-(11, 'đâs', '28-03-2024', 1, 18, 42),
-(12, 'sadsadsad', '30-03-2024', 5, 18, 65);
+(7, 'ưqewqeqewqeqqqqqqqqqqqqq', '28-03-2024', 0, 18, 42),
+(8, 'qưeqw', '28-03-2024', 0, 18, 42),
+(9, 'eqweqw', '28-03-2024', 0, 18, 42),
+(10, 'qưeqweqe', '28-03-2024', 0, 18, 42),
+(11, 'đâs', '28-03-2024', 0, 18, 42);
 
 -- --------------------------------------------------------
 
@@ -99,6 +122,32 @@ CREATE TABLE `image_product` (
   `product_id` int(11) NOT NULL,
   `img` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `oder`
+--
+
+CREATE TABLE `oder` (
+  `id` int(11) NOT NULL,
+  `ma_donhang` varchar(50) NOT NULL,
+  `tong_donhang` int(11) NOT NULL,
+  `phuongthuc_thanhtoan` tinyint(1) NOT NULL DEFAULT 1,
+  `id_user` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tel` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `oder`
+--
+
+INSERT INTO `oder` (`id`, `ma_donhang`, `tong_donhang`, `phuongthuc_thanhtoan`, `id_user`, `name`, `address`, `email`, `tel`) VALUES
+(213, 'SHN759034', 1959999, 2, 0, 'ngát phạm', 'hà nội', 'ngat@gmail.com', '0987654321'),
+(214, 'SHN546477', 4945050, 1, 0, 'Thất Tịch', 'HCM', 'ngat@gmail.com', '0123456789');
 
 -- --------------------------------------------------------
 
@@ -224,6 +273,12 @@ ALTER TABLE `brand`
   ADD UNIQUE KEY `Tên thương hiệu` (`brand_name`);
 
 --
+-- Chỉ mục cho bảng `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -243,6 +298,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `image_product`
   ADD PRIMARY KEY (`image_product_id`);
+
+--
+-- Chỉ mục cho bảng `oder`
+--
+ALTER TABLE `oder`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `product`
@@ -287,6 +348,12 @@ ALTER TABLE `brand`
   MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
+-- AUTO_INCREMENT cho bảng `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
+--
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
@@ -296,13 +363,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `image_product`
 --
 ALTER TABLE `image_product`
   MODIFY `image_product_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `oder`
+--
+ALTER TABLE `oder`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=215;
 
 --
 -- AUTO_INCREMENT cho bảng `product`

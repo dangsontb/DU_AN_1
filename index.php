@@ -11,6 +11,7 @@
     include "model/user.php";
     include "model/size.php";
     include "model/cart.php";
+    include "model/order.php";
     include "model/comment.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
@@ -22,7 +23,7 @@
     $_SESSION['giohang'] = [];
 
 
-    $spnew=product_select_all();
+    $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
@@ -90,6 +91,7 @@
             case 'comment':
                 comment_insert();
                 break;
+            
             // ----------------------------------filter---------------------------------
 
             case 'productOld':
@@ -122,7 +124,8 @@
                 signup();
                 break;
             case 'change_password':
-                include 'views/change_password.php';
+                change_password();
+               
                 break;
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
@@ -196,6 +199,7 @@
             case 'thanhtoan':
                 if ((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])) {
                     // Lấy dữ liệu
+                    $user_id = $_POST['user_id'];
                     $tongdonhang=$_POST['tongdonhang'];
                     $name=$_POST['name'];
                     $address=$_POST['address'];
@@ -203,8 +207,16 @@
                     $phone=$_POST['phone'];
                     $pttt=$_POST['pttt'];
                     $ma_donhang="SHN".rand(0,999999);
+                    $status_id = 1;
+                    $date = date('d-m-Y');
                     //Tạo đơn hàng và trả về đơn hàng;
+<<<<<<< HEAD
                     $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$name,$address,$email,$phone);
+=======
+                    $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$status_id,$user_id,$date);
+                
+                    
+>>>>>>> fa57edc0984afcdd4d5598b23773df28a889c2a7
                     if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
                         foreach ($_SESSION['giohang']  as $item) {
                                 //$id_product,$tensp,$hinh,$gia,$soluong

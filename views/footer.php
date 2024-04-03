@@ -43,7 +43,7 @@
           
           //alert(value);
           if(value!=0){
-            var url = "http://localhost/du_an_1/index.php" + value;
+            var url = "http://localhost/du_an_1/index.php?act=" + value;
             // alert(url);
             window.location.href =  url; 
           }else{

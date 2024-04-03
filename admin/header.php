@@ -12,7 +12,7 @@
 <body>
     <div class="container"> 
         <header>
-            <h1 class="alert alert-success"><a class="nav-link text-black-50" href="#">Quản Trị Website</a></h1>
+            <h1 class="alert alert-success"><a class="nav-link text-primary" href="#">Website Admin</a></h1>
             <nav class="navbar navbar-expand-lg bg-dark  rounded-2 " >
                 <div class="container-fluid ">       
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
