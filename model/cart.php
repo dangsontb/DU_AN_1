@@ -13,7 +13,6 @@
         pdo_execute($sql);
         
     }
-    
     function countcart()
     {
         $i = 0;

@@ -1,6 +1,5 @@
 <?php
 $count = countcart();
-
 ?>
 
 <!DOCTYPE html>
@@ -122,7 +121,7 @@ $count = countcart();
                         <li style="list-style: none;">
                             <a class="nav-link gh" href="index.php?act=viewcart" style="padding:0px 5px 0px 12px;">
                                 <i class="fas fa-cart-plus fa-lg"></i> 
-                                <span class="item-count rounded-circle sl "><?= !empty($count) ? $count : '' ?></span>
+                                <span class="item-count rounded-circle sl "><?=$count?></span>
                             </a>
                         </li>
                     </div>

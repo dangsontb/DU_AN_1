@@ -1,4 +1,4 @@
-<div class="boxleft" style="margin-bottom: 20px;">
+<div class="boxleft" style="margin-top: 53px;">
                   <!-- ======================================== GIÁ===================================== -->
                     <!-- <div class="price">
                         <h6>Mức giá</h6>

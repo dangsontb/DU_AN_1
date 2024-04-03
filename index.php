@@ -205,14 +205,11 @@
                     $ma_donhang="SHN".rand(0,999999);
                     //Tạo đơn hàng và trả về đơn hàng;
                     $id_donhang=taodonhang($ma_donhang,$tongdonhang,$pttt,$name,$address,$email,$phone);
-                    
-                    
                     if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
                         foreach ($_SESSION['giohang']  as $item) {
                                 //$id_product,$tensp,$hinh,$gia,$soluong
                             addtocarrt($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
                         }
-                        unset($_SESSION['giohang']);
                     }
                 }
                 include "views/cart/viewbill.php";

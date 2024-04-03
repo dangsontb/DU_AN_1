@@ -108,7 +108,7 @@
           </div>
         </div>
       </div>
-      <a href=""><input type="submit" class="btn btn-primary btn-block mt-3" name="thanhtoan" value="Thanh toán"></a>
+      <a href=""><input type="submit" class="btn btn-primary btn-block mt-3" name="thanhtoan" value="Thanh toán" style="margin-bottom: 150px;"></a>
     </form>
   </div>
 </div>
