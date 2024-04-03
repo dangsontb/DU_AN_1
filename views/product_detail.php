@@ -175,7 +175,7 @@
                             } 
                                           
                         ?> 
-                            <a class="page-link" href="=?act=product_detail&product_id=<?=$product_id ?>&page=<?= $next_page ?>" aria-label="Next">
+                            <a class="page-link" href="?act=product_detail&product_id=<?=$product_id ?>&page=<?= $next_page ?>" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         <?php }?>

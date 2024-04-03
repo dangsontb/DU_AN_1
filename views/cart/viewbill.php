@@ -18,6 +18,7 @@
       <div class="card">
         <div class="card-header cart text-primary fw-bold text-white">Thông tin đặt hàng</div>
         <div class="card-body">
+        <input type="hidden" name="user_id" value="<?= $user_id ?>">
           <div class="wrap-infocart mar-t5">
             <span>Họ tên người đặt: </span>
             <input name="name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận"  value="<?= $name ?>">

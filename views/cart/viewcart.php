@@ -76,9 +76,11 @@
   <div style="width: 28%; float: right; margin-top: 30px">
     <form action="index.php?act=thanhtoan" method="post">
       <input type="hidden" name="tongdonhang" value="<?=$tong?>">
+      <input type="hidden" name="user_id" value="<?= $user_id ?>">
       <div class="card">
         <div class="card-header cart text-primary fw-bold text-white">Thông tin đặt hàng</div>
         <div class="card-body">
+       
           <div class="wrap-infocart mar-t5">
             <span>Họ và tên  : </span>
             <input name="name" type="text" value="<?= $fullname?>" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" required>

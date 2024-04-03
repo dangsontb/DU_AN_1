@@ -33,9 +33,9 @@ function comments_select_by_id($comment_id){
     return pdo_query_one($sql, $comment_id);
 }
 function comments_select_byid($comment_id){
-    $sql = "SELECT c.content, c.date, p.name ,k.ho_ten FROM comments b 
+    $sql = "SELECT c.content, c.date, p.name ,u.ho_ten FROM comments b 
             join product p on p.product_id = c.product_id
-            join user k on k.user_id = c.user_id
+            join user u on u.user_id = c.user_id
             WHERE comment_id=?";
     return pdo_query_one($sql, $comment_id);
 }
@@ -59,4 +59,24 @@ function comments_select_page_product($product_id,$page, $quantity){
             WHERE c.product_id=? ORDER BY date asc
             limit $start, $quantity";
     return pdo_query($sql,$product_id);
+}
+function comments_select_by_product_admin(){
+    $sql = "SELECT p.name,  p.product_id, COUNT(c.comment_id) AS comment_count, MIN(c.date) AS earliest_comment_date, MAX(c.date) AS lastest_comment_date 
+            FROM comments c 
+            JOIN product p ON p.product_id = c.product_id 
+            JOIN user u ON u.user_id = c.user_id 
+            GROUP BY p.name
+            Order By  p.name desc";
+    return pdo_query($sql);
+}
+function comments_select_page_by_product_admin($page, $quantity){
+    $start = ($page -1)* $quantity;
+    $sql = "SELECT p.name,  p.product_id, COUNT(c.comment_id) AS comment_count, MIN(c.date) AS earliest_comment_date, MAX(c.date) AS lastest_comment_date 
+            FROM comments c 
+            JOIN product p ON p.product_id = c.product_id 
+            JOIN user u ON u.user_id = c.user_id 
+            GROUP BY p.name
+            Order By  p.name desc 
+            Limit $start , $quantity";
+    return pdo_query($sql);
 }

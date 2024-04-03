@@ -29,17 +29,7 @@
                 <div class="boxright">
 
                   <!-- =================================== LỰA CHỌN ===================================== -->
-                    <div class="luachon">
-                     
-                        <select class="form-select  align-self-end select-filter" id="select-filter" aria-label="Default select example"
-                         onchange="changeFilter()">
-                            <option value="0">---Lọc theo---</option>
-                            <option value="?act=productOld">Sản phẩm cũ</option>
-                            <option value="?act=priceAsc">Giá tăng dần</option>
-                            <option value="?act=priceDesc">Giá giảm dần</option>
-                        </select>
-                    </div>
-
+                    <?php include "chon.php"?>
                     <!-- ====================================== SẢN PHẨM ======================================= -->
                     <div class="row row-cols-1 row-cols-md-3 g-4 sanpham">
 
