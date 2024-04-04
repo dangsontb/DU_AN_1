@@ -98,12 +98,9 @@
             case 'signup':
                 signup();
                 break;
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 6bf12487ee2394c4dabecac8a6ebebeba8ea56ef
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
                 include "views/cart/viewcart.php";
@@ -172,10 +169,7 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-<<<<<<< HEAD
     
-=======
->>>>>>> 6bf12487ee2394c4dabecac8a6ebebeba8ea56ef
             default:
                 include "views/home.php";
                 break;
