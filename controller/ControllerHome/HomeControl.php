@@ -107,8 +107,8 @@ function signup(){
     include "views/signup.php";
 }
 function change_password(){
-    echo "<pre>";
-    print_r($_SESSION['user']);
+        // echo "<pre>";
+        // print_r($_SESSION['user']);
     if(isset($_SESSION['user'])){
         $user_id = $_SESSION['user']['user_id'];
         $user_name  = $_SESSION['user']['user_name'];

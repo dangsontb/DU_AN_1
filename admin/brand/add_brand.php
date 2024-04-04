@@ -2,7 +2,7 @@
         <!-- main -->
         <main class="container_">
         
-            <h3 class="alert alert-success text-success"> Thêm mới thương hiệu</h3>
+            <h3 class="alert alert-primary text-primary"> Thêm mới thương hiệu</h3>
    
             <form action="" method="post">
                 <div class="mb-3">

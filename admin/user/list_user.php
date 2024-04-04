@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container-fluid row">
         
-                <h3 class="alert alert-success text-success"> Danh sách tài khoản</h3>
+                <h3 class="alert alert-primary text-primary"> Danh sách tài khoản</h3>
                 <form action="index.php?act=delete_user_by_checkbox" method="post">
                     <table class="table table-hover">
                         <thead  class="table-secondary" >
