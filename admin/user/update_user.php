@@ -7,40 +7,40 @@
         <!-- main -->
         <main class="container-fluid">
            <div >
-            <h3 class="alert alert-success text-success"> Cập nhật khách hàng </h3>
+            <h3 class="alert alert-primary text-primary"> Cập nhật khách hàng </h3>
    
             <form action="index.php?act=update_user" class="row g-3" method="post" >
                
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Tên tài khoản</label>
-                    <input type="text" class="form-control" name='name' value="<?= $user_name  ?>" disabled>
+                    <input type="text" class="form-control" name='name' value="<?= $user_name  ?>" readonly>
                     <p class="text-danger"> <?= isset($error['user_name'])? $error['user_name'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Mật khẩu</label>
-                    <input type="password" class="form-control" name='pass' value="<?= $password  ?>" disabled >
+                    <input type="password" class="form-control" name='pass' value="<?= $password  ?>" readonly >
                     <p class="text-danger"> <?= isset($error['pass'])? $error['pass'] :'' ?></p>
                 </div>
                 
                 
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Họ tên</label>
-                    <input type="text" class="form-control" name='fullname' value="<?= $fullname  ?>" disabled>
+                    <input type="text" class="form-control" name='fullname' value="<?= $fullname  ?>" readonly>
                     <p class="text-danger"> <?= isset($error['fullname'])? $error['fullname'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Email</label>
-                    <input type="email" class="form-control" name='email' value="<?= $email   ?>" disabled>
+                    <input type="email" class="form-control" name='email' value="<?= $email   ?>" readonly>
                     <p class="text-danger"> <?= isset($error['email'])? $error['email'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Số điện thoại</label>
-                    <input type="tel"  class="form-control" name='tel' value="<?= $phone  ?>" disabled>
+                    <input type="tel"  class="form-control" name='tel' value="<?= $phone  ?>" readonly>
                     <p class="text-danger"> <?= isset($error['tel'])? $error['tel'] :'' ?></p>
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Địa chỉ</label>
-                    <input type="text"  class="form-control" name='address' value="<?= $address  ?>" disabled>
+                    <input type="text"  class="form-control" name='address' value="<?= $address  ?>" readonly>
                     <p class="text-danger"> <?= isset($error['address'])? $error['address'] :'' ?></p>
                 </div>
                 <div class="col-4">

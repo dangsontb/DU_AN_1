@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container_">
         
-            <h3 class="alert alert-success text-success"> Thêm mới sản phẩm</h3>
+            <h3 class="alert alert-primary text-primary"> Thêm mới sản phẩm</h3>
    
             <form action="index.php?act=add_product" class="row g-3" method="post" enctype="multipart/form-data">
                 

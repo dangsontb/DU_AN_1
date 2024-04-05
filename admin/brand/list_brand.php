@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container_">
         
-                <h3 class="alert alert-success text-success"> Danh sách thương hiệu</h3>
+                <h3 class="alert alert-primary text-primary"> Danh sách thương hiệu</h3>
                 <form action="index.php?act=delete_brand_checkbox" method="post">
                 <table class="table table-hover">
                     <thead  class="table-secondary" >

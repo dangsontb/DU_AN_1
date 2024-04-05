@@ -1,5 +1,5 @@
 <main class="container_">
-    <h3 class="alert alert-success text-success"> Danh sách bình luận</h3>  
+    <h3 class="alert alert-primary text-primary"> Danh sách bình luận</h3>  
     <table class="table table-hover">
         <thead  class="table-secondary" >
             <tr>

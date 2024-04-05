@@ -1,6 +1,6 @@
 <main class="container_">
         
-        <h3 class="alert alert-success text-success"> Danh sách bill</h3>
+        <h3 class="alert alert-primary text-primary"> Danh sách bill</h3>
         <table class="table table-hover">
             <thead  class="table-secondary" >
                 <tr>
@@ -27,7 +27,7 @@
                         <td><?= $ten_sanpham?></td>
                         <td> <img src="<?=$img ?>" class="img-thumbnail" width="60px" alt="..."> </td>                      
                         <td><?= $soluong?></td>
-                        <td><?= $dongia?></td>
+                        <td><?= number_format($dongia)?></td>
                         <td><?=$total =  number_format($soluong * $dongia)?></td>
                     </tr>
                     <?php endforeach  ?>
@@ -43,7 +43,7 @@
                 
             </div>
         </form> -->
-        <div aria-label="Page navigation example" class="chuyentrang">
+        <!-- <div aria-label="Page navigation example" class="chuyentrang">
             <ul class="pagination justify-content-center" >
                 <li class="page-item">
                     <?php 
@@ -82,5 +82,5 @@
                 </li>
             </ul>
         </div>
-      
+       -->
 </main>
