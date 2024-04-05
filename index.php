@@ -28,6 +28,7 @@
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
     $tong_sanpham  = count_product();
+    $order_history =history();
     include "views/header.php";
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
@@ -221,7 +222,10 @@
                 }
                 include "views/cart/viewbill.php";
                 break;
-
+            
+            case 'order_history':
+                include "views/cart/history.php";
+                break;
 
             default:
                 include "views/home.php";

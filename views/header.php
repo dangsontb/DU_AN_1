@@ -107,6 +107,7 @@ $count = countcart();
 
                                     <li><a class="dropdown-item" href="index.php?act=change_password">Đổi mật khẩu</a></li>
                                     <li><a class="dropdown-item" href="index.php?act=logout">Thoát</a></li>
+                                    <li><a class="dropdown-item" href="index.php?act=order_history">Lịch sử </a></li>
                                     
                                     <?php }else{?>
                                         <li><a class="dropdown-item" href="index.php?act=form_login">Đăng nhập</a></li>
