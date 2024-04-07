@@ -27,7 +27,6 @@ function taodonhang($ma_donhang, $tongdonhang, $pttt,$order_name , $phone , $add
             VALUES ('$ma_donhang','$tongdonhang','$pttt','$order_name' , '$phone' , '$address' , '$status_id' , '$user_id', '$date')";
     //pdo_execute($sql);
     return  insert_id($sql);
-    
 }
 
 // function update_order($id, $ma_donhang, $tong_donhang, $phuongthuc_thanhtoan, $order_name, $phone, $address, $id_status ,$id_user,$create_at){
