@@ -5,11 +5,13 @@
         pdo_execute($sql);
         
     }
-    function history(){
+    function history($user_id){
         $sql = "SELECT * 
                 FROM `order_detail`
                 JOIN `order` ON order_detail.id_order = order.id
-                JOIN `status` ON order.id_status = status.status_id";
+                JOIN `status` ON order.id_status = status.status_id
+                JOIN `user` ON order.id_user=user.user_id 
+                WHERE order.id_user=$user_id";
         return pdo_query($sql);
     
     }

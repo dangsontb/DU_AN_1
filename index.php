@@ -28,7 +28,7 @@
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
     $tong_sanpham  = count_product();
-    $order_history =history();
+   
     include "views/header.php";
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
@@ -216,7 +216,7 @@
                     if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
                         foreach ($_SESSION['giohang']  as $item) {
                                 //$id_product,$tensp,$hinh,$gia,$soluong
-                                add_order_detail($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
+                         add_order_detail($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
                         }
                     }
                 }
@@ -224,6 +224,10 @@
                 break;
             
             case 'order_history':
+                if (isset($_SESSION['user'])){
+                    $id=$_SESSION['user']['user_id'];
+                    $order_history =history($id);
+                }
                 include "views/cart/history.php";
                 break;
 

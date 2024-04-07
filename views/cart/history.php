@@ -17,18 +17,18 @@
             <?php  foreach($order_history as $sp){
                         extract($sp);
                         // echo "<pre>";
-                        // var_dump($order_detail);
+                        // var_dump($order_history);
                         $hinh = $path_img.$hinhanh;
                     ?>
 
                     <tr>
                     <td></td>
                         <td><?= $ten_sanpham?></td>
-                        <td> <img src="<?=$hinh ?>" class="img-thumbnail" width="60px" alt="..."> </td>                      
+                        <td> <img src="<?=$hinh ?>" class="img-thumbnail" width="80px" alt="..."> </td>                      
                         <td><?= $soluong?></td>
                         <td><?= $dongia?></td>
                         <td><?= $status_name?></td>
-                        <td><?= $create_at?></td>
+                        <td><?= $sp['16']?></td>
                     </tr>
                 <?php }?>
             </tbody>
