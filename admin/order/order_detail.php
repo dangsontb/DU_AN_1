@@ -1,11 +1,25 @@
 <main class="container_">
         
-        <h3 class="alert alert-primary text-primary"> Danh sách bill</h3>
-        <table class="table table-hover">
+        <h3 class="alert alert-primary text-primary">Chi tiết đơn hàng : <?=$detail_order_name['ma_donhang']?></h3>
+        <?php if(is_array($list_order_detail)){?>
+            
+            <div class="mb-2  w-25">
+                <ul class="list-group ">
+                    <li class="list-group-item">Khách hàng:  <span class="float-right text-danger fw-semibold"> <?=$list_order_detail[0]['order_name']?></span></li>
+                    <li class="list-group-item">Địa chỉ:     <span class="float-right text-danger fw-semibold"><?=$list_order_detail[0]['address']?></span></li>
+                    <li class="list-group-item">Số điện thoại: <span class="float-right text-danger fw-semibold"><?=$list_order_detail[0]['phone']?></span></li>
+                    <li class="list-group-item">Email: <span class="float-right text-danger fw-semibold"><?=$list_order_detail[0]['email']?></span></li>
+                    <li class="list-group-item">Ngày mua: <span class="float-right text-danger fw-semibold"><?=$list_order_detail[0]['create_at']?></span></li>
+                    <!-- <li class="list-group-item">Tổng giá: <span class="float-right text-danger fw-semibold"><?=number_format($tong)?> VNĐ</span></li> -->
+                </ul>
+            </div>
+        <?php }?>
+        <table class="table table-hover text-center align-items-center">
             <thead  class="table-secondary" >
                 <tr>
-                    <th></th>
+             
                     <th>Sản phẩm</th>
+                    <th>Mã SP</th>
                     <th>Ảnh</th>
                     <th>Số lượng</th>
                     <th>Đơn giá</th>
@@ -23,12 +37,14 @@
                     ?>
 
                     <tr>
-                        <td></td>
+                  
                         <td><?= $ten_sanpham?></td>
+                        <td><?= $id_product?></td>
                         <td> <img src="<?=$img ?>" class="img-thumbnail" width="60px" alt="..."> </td>                      
                         <td><?= $soluong?></td>
                         <td><?= number_format($dongia)?></td>
                         <td><?=$total =  number_format($soluong * $dongia)?></td>
+                        <td></td>
                     </tr>
                     <?php endforeach  ?>
                 
