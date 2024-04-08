@@ -73,13 +73,15 @@
     <div class="col-md-4">
       <?php }else {?>
         <h5 class="text-danger">Giỏ hàng trống. Vui lòng chọn thêm sản phẩm!</h5>
-        <a href="index.php"><button class="btn btn-primary btn-block mt-3">Tiếp tục mua hàng</button></a>
+        <a href="index.php"><button class="btn btn-primary btn-block my-5">Tiếp tục mua hàng</button></a>
       <?php }?>
     </div>
   </div>
 
 
-
+  <?php 
+    if(!empty($_SESSION['giohang'])){
+  ?>
       <!-- Thông tin đặt hàng -->
   <div style="width: 28%; float: right; margin-top: 30px">
     <form action="index.php?act=thanhtoan" method="post">
@@ -131,7 +133,9 @@
   </div>
 </div>
 
-<?php }else{
+<?php 
+    }
+}else{
     header('location: ?act=form_login');
 } ?>
 

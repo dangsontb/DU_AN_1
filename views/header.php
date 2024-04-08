@@ -130,6 +130,9 @@ $count = countcart();
 
 
 </style>
+<?php
+    if (  !isset($_GET['act']) || (isset($_GET['act']))&&($_GET['act']!="viewcart")  ) {
+?>
             <!-- ========================================================== SLIDESHOW========================================================= -->
             <div>
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -154,4 +157,5 @@ $count = countcart();
                     </button>
                 </div>
             </div>
+<?php }?>
         </header>
