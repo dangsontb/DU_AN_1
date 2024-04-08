@@ -17,6 +17,7 @@
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
     include "controller/ControllerHome/FilterControl.php";
+    include "controller/ControllerHome/CartControl.php";
 
 
     if (!isset($_SESSION['giohang']))
@@ -196,7 +197,15 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-             
+            
+            case "plus":
+                plus_quantity();
+                break;
+              
+            case "minus":
+                minus_quantity();
+                break;
+              
             case 'thanhtoan':
                 if ((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])) {
                     // Lấy dữ liệu

@@ -32,22 +32,30 @@
         <tbody>
           <?php 
             foreach ($_SESSION['giohang'] as $item) {
+              // var_dump($item);
               $thanhtien=$item['3'] * $item['4'];
               $tong+=$thanhtien;
               $tongsp+=$item['4'];
-            echo '<tr>
-                    <td>'.($i+1).'</id>
-                    <td>'.$item['1'].'</id>
-                    <td> <img src="./uploads/'.$item['2'].'" width="60" alt=""></id>
-                    <td>'.number_format($item['3']).'</id>
-                    <td>'.$item['4'].'</id>
-                    <td>'.number_format($thanhtien).'</id>
+              $i++;
+          ?>
+             <tr class="text-center">
+                    <td><?= ($i)?></id>
+                    <td><?= $item['1'] ?></id>
+                    <td> <img src="./uploads/<?= $item['2']?>" width="60" alt=""></id>
+                    <td><?= number_format($item['3'])?> </id>
                     <td>
-                      <a href="index.php?act=delete_cart&i='.$i.'"><i class="fas fa-trash fa-sm" style="color: #b80000;"></i></a>
+                      <a href="?act=plus&id=<?=$item[0] ?>&i=<?=$i -1 ?>"><i class="fas fa-plus"></i></a>
+                      <?= $item['4'] ?>
+                      <a href="?act=minus&id=<?=$item[0] ?>&i=<?=$i -1 ?>"><i class="fas fa-minus"></i></a>
+                    </id>
+                    <td><?=number_format($thanhtien) ?></id>
+                    <td>
+                      <a href="index.php?act=delete_cart&i=<?=$i -1 ?>"><i class="fas fa-trash fa-sm" style="color: #b80000;"></i></a>
                     </td>
-                  </tr>';
-            $i++;
-          } ?>
+                  </tr>
+                  
+          
+          <?php } ?>
         </tbody>
       </table>
       <a href="index.php"><button class="btn btn-primary btn-block mt-3">Tiếp tục mua hàng</button></a>
@@ -127,8 +135,13 @@
     header('location: ?act=form_login');
 } ?>
 
-
-<style>
+<!-- <td class="w-25">
+  <div class="input-group mx-5 " style="width : 50%">
+    <button class="btn btn-outline-secondary minusBtn" type="button" onclick="minusBtn(this)">-</button>
+    <input type="text"  class="form-control quantityInput" value="'.$item['4'].'">
+    <button class="btn btn-outline-secondary plusBtn" type="button"  onclick="plusBtn(this)">+</button>
+  </div> -->
+  <style>
      /* Style for the card containing the "Thông tin đặt hàng" section */
      table{
         width: 100%;
