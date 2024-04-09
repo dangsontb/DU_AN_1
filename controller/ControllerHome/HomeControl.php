@@ -106,3 +106,56 @@ function signup(){
     }
     include "views/signup.php";
 }
+function change_password(){
+    echo "<pre>";
+    print_r($_SESSION['user']);
+    if(isset($_SESSION['user'])){
+        $user_id = $_SESSION['user']['user_id'];
+        $user_name  = $_SESSION['user']['user_name'];
+        $fullname = $_SESSION['user']['fullname'];
+        $email  = $_SESSION['user']['email'];
+        $phone = $_SESSION['user']['phone'];
+        $address = $_SESSION['user']['address'];
+        $phone = $_SESSION['user']['phone'];
+        $role = $_SESSION['user']['role'];
+        $create_at = $_SESSION['user']['create_at'];
+        $password = $_SESSION['user']['password'];
+    }
+    if(isset($_POST['confirm_change'])){
+        $password = $_POST['password'];
+        $new_password = $_POST['new_password'];
+        $confirm_new_password = $_POST['confirm_new_password'];
+        $error = [];
+
+        if(empty($password)){
+            echo 'aaa';
+            $error['password'] = "Nhập mật khẩu";
+        }else if($password !== $_SESSION['user']['password']){
+            echo 'bbbbb';
+            $error['password'] = "Mật khẩu không chính xác";
+        }
+        if(empty($new_password)){
+            echo 'cccc';
+            $error['new_password'] = "Nhập  mật khẩu mới";
+        }elseif(strlen($new_password) < 8){
+            echo 'd';
+            $error['new_password'] = "Mật khẩu lớn hơn 8 ký tự";
+        }
+
+        if(empty($confirm_new_password)){
+            echo 'ee';
+            $error['confirm_new_password'] = "Nhập mật khẩu";
+        }elseif($new_password !== $confirm_new_password){
+            echo 'ffff';
+            $error['confirm_new_password'] = "Mật khẩu không trùng khớp";
+        }
+        
+        if(empty($error)){
+            user_update($user_id, $user_name, $confirm_new_password, $fullname, $email, $phone, $address, $role, $create_at );
+            $_SESSION['user'] = user_select_by_id($user_id);
+            header("location: index.php");
+        }
+        
+    }
+    include 'views/change_password.php';
+}

@@ -5,11 +5,15 @@
     include "../model/product.php";
     include "../model/user.php";
     include '../model/image_product.php';
-
+    include '../model/comment.php';
+    include "../model/order_detail.php";
+    include "../model/order.php";
     include '../controller/ControllerAdmin/ProductControl.php';
     include '../controller/ControllerAdmin/UserControl.php';
     include '../controller/ControllerAdmin/BrandControl.php';
     include '../controller/ControllerAdmin/CateControl.php';
+    include '../controller/ControllerAdmin/CommentControl.php';
+    include '../controller/ControllerAdmin/OderControl.php';
 
 
     include "header.php";
@@ -118,9 +122,38 @@
             case 'update_user';
                 update_user();
                 break;
-            default : include "home.php";
+
+              //-----------------------------------Comment-----------------------------
+
+            case 'list_comment':
+            // $list_comment = comments_select_by_product_admin();
+            // include 'comment/list_comment.php';
+            list_comment();
+            break;
+            case 'comment_detail':
+                select_comment_by_id();
+                break;
+            case 'delete_comment':
+                delete_comment();
+                break;
+            case 'delete_comment_by_checkbox':
+                delete_comment_by_checkbox();
+                break;
+
+            // ---------------------------------------Order------------------------------------    
+            case 'list_bill':
+                list_order();
+                break;
+            case 'order_detail':
+                order_detail();
+               
+                break;
+            default : 
+                include "home.php";
+                break;
+
         }
     }else{
         include "home.php";
     }
-?>
+?> 

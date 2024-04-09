@@ -28,25 +28,25 @@
                 <div class="boxright">
 
                   <!-- =================================== LỰA CHỌN ===================================== -->
-                    <div class="luachon">
+                    <!-- <div class="luachon">
                         <select class="form-select  align-self-end" aria-label="Default select example">  
                             <a href=""><option selected>Lựa chọn</option></a>
                             <a href=""></a><option value="1">Mới nhất</option></a>
                             <a href=""></a><option value="2">Giá cao</option></a>
                             <a href=""></a><option value="3">Giá thấp</option></a>
                         </select>
-                    </div>
+                    </div> -->
 
 
                     <!-- ====================================== SẢN PHẨM ======================================= -->
                     <div class="row row-cols-1 row-cols-md-3 g-4 sanpham">
 
                         <?php
-                          foreach ( $list_product as $sp) {
+                          foreach ( $list_product_brand as $sp) {
                             extract($sp);
                             $link_product="index.php?act=sanphamct&idsp".$product_id;
                             $hinh = $path_img.$image;
-                            $price_sale =(( $price *  $sale )/100);
+                            $price_sale =($price -( $price *  $sale )/100);
                             echo '<div class="col name">
                                       <a href="'.$link_product.'">
                                         <div class="card h-100 item">
@@ -63,7 +63,7 @@
                                                 <input type="hidden" name="tensp" value="'.$name.'">
                                                 <input type="hidden" name="gia" value="'.$price_sale.'">
                                                 <input type="hidden" name="hinh" value="'.$image.'">
-                                                <input type="submit" class="muahang" name="addtocart" value="Đặt hàng">
+                                                <button type="submit" class=" muahang" name="addtocart" style="background-color: white; border:none"><i class="fas fa-cart-plus fa-lg"></i></button>
                                             </form>
                                           </div>
                                         </div>
@@ -75,19 +75,39 @@
 
                     <!-- ============================================ CHUYỂN TRANG ============================================== -->
                     <div aria-label="Page navigation example" class="chuyentrang">
-                        <ul class="pagination justify-content-center" >
+                      <ul class="pagination justify-content-center" >
                           <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
+                          <?php 
+                         
+                            if(isset($page) && $page > 1){
+                                $prev_page = $page - 1;
+                          ?>
+                            <a class="page-link " href="?act=sanpham_brand&idbrand=<?=$brand_id?>&page=<?= $prev_page ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
                             </a>
+                          <?php }?>
                           </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <?php 
+                         
+                            for ($i=1; $i <= $total_pages ; $i++) {
+
+                              $page = isset($page) && !empty($page) ? $page : 1;
+                          ?>
+                          <li class="page-item "><a class="page-link <?= $page == $i ? 'active' : ''  ?>" 
+                            href="?act=sanpham_brand&idbrand=<?=$brand_id?>&page=<?=$i?>"><?=$i?></a></li>
+                          <?php } ?>
+
                           <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
+                            <?php 
+                              if(isset($page)  && isset($total_pages) && $total_pages > $page  ){
+                                if($page <  $total_pages){
+                                    $next_page = $page + 1;
+                                }                  
+                            ?> 
+                              <a class="page-link" href="?act=sanpham_brand&idbrand=<?=$brand_id?>&page=<?= $next_page ?>" aria-label="Next">
                               <span aria-hidden="true">&raquo;</span>
-                            </a>
+                              </a>
+                            <?php }?>
                           </li>
                         </ul>
                     </div>

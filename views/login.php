@@ -14,7 +14,7 @@
                     <input name="password" type="password" class="form-control" id="password" placeholder="Nhập mật khẩu" value="<?= !empty($_POST['cate_name']) ? $_POST['cate_name'] : false ?>" >
                 </div>
                 
-                <input type="submit" name="btn_login" class="form-control btn btn-success mb-3"  value="Đăng nhập">
+                <input type="submit" name="btn_login" class="form-control btn bg-primary mb-3 text-white fw-semibold"  value="Đăng nhập">
                 
             
             <p class="text-center">Bạn chưa có tài khoản ? <a href="index.php?act=register" class="btn-link-style btn-register" style="text-decoration: underline; ">Đăng ký tại đây</a></p>

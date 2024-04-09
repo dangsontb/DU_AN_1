@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-    
-</body>
-</html>
+
 <?php
     session_start();
 
@@ -21,11 +10,14 @@
     include "model/brand.php";
     include "model/user.php";
     include "model/size.php";
-    //include "model/cart.php";
+    include "model/order_detail.php";
+    include "model/order.php";
     include "model/comment.php";
     include "global.php";
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
+    include "controller/ControllerHome/FilterControl.php";
+
 
     if (!isset($_SESSION['giohang']))
     $_SESSION['giohang'] = [];
@@ -49,38 +41,71 @@
             case 'sanpham':
                 if(isset($_GET['idcate'])&&($_GET['idcate']>0)){
                     $cate_id=$_GET['idcate'];
-                    $list_product=loadall_sanpham_cate("",$cate_id);
+                    if(!isset($_GET['page']) || !is_numeric($_GET['page']) || $_GET['page'] <= 1 ){
+                        $page = 1;
+                    }else{
+                        $page = $_GET['page'];
+                    }
+                    $quantity = 9;
+                    $total_product_category=loadall_sanpham_cate("",$cate_id);
+                    $list_product=product_select_page_category($cate_id ,$page, $quantity);
+                    $total_pages = ceil(count($total_product_category) / $quantity);
                     include "views/sanpham_dm.php";
-                }else{
-                    include "views/home.php";
                 }
                 break;
 
             case 'sanpham_brand':
                 if(isset($_GET['idbrand'])&&($_GET['idbrand']>0)){
                     $brand_id=$_GET['idbrand'];
-                    $list_product=loadall_sanpham_brand("",$brand_id);
-                    
+                    if(!isset($_GET['page']) || !is_numeric($_GET['page']) || $_GET['page'] <= 1 ){
+                        $page = 1;
+                    }else{
+                        $page = $_GET['page'];
+                    }
+                    $quantity = 3;
+                    $total_product_brand=loadall_sanpham_brand("",$brand_id);
+                    $list_product_brand=product_select_page_brand($brand_id ,$page, $quantity);
+                    $total_pages = ceil(count($total_product_brand) / $quantity);
                     include "views/sanpham_brand.php";
-                }else{
-                    include "views/home.php";
                 }
                 break;
             case 'keyword':
                 if(isset($_POST['submit'])){
                     $keyw = $_POST['keyw'];
-                    $product = product_select_keyw($keyw);
                 }
+                if(!isset($_GET['page']) || !is_numeric($_GET['page']) || $_GET['page'] <= 1 ){
+                    $page = 1;
+                }else{
+                    $page = $_GET['page'];
+                }
+                isset($_GET['keyword']) ? $keyw = $_GET['keyword'] : '';
+                $quantity = 9;
+                $total_product_keyword=product_select_keyw($keyw);
+                $list_product=product_select_page_keyword($keyw ,$page, $quantity);
+                $total_pages = ceil(count($total_product_keyword) / $quantity);
                 include "views/search.php";
                 break;
             case 'product_detail':
                 product_detail();
-                
                 break;
             case 'comment':
                 comment_insert();
                 break;
-                
+            
+            // ----------------------------------filter---------------------------------
+
+            case 'productOld':
+               
+                productOld();
+              
+                break;
+            case 'priceAsc':
+                product_price_asc();
+                break;
+
+            case "priceDesc":
+                product_price_desc();
+                break;
             // -------------------------- User ------------------------------------------------------
             case 'form_login':
            

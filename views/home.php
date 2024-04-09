@@ -29,17 +29,7 @@
                 <div class="boxright">
 
                   <!-- =================================== LỰA CHỌN ===================================== -->
-                    <div class="luachon">
-                     
-                        <select class="form-select  align-self-end select-filter" id="select-filter" aria-label="Default select example"
-                         onchange="changeFilter()">
-                            <option value="0">---Lọc theo---</option>
-                            <option value="?product=new">Sản phẩm cũ</option>
-                            <option value="?price=asc">Giá tăng dần</option>
-                            <option value="?price=new">Giá giảm dần</option>
-                        </select>
-                    </div>
-
+                    <?php include "chon.php"?>
                     <!-- ====================================== SẢN PHẨM ======================================= -->
                     <div class="row row-cols-1 row-cols-md-3 g-4 sanpham">
 
@@ -66,7 +56,7 @@
                                                 <input type="hidden" name="tensp" value="'.$name.'">
                                                 <input type="hidden" name="gia" value="'.$sale_price.'">
                                                 <input type="hidden" name="hinh" value="'.$image.'">
-                                                <button type="submit" class=" muahang" name="addtocart"><i class="fas fa-cart-plus fa-lg"></i></button>
+                                                <button type="submit" class=" muahang" name="addtocart" style="background-color: white; border:none"><i class="fas fa-cart-plus fa-lg"></i></button>
                                             </form>
                                           </div>
                                         </div>
@@ -74,10 +64,17 @@
                                     </div>';
                           }
                         ?>
+                       
                     </div>
                     <!-- ============================================ CHUYỂN TRANG ============================================== -->
 
-                   
+                   <style>
+                      p{
+                        background-color: white;
+                        border: none;
+                      }
+                   </style>
+
                     <div aria-label="Page navigation example" class="chuyentrang">
                       <ul class="pagination justify-content-center" >
                         <li class="page-item">

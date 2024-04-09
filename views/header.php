@@ -1,9 +1,13 @@
+<?php
+$count = countcart();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shoes Fashion</title>
     <link rel="stylesheet" href="./views/css2/style.css">
     <link rel="stylesheet" href="views/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +43,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục</a>
                                 <ul class="dropdown-menu">
-                                    <?php 
+<?php 
                                         foreach ($list_category as $category) {
                                             extract($category);
                                             $link_category="index.php?act=sanpham&idcate=".$cate_id;
@@ -83,7 +87,7 @@
                         </ul>
                         <form action="?act=keyword" method="post" class="d-flex" role="search">
                           <input name="keyw" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" name="submit"  type="submit"><i class="fas fa-search"></i></button>
+<button class="btn btn-outline-success" name="submit"  type="submit"><i class="fas fa-search"></i></button>
                         </form>
                       </div>
                     </div>
@@ -113,14 +117,18 @@
                             </ul>
                         </li>
                         <li style="list-style: none;">
-                            <a class="nav-link " href="#" style="padding:0px 5px 0px 12px;">
-                            <i class="fas fa-cart-plus fa-lg"></i>
+                            <a class="nav-link gh" href="index.php?act=viewcart" style="padding:0px 5px 0px 12px;">
+                                <i class="fas fa-cart-plus fa-lg"></i> 
+                                <span class="item-count rounded-circle sl"><?= $count ?></span>
                             </a>
                         </li>
                     </div>
                 </nav>
             </div>
+<style>
 
+
+</style>
             <!-- ========================================================== SLIDESHOW========================================================= -->
             <div>
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
