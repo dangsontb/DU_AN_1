@@ -1,9 +1,13 @@
 <?php
-    function add_order_detail($id_donhang,$id_product,$ten_snpham,$hinhanh,$dongia,$soluong) {
-        $sql="INSERT INTO `order_detail`( `id_order`, `id_product`, `soluong`, `dongia`, `hinhanh`, `ten_sanpham`) 
-            VALUES ('$id_donhang','$id_product','$soluong','$dongia','$hinhanh','$ten_snpham')";
-        pdo_execute($sql);
+    // function add_order_detail($id_donhang,$id_product,$soluong,$dongia,$hinhanh,$ten_sanpham) {
+    //     $sql="INSERT INTO `order_detail`( `id_order`, `id_product`, `soluong`, `dongia`, `hinhanh`, `ten_sanpham`) 
+    //         VALUES ('$id_donhang','$id_product','$soluong','$dongia','$hinhanh','$ten_sanpham')";
+    //     pdo_execute($sql);
         
+    // }
+    function add_order_detail($id_donhang,$id_product,$soluong,$dongia,$hinhanh,$ten_sanpham) {
+        $sql="INSERT INTO order_detail( id_order, id_product, soluong, dongia, hinhanh, ten_sanpham)  VALUES (?,?,?,?,?,?)";
+        pdo_execute($sql,$id_donhang,$id_product,$soluong,$dongia,$hinhanh,$ten_sanpham);      
     }
     function history($user_id){
         $sql = "SELECT * 

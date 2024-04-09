@@ -218,14 +218,14 @@
                     $pttt=$_POST['pttt'];
                     $ma_donhang="SHN".rand(0,999999);
                     $status_id = 1;
-                    $date = date('d-m-Y');
+                    $date = date('Y-m-d');
                     //Tạo đơn hàng và trả về đơn hàng;
                     $id_donhang=taodonhang($ma_donhang, $tongdonhang, $pttt,$name , $phone , $address , $status_id, $user_id, $date);
             
                     if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
                         foreach ($_SESSION['giohang']  as $item) {
                                 //$id_product,$tensp,$hinh,$gia,$soluong
-                         add_order_detail($id_donhang,$item[0],$item[1],$item[2],$item[3],$item[4]);
+                         add_order_detail($id_donhang,$item[0],$item[4],$item[3],$item[2],$item[1]);
                         }
                     }
                 }

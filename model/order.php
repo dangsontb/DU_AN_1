@@ -8,10 +8,29 @@ function order_select_all(){
             ORDER BY o.id asc ";
     return pdo_query($sql);
 }
+function order_select_by_id_status($id_status){
+    $sql = "SELECT * FROM `order` o 
+            JOIN `user` u ON o.id_user = u.user_id
+            JOIN `status` s ON o.id_status = s.status_id
+            WHERE id_status = ?
+            ORDER BY o.id asc ";
+    return pdo_query($sql, $id_status);
+}
+function order_select_pages_by_id_status($id_status,$page , $quantity){
+    $start = ($page -1) * $quantity;
+    $sql = "SELECT * FROM `order` o 
+            JOIN `user` u ON o.id_user = u.user_id
+            JOIN `status` s ON o.id_status = s.status_id
+            WHERE id_status = ?
+            ORDER BY o.id asc 
+            LIMIT $start , $quantity";
+    return pdo_query($sql, $id_status);
+}
 function order_select_by_id($id){
     $sql = "SELECT * FROM `order` WHERE id = ?";
     return pdo_query_one($sql, $id);
 }
+
 function order_select_pages( $page , $quantity){
     $start = ($page -1) * $quantity;
     $sql = "SELECT * FROM `order` o 

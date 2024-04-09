@@ -132,7 +132,9 @@
                         <meta itemprop="datePublished" content="01-01-2016"><?= $comment['date'] ?>
 
                         <?php for ($i = 1; $i <= $comment['rating']; $i++) {
-                                echo '<span class="review_rating fa fa-star"></span>';
+                                if($comment['rating'] >=3){
+                                    echo '<span class="review_rating fa fa-star"></span>';
+                                }                   
                             } ?>
 
                         by <b><?= $comment['user_name'] ?></b>

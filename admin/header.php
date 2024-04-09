@@ -39,9 +39,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="index.php?act=list_bill">Đơn hàng</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link text-light" href="index.php?act=list_property">Thuộc tính</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="index.php?act=list_statistical">Thống kê</a>
                             </li>
