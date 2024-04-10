@@ -29,14 +29,7 @@
                 <div class="boxright">
 
                   <!-- =================================== LỰA CHỌN ===================================== -->
-                    <div class="luachon">
-                        <select class="form-select  align-self-end" aria-label="Default select example">
-                            <option selected>Lựa chọn</option>
-                            <option><a href="index.php?act=product_new">Mới nhất</a></option>
-                            <a href=""></a><option >Giá cao</option></a>
-                            <a href=""></a><option>Giá thấp</option></a>
-                        </select>
-                    </div>
+                    <?php include 'chon.php'?>
 
                     <!-- ====================================== SẢN PHẨM ======================================= -->
                     <div class="row row-cols-1 row-cols-md-3 g-4 sanpham">
@@ -45,7 +38,7 @@
                           foreach ($list_product as $sp) {
                             extract($sp);
                             $link_product="index.php?act=product_detail&product_id=".$product_id;
-                            $hinh = $path_img.$image;
+                            $hinh = $GLOBALS['path_img'].$image;
                             echo '<div class="col name">
                                       <a href="'.$link_product.'">
                                         <div class="card h-100 item">
