@@ -27,7 +27,7 @@ position: relative;
 .sl{
 position: absolute;
 color:red; 
-font-size:xx-small; 
+font-size:small; 
 font-weight: 900;
 padding-left: 2px;
 }

@@ -1,4 +1,4 @@
-<main class="container_">
+<main class="container">
         
         <h3 class="alert alert-primary text-primary"> Danh sách bill</h3>
         <?php include 'order/select_status.php' ?>

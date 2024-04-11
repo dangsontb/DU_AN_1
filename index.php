@@ -64,7 +64,7 @@
                     }else{
                         $page = $_GET['page'];
                     }
-                    $quantity = 3;
+                    $quantity = 9;
                     $total_product_brand=loadall_sanpham_brand("",$brand_id);
                     $list_product_brand=product_select_page_brand($brand_id ,$page, $quantity);
                     $total_pages = ceil(count($total_product_brand) / $quantity);
@@ -106,9 +106,9 @@
             case 'logout':
                 logout();
                 break;
-            // case 'register':
-            //     include "views/signup.php";
-            //     break;
+            case 'register':
+                include "views/signup.php";
+                break;
             case 'signup':
                 signup();
                 break;

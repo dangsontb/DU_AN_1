@@ -1,7 +1,7 @@
 
 
         <!-- main -->
-        <main class="container-fluid">
+        <main class="container_">
            <div >
             <h3 class="alert alert-primary text-primary"> Thêm mới người dùng</h3>
    

@@ -5,7 +5,7 @@
             }
         ?>
         <!-- main -->
-        <main class="container-fluid">
+        <main class="container_">
            <div >
             <h3 class="alert alert-primary text-primary"> Cập nhật khách hàng </h3>
    
