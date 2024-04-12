@@ -9,19 +9,23 @@
         $sql="INSERT INTO order_detail( id_order, id_product, soluong, dongia, hinhanh, ten_sanpham)  VALUES (?,?,?,?,?,?)";
         pdo_execute($sql,$id_donhang,$id_product,$soluong,$dongia,$hinhanh,$ten_sanpham);      
     }
-    function history($user_id){
-        $sql = "SELECT * 
-                FROM `order_detail`
-                JOIN `order` ON order_detail.id_order = order.id
-                JOIN `status` ON order.id_status = status.status_id
-                JOIN `user` ON order.id_user=user.user_id 
-                WHERE order.id_user=$user_id";
+
+
+    function history_order_detail($id){
+        $sql="SELECT * FROM `order_detail` WHERE id_order=$id";
         return pdo_query($sql);
-    
+
+    } 
+    function delete_history_order_detail($id){
+         $sql="DELETE FROM `order_detail` WHERE id=$id"; 
+         pdo_execute($sql);
+    }
+    function delete_order_detail_by_id_order($id_order){
+         $sql="DELETE FROM `order_detail` WHERE id_order=$id_order"; 
+         pdo_execute($sql);
     }
 
-
-
+    
     function countcart()
     {
         $i = 0;
@@ -30,6 +34,8 @@
         }
         return $i;
     }
+
+
     function order_detail_by_order_id($id_order){
         $sql = "SELECT od.*, o.*, u.email FROM order_detail od 
                 JOIN `order` o ON od.id_order = o.id

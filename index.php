@@ -23,7 +23,6 @@
     if (!isset($_SESSION['giohang']))
     $_SESSION['giohang'] = [];
 
-
     $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
@@ -198,6 +197,40 @@
                 }
                 include "views/cart/history.php";
                 break;
+            
+            case 'history_order_detail':
+                if (isset($_GET['order_id'])) {
+                    $order_id=$_GET['order_id'];
+                    $history_order_detail = order_detail_by_order_id($order_id);
+                    // echo "<pre>";
+                    // var_dump($history_order_detail);
+                }
+                include "views/cart/detail_history.php";
+                break;
+
+            case 'cancel_order':
+                if(isset($_GET['order_id']) && $_GET['order_id']> 0){
+                    $order_id = $_GET['order_id'];
+                    delete_order_detail_by_id_order($order_id);
+                    delete_order_by_id_order($order_id);
+                    header('location: index.php?act=order_history');
+                }
+                break;
+            case 'delete_order_detail':
+                if(isset($_GET['id']) &&($_GET['id']) > 0){
+                    $id = $_GET['id'] ;
+                    $order_id = $_GET['order_id'] ;
+                    delete_history_order_detail($_GET['id']);
+                    $history_order_detail = history_order_detail($order_id);
+                    if(count($history_order_detail) ==0){
+                        delete_order_by_id_order($order_id);
+                        header('location: index.php?act=order_history');
+                    }else{
+                        header('location: index.php?act=history_order_detail&order_id='.$order_id);
+                    }
+                } 
+                break;
+
 
             default:
                 include "views/home.php";
