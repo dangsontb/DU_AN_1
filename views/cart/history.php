@@ -10,7 +10,7 @@
                     <th>Đơn giá</th>
                     <th>Trạng thái</th>
                     <th>Ngày đặt</th>
-                    <th></th>
+                    <th></th><th></th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +29,8 @@
                         <td><?= $dongia?></td>
                         <td><?= $status_name?></td>
                         <td><?= $sp['16']?></td>
+                        <td></td>
+                        <td><a href="index.php?act=cancel_order&order_id="  class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận hủy đơn hàng  ')">Hủy đơn</a></td>
                     </tr>
                 <?php }?>
             </tbody>
