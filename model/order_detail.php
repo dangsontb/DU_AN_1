@@ -43,5 +43,13 @@
                 WHERE od.id_order = ?";
         return pdo_query($sql,$id_order);
     }
+    function select_product_by_order_id($order_id){
+        $sql = "SELECT od.id_product, od.soluong, od.dongia, od.hinhanh, od.ten_sanpham ,p.description, p.sale, p.create_at , p.view , p.cate_id , p.brand_id
+                            FROM order_detail od 
+                            JOIN `order` o ON od.id_order = o.id
+                            JOIN `product` p ON p.product_id = od.id_product
+                            where od.id_order = ?";
+        return pdo_query($sql,$order_id);
+    }
    
 ?>

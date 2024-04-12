@@ -209,12 +209,7 @@
                 break;
 
             case 'cancel_order':
-                if(isset($_GET['order_id']) && $_GET['order_id']> 0){
-                    $order_id = $_GET['order_id'];
-                    delete_order_detail_by_id_order($order_id);
-                    delete_order_by_id_order($order_id);
-                    header('location: index.php?act=order_history');
-                }
+                update_quantity_cancel_order();
                 break;
             case 'delete_order_detail':
                 if(isset($_GET['id']) &&($_GET['id']) > 0){

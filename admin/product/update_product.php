@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-4">
                     <label  class="form-label fw-bolder" >Số lượng</label>
-                    <input type="number" class="form-control" name='quantity' value="<?=$product_by_id['sale']?>"  >
+                    <input type="number" class="form-control" name='quantity' value="<?=$product_by_id['product_quantity']?>"  >
                     <p class="text-danger"> <?= isset($error['quantity_update'])? $error['quantity_update'] :'' ?></p>
                 </div>
                 <div class="col-4">

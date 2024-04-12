@@ -75,4 +75,24 @@ function find_keyword(){
     $total_pages = ceil(count($total_product_keyword) / $quantity);
     include "views/search.php";
 }
-
+function update_quantity_cancel_order(){
+    if(isset($_GET['order_id']) && $_GET['order_id']> 0){
+        $order_id = $_GET['order_id'];
+        $product_in_order_detail = select_product_by_order_id($order_id);    
+        foreach($product_in_order_detail as $product){
+            // echo "<pre>";
+            // var_dump($product);
+            $product_quantity_in_stock = product_select_by_id($product['id_product'])['product_quantity'];
+            $product_price_in_stock = product_select_by_id($product['id_product'])['price'];
+            var_dump($product_quantity_in_stock) ; 
+            $product_update_cancel = $product_quantity_in_stock + $product['soluong'];
+            echo $product_update_cancel;
+            product_update($product['id_product'],$product['ten_sanpham'],$product_price_in_stock,$product['hinhanh'],$product['description'],$product['sale'],$product_update_cancel,$product['create_at'],$product['view'],$product['cate_id'],$product['brand_id']);
+            // product_update($product_id, $name, $price, $image, $description, $sale,$product_quantity, $create_at, $view, $cate_id, $brand_id);
+        }
+        delete_order_detail_by_id_order($order_id);
+        delete_order_by_id_order($order_id);
+      
+        header('location: index.php?act=order_history');
+    }
+}
