@@ -17,10 +17,7 @@
                 JOIN `user` ON order.id_user=user.user_id 
                 WHERE order.id_user=$user_id";
         return pdo_query($sql);
-    
     }
-
-
 
     function countcart()
     {
@@ -30,6 +27,8 @@
         }
         return $i;
     }
+
+
     function order_detail_by_order_id($id_order){
         $sql = "SELECT od.*, o.*, u.email FROM order_detail od 
                 JOIN `order` o ON od.id_order = o.id
