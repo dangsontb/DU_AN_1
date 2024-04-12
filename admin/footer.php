@@ -24,6 +24,13 @@
         }else{
         alert('Hãy lọc sản phẩm');
         }
+    }
+    function commentFilter(){
+        var value = document.querySelector('#select-filter').value;
+        if(value!= 0){
+            var url = "http://localhost/du_an_1/admin/index.php?act=comment_detail&product_id=".value;
+            window.location.href = url;
         }
+    }
 
 </script>
