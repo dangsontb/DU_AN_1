@@ -9,15 +9,18 @@
         $sql="INSERT INTO order_detail( id_order, id_product, soluong, dongia, hinhanh, ten_sanpham)  VALUES (?,?,?,?,?,?)";
         pdo_execute($sql,$id_donhang,$id_product,$soluong,$dongia,$hinhanh,$ten_sanpham);      
     }
-    function history($user_id){
-        $sql = "SELECT * 
-                FROM `order_detail`
-                JOIN `order` ON order_detail.id_order = order.id
-                JOIN `status` ON order.id_status = status.status_id
-                JOIN `user` ON order.id_user=user.user_id 
-                WHERE order.id_user=$user_id";
+
+
+    function history_order_detail($id){
+        $sql="SELECT * FROM `order_detail` WHERE id_order=$id";
         return pdo_query($sql);
+
+    } 
+    function delete_history_order_detail($id){
+         $sql="DELETE FROM `order_detail` WHERE id=$id"; 
+         pdo_execute($sql);
     }
+
 
     function countcart()
     {

@@ -23,7 +23,6 @@
     if (!isset($_SESSION['giohang']))
     $_SESSION['giohang'] = [];
 
-
     $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
@@ -198,6 +197,26 @@
                 }
                 include "views/cart/history.php";
                 break;
+            
+            case 'history_order_detail':
+                if (isset($_GET['order_id'])) {
+                    $order_id=$_GET['order_id'];
+                    $history_order_detail = history_order_detail($order_id);
+                }
+                include "views/cart/detail_history.php";
+                break;
+
+
+            // case 'delete_history':
+            //     if(isset($_GET['id']) &&($_GET['id']) > 0){
+            //         $id = $_GET['id'] ;
+            //         delete_history_order_detail($_GET['id']);
+                    
+            //     } 
+            //     header('location: index.php?act=history_order_detail');
+            //     $list_history=history_order_detail();
+            //     break;
+
 
             default:
                 include "views/home.php";

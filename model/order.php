@@ -57,3 +57,13 @@ function update_order($id, $ma_donhang, $tong_donhang, $phuongthuc_thanhtoan, $o
     pdo_execute($sql);
 }
 
+function history($user_id){
+        $sql = "SELECT * 
+                FROM `order`
+                JOIN `status` ON order.id_status = status.status_id
+                JOIN `user` ON order.id_user=user.user_id 
+                WHERE order.id_user=$user_id";
+        return pdo_query($sql);
+    }
+
+
