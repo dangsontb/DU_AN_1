@@ -1,5 +1,5 @@
 
-<h4 class="text-center" style="padding: 60px 0px ;">Chi tiết lịch sử đơn hàng</h4>
+<h4 class="text-center" style="padding: 60px 0px ;">Chi tiết đơn hàng</h4>
   <div class="container">
 <table class="table table-hover text-center align-items-center">
             <thead  class="table-secondary" >
