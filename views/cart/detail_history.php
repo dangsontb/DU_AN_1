@@ -11,7 +11,7 @@
                     <th>Đơn giá</th>
                     <th>Số tiền</th>
                     <th></th>
-                    <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -30,11 +30,11 @@
                         <td><?= number_format($dongia)?></td>
                         <td><?=$total =  number_format($soluong * $dongia)?></td>
                         <td></td>
-                        <td>
+                        <!-- <td>
                             <?= $id_status == 1 ?
                             '<a href="index.php?act=delete_order_detail&order_id=' . $id_order . '&id=' . $sp[0] . '" onclick="return confirm(\'Bạn có muốn xóa ' . $ten_sanpham . ' khỏi đơn hàng ?\')">
                             <i class="fas fa-trash fa-sm" style="color: #b80000;"></i></a>' : '' ?>
-                        </td>
+                        </td> -->
                     </tr>
                     <?php } ?>
             </tbody>     
