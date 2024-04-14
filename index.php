@@ -111,6 +111,9 @@
             case 'signup':
                 signup();
                 break;
+
+
+
             case 'change_password':
                 change_password();
                 break;
@@ -150,83 +153,7 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-            
-            case "plus":
-                plus_quantity();
-                break;
-              
-            case "minus":
-                minus_quantity();
-                break;
-              
-            case 'thanhtoan':
-                if ((isset($_POST['thanhtoan']))&&($_POST['thanhtoan'])) {
-                    // Lấy dữ liệu
-                    $user_id = $_POST['user_id'];
-                    $tongdonhang=$_POST['tongdonhang'];
-                    $name=$_POST['name'];
-                    $address=$_POST['address'];
-                    $email=$_POST['email'];
-                    $phone=$_POST['phone'];
-                    $pttt=$_POST['pttt'];
-                    $ma_donhang="SHN".rand(0,999999);
-                    $status_id = 1;
-                    $date = date('Y-m-d');
-                    //Tạo đơn hàng và trả về đơn hàng;
-                    $id_donhang=taodonhang($ma_donhang, $tongdonhang, $pttt,$name , $phone , $address , $status_id, $user_id, $date);
-            
-                    if(isset($_SESSION['giohang'])&&(count($_SESSION['giohang'])>0)){
-                        foreach ($_SESSION['giohang']  as $item) {
-                                //$id_product,$tensp,$hinh,$gia,$soluong
-                            $product_by_id = product_select_by_id($item[0]);
-                            $product_quantity = $product_by_id['product_quantity'] - $item[4];
-                            product_update($product_by_id['product_id'],$product_by_id['name'],$product_by_id['price'],$product_by_id['image'],$product_by_id['description'],$product_by_id['sale'],$product_quantity,$product_by_id['create_at'],$product_by_id['view'],$product_by_id['cate_id'],$product_by_id['brand_id']);
-                            
-                            add_order_detail($id_donhang,$item[0],$item[4],$item[3],$item[2],$item[1]);
-                          
-                        }
-                    }
-                }
-                include "views/cart/viewbill.php";
-                break;
-            
-            case 'order_history':
-                if (isset($_SESSION['user'])){
-                    $id=$_SESSION['user']['user_id'];
-                    $order_history =history($id);
-                }
-                include "views/cart/history.php";
-                break;
-            
-            case 'history_order_detail':
-                if (isset($_GET['order_id'])) {
-                    $order_id=$_GET['order_id'];
-                    $history_order_detail = order_detail_by_order_id($order_id);
-                    // echo "<pre>";
-                    // var_dump($history_order_detail);
-                }
-                include "views/cart/detail_history.php";
-                break;
-
-            case 'cancel_order':
-                update_quantity_cancel_order();
-                break;
-            case 'delete_order_detail':
-                if(isset($_GET['id']) &&($_GET['id']) > 0){
-                    $id = $_GET['id'] ;
-                    $order_id = $_GET['order_id'] ;
-                    delete_history_order_detail($_GET['id']);
-                    $history_order_detail = history_order_detail($order_id);
-                    if(count($history_order_detail) ==0){
-                        delete_order_by_id_order($order_id);
-                        header('location: index.php?act=order_history');
-                    }else{
-                        header('location: index.php?act=history_order_detail&order_id='.$order_id);
-                    }
-                } 
-                break;
-
-
+    
             default:
                 include "views/home.php";
                 break;
