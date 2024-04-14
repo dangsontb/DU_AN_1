@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container"> 
-        <header class="mt-5">
+        <header class="mt-1">
             <h1 class="alert alert-primary "><a class="nav-link text-primary" href="#">Website Admin</a></h1>
             <nav class="navbar navbar-expand-lg bg-dark  rounded-2 " >
                 <div class="container-fluid ">       
@@ -39,9 +39,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="index.php?act=list_bill">Đơn hàng</a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link text-light" href="index.php?act=list_property">Thuộc tính</a>
-                            </li>
+                            </li> -->
                             <li class="nav-item">
                                 <a class="nav-link text-light" href="index.php?act=list_statistical">Thống kê</a>
                             </li>

@@ -35,6 +35,11 @@
                     <p class="text-danger"> <?= isset($error['sale'])? $error['sale'] :'' ?></p>
                 </div>
                 <div class="col-4">
+                    <label  class="form-label fw-bolder" >Số lượng</label>
+                    <input type="number" class="form-control" name='quantity' value="<?= !empty($_POST['quantity']) ? $_POST['quantity'] : false ?>" >
+                    <p class="text-danger"> <?= isset($error['quantity'])? $error['quantity'] :'' ?></p>
+                </div>
+                <div class="col-4">
                     <label  class="form-label fw-bolder" >Ngày nhập</label>
                     <input type="date" value="" class="form-control" name='create_at' value="<?= !empty($_POST['create_at']) ? $_POST['create_at'] : false ?>">
                     <p class="text-danger"> <?= isset($error['create_at'])? $error['create_at'] :'' ?></p>

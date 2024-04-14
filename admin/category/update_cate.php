@@ -20,7 +20,7 @@
                     <label  class="form-label fw-bolder" >Tên danh mục</label>
                     
                     <input type="text" class="form-control" value="<?= $show_one_cate['cate_name'] ?>" name='cate_name'>
-                    <p class="text-danger"> <?= isset($bcate_name_error)? $cate_name_error :'' ?></p>
+                    <p class="text-danger"> <?= isset($cate_name_error)? $cate_name_error :'' ?></p>
 
 
                     <div class="invalid-feedback">

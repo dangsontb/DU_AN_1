@@ -11,7 +11,7 @@ function list_cate(){
     $list_category = category_select_page($page , $quantity);
     $total_pages = category_number_pages($cate_select_all,$quantity);
     include "category/list_cate.php";
-    echo $total_pages;
+    // echo $total_pages;
 }
 function delete_cate(){
     if(isset($_GET['id']) &&  ($_GET['id']) > 0){

@@ -43,7 +43,7 @@ $count = countcart();
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle fs-6 text-body-emphasis" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Danh mục</a>
                                 <ul class="dropdown-menu">
-<?php 
+                                    <?php 
                                         foreach ($list_category as $category) {
                                             extract($category);
                                             $link_category="index.php?act=sanpham&idcate=".$cate_id;
@@ -111,7 +111,7 @@ $count = countcart();
                                     
                                     <?php }else{?>
                                         <li><a class="dropdown-item" href="index.php?act=form_login">Đăng nhập</a></li>
-                                        <li><a class="dropdown-item" href="index.php?act=register">Đăng kí</a></li>
+                                        <li><a class="dropdown-item" href="index.php?act=signup">Đăng kí</a></li>
                                         <li><a class="dropdown-item" href="index.php?act=forgot_password">Quên mật khẩu</a></li>
                                 
                                     <?php } ?>

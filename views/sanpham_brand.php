@@ -44,7 +44,7 @@
                         <?php
                           foreach ( $list_product_brand as $sp) {
                             extract($sp);
-                            $link_product="index.php?act=sanphamct&idsp".$product_id;
+                            $link_product="index.php?act=product_detail&product_id=".$product_id;
                             $hinh = $path_img.$image;
                             $price_sale =($price -( $price *  $sale )/100);
                             echo '<div class="col name">

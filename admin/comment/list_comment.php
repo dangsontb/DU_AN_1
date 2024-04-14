@@ -22,7 +22,6 @@
                     <td><?= $comment['earliest_comment_date'] ?></td>
                     <td><?= $comment['lastest_comment_date'] ?></td>
            
-                    
                     <td>
                         <a href="?act=comment_detail&product_id=<?= $comment['product_id'] ?>" class="btn btn-primary fw-medium">Chi tiết  <i class="fas fa-info-circle"></i></a> 
                     </td>

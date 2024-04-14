@@ -32,11 +32,11 @@ function product_select_price_desc(){
             order by price_sale desc";
     return pdo_query($sql);
 }
-  
 
-function product_insert($name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id){
-    $sql = "INSERT INTO product(name, price, image, description, sale, create_at, view, cate_id, brand_id) VALUES (?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
+
+function product_insert($name, $price, $image, $description, $sale,$product_quantity, $create_at, $view, $cate_id, $brand_id){
+    $sql = "INSERT INTO product(name, price, image, description, sale,product_quantity, create_at, view, cate_id, brand_id) VALUES (?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql,$name, $price, $image, $description, $sale,$product_quantity, $create_at, $view, $cate_id, $brand_id);
 }
 
 function product_select_name($name){
@@ -50,13 +50,13 @@ function product_select_by_id($product_id){
 }
 
 
-function product_update($product_id, $name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id){
+function product_update($product_id, $name, $price, $image, $description, $sale,$product_quantity, $create_at, $view, $cate_id, $brand_id){
     if($image != ''){
-        $sql = "UPDATE product SET name=?,price=?,image=?,description=?,sale=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
-        pdo_execute($sql,$name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id, $product_id);
+        $sql = "UPDATE product SET name=?,price=?,image=?,description=?,sale=?,product_quantity=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
+        pdo_execute($sql,$name, $price, $image, $description, $sale,$product_quantity, $create_at, $view, $cate_id, $brand_id, $product_id);
     }else{
-        $sql = "UPDATE product SET name=?,price=?,description=?,sale=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
-        pdo_execute($sql,$name, $price,  $description, $sale, $create_at, $view, $cate_id, $brand_id, $product_id);
+        $sql = "UPDATE product SET name=?,price=?,description=?,sale=?,product_quantity=?,create_at=?,view=?,cate_id=?,brand_id=? WHERE product_id =?";
+        pdo_execute($sql,$name, $price,  $description, $sale,$product_quantity, $create_at, $view, $cate_id, $brand_id, $product_id);
     }
 }
  function product_delele_by_id($product_id){

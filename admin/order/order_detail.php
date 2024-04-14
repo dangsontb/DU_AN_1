@@ -1,10 +1,11 @@
-<main class="container_">
+<main class="container">
         
-        <h3 class="alert alert-primary text-primary">Chi tiết đơn hàng : <?=$detail_order_name['ma_donhang']?></h3>
+        <!-- <h3 class="alert alert-primary text-primary">Chi tiết đơn hàng : </h3> -->
         <?php if(is_array($list_order_detail)){?>
             
             <div class="mb-2  w-25">
                 <ul class="list-group ">
+                    <li class="list-group-item">Đơn hàng:  <span class="float-right text-danger fw-semibold"> <?=$detail_order_name['ma_donhang']?></span></li>
                     <li class="list-group-item">Khách hàng:  <span class="float-right text-danger fw-semibold"> <?=$list_order_detail[0]['order_name']?></span></li>
                     <li class="list-group-item">Địa chỉ:     <span class="float-right text-danger fw-semibold"><?=$list_order_detail[0]['address']?></span></li>
                     <li class="list-group-item">Số điện thoại: <span class="float-right text-danger fw-semibold"><?=$list_order_detail[0]['phone']?></span></li>

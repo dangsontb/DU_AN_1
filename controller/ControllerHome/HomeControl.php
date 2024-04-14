@@ -128,25 +128,25 @@ function change_password(){
         $error = [];
 
         if(empty($password)){
-            echo 'aaa';
+     
             $error['password'] = "Nhập mật khẩu";
         }else if($password !== $_SESSION['user']['password']){
-            echo 'bbbbb';
+          
             $error['password'] = "Mật khẩu không chính xác";
         }
         if(empty($new_password)){
-            echo 'cccc';
+         
             $error['new_password'] = "Nhập  mật khẩu mới";
         }elseif(strlen($new_password) < 8){
-            echo 'd';
+         
             $error['new_password'] = "Mật khẩu lớn hơn 8 ký tự";
         }
 
         if(empty($confirm_new_password)){
-            echo 'ee';
+       
             $error['confirm_new_password'] = "Nhập mật khẩu";
         }elseif($new_password !== $confirm_new_password){
-            echo 'ffff';
+        
             $error['confirm_new_password'] = "Mật khẩu không trùng khớp";
         }
         
@@ -158,4 +158,23 @@ function change_password(){
         
     }
     include 'views/change_password.php';
+}
+function forgot_password(){
+    if(isset($_POST['btn_confirm'])){
+        $user_name = $_POST['user_name'];
+        $email = $_POST['email'];
+        $error = [];
+        if(!empty($user_name) && !empty($email)){
+           $user =  user_select_forgot_password($email, $user_name);
+          
+           if(empty($user)){
+            $error['user_name'] = "Tài khoản hoặc email không chính xác";
+           }else{
+            $password = "Mật khẩu của bạn là:  ".$user['password'];
+           }
+        }else{
+            $error['user_name'] = "Vui lòng nhập tài khoản và email";
+        }
+    }   
+    include 'views/forgot_password.php';
 }

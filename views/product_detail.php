@@ -132,7 +132,9 @@
                         <meta itemprop="datePublished" content="01-01-2016"><?= $comment['date'] ?>
 
                         <?php for ($i = 1; $i <= $comment['rating']; $i++) {
-                                echo '<span class="review_rating fa fa-star"></span>';
+                                if($comment['rating'] >=3){
+                                    echo '<span class="review_rating fa fa-star"></span>';
+                                }                   
                             } ?>
 
                         by <b><?= $comment['user_name'] ?></b>
@@ -203,7 +205,7 @@
                     <label for="comment">Comments:</label>
                     <textarea class="form-control" rows="5" id="comment" name="content"></textarea>
                     </div>
-                    <input name="submit" type="submit" class="btn btn-primary" value="Gui binh luan"> 
+                    <input name="submit" type="submit" class="btn btn-primary" value="Gửi bình luận"> 
                 </form>
             </div>
             

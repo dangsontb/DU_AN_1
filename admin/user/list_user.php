@@ -1,7 +1,7 @@
 
 
         <!-- main -->
-        <main class="container-fluid row">
+        <main class="container">
         
                 <h3 class="alert alert-primary text-primary"> Danh sách tài khoản</h3>
                 <form action="index.php?act=delete_user_by_checkbox" method="post">

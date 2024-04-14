@@ -23,7 +23,6 @@
     if (!isset($_SESSION['giohang']))
     $_SESSION['giohang'] = [];
 
-
     $spnew=loadall_sanpham_home();
     $list_category=category_select_all();
     $list_brand=brand_select_all();
@@ -64,7 +63,7 @@
                     }else{
                         $page = $_GET['page'];
                     }
-                    $quantity = 3;
+                    $quantity = 9;
                     $total_product_brand=loadall_sanpham_brand("",$brand_id);
                     $list_product_brand=product_select_page_brand($brand_id ,$page, $quantity);
                     $total_pages = ceil(count($total_product_brand) / $quantity);
@@ -72,20 +71,7 @@
                 }
                 break;
             case 'keyword':
-                if(isset($_POST['submit'])){
-                    $keyw = $_POST['keyw'];
-                }
-                if(!isset($_GET['page']) || !is_numeric($_GET['page']) || $_GET['page'] <= 1 ){
-                    $page = 1;
-                }else{
-                    $page = $_GET['page'];
-                }
-                isset($_GET['keyword']) ? $keyw = $_GET['keyword'] : '';
-                $quantity = 9;
-                $total_product_keyword=product_select_keyw($keyw);
-                $list_product=product_select_page_keyword($keyw ,$page, $quantity);
-                $total_pages = ceil(count($total_product_keyword) / $quantity);
-                include "views/search.php";
+                find_keyword();
                 break;
             case 'product_detail':
                 product_detail();
@@ -128,6 +114,12 @@
 
 
 
+            case 'change_password':
+                change_password();
+                break;
+            case 'forgot_password':
+                forgot_password();
+                break;
             // --------------------------------------------------------------- Giỏ hàng -----------------------------------------------------------
             case 'viewcart':
                 include "views/cart/viewcart.php";
@@ -135,42 +127,7 @@
 
             case 'addtocart':
                 // Lấy dữ liệu từ form
-                if (isset($_POST['addtocart'])) {
-                    $id_product = $_POST['product_id'];
-                    $tensp = $_POST['tensp'];
-                    $hinh = $_POST['hinh'];
-                    $gia = $_POST['gia'];
-                    
-                    if(isset($_POST['soluong']) && $_POST['soluong'] > 0){
-                        $soluong=$_POST['soluong'];
-                    }else{
-                        $soluong=1;
-                    }
-                   
-                    $check=0;
-                    //Kiểm tra sản phẩm có tồn tại trong giỏ hàng k
-                    //Nếu có -> Cập nhập số lượng
-                    $i=0; // Định vị xem mk ở sản phẩm nào
-                    foreach ($_SESSION['giohang'] as $sp) {
-                        if ($sp[1]===$tensp) {
-                            $soluongmoi=$soluong + $item[4];
-                            $_SESSION['giohang'][$i][4]+=$soluongmoi;
-                            $check=1;
-                            break;
-                        }
-                        $i++;
-                    }
-
-                    if($check==0){ //Không: add sản phẩm mới
-
-                        //Khởi tạo mảng con trước khi đưa vào giỏ hàng
-                        $item=array($id_product,$tensp,$hinh,$gia,$soluong);
-                        $_SESSION['giohang'][]=$item;
-                        // $spadd= [$id_product, $tensp , $hinh, $gia,  $soluong];
-                        // array_push($_SESSION['giohang'], $spadd);
-                    }
-                }
-                header("location: index.php?act=viewcart");
+                add_cart();
 
                 //include "views/cart/viewcart.php";
                 break;

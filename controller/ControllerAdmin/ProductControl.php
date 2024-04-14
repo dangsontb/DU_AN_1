@@ -8,6 +8,7 @@
             
             $description = $_POST['description'] ;
             $sale = $_POST['sale'] ;
+            $quantity = $_POST['quantity'] ;
             $create_at = $_POST['create_at'] ;
             $view = $_POST['view'] ;
             $cate_id  = $_POST['cate_id'] ;
@@ -63,6 +64,14 @@
             }else{
                 $error['sale'] = "Nhập giảm  giá";
             }
+
+            if(!empty($quantity) ){
+                if($quantity <1){
+                    $error['quantity'] = "Số lượng lớn hơn 0";
+                }
+            }else{
+                $error['quantity'] = "Nhập số lượng";
+            }
         
             if(!empty($view) ){
                 if($view < 1){
@@ -79,7 +88,7 @@
             if(empty($error)){
                 move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
         
-                product_insert($name, $price, $image, $description, $sale, $create_at, $view, $cate_id, $brand_id);
+                product_insert($name, $price, $image, $description, $sale,$quantity, $create_at, $view, $cate_id, $brand_id);
                 header("location: ?act=list_product");
             }
             // if(!empty($image_description)){
@@ -105,6 +114,7 @@ function update_product(){
         
         $description_update = $_POST['description'] ;
         $sale_update = $_POST['sale'] ;
+        $quantity_update = $_POST['quantity'] ;
         $create_at_update = $_POST['create_at'] ;
         $view_update = $_POST['view'] ;
         $cate_id_update  = $_POST['cate_id'] ;
@@ -152,7 +162,14 @@ function update_product(){
         }else{
             $error['sale_update'] = "Nhập giảm  giá";
         }
-    
+        if(!empty($quantity_update) ){
+            if($quantity_update <1){
+                $error['quantity_update'] = "Số lượng lớn hơn 0";
+            }
+        }else{
+            $error['quantity_update'] = "Nhập số lượng";
+        }
+
         if(!empty($view) ){
             if($view < 0){
                 $error['view_update'] = "View phải lớn hơn 0";
@@ -165,7 +182,7 @@ function update_product(){
     
         if(empty($error)){
             move_uploaded_file($_FILES['image']['tmp_name'], $target_file);
-            product_update($product_id_update, $name_update, $price_update, $image_update, $description_update, $sale_update, $create_at_update, $view_update, $cate_id_update, $brand_id_update);
+            product_update($product_id_update, $name_update, $price_update, $image_update, $description_update, $sale_update,$quantity_update, $create_at_update, $view_update, $cate_id_update, $brand_id_update);
             header("location: ?act=list_product");
         }else{
             header("location: ?act=edit_product&product_id=".$product_id_update);

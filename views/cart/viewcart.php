@@ -93,7 +93,7 @@
        
           <div class="wrap-infocart mar-t5">
             <span>Họ và tên  : </span>
-            <input name="name" type="text" value="<?= $fullname?>" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" required>
+            <input name="name" type="text" value="<?= $fullname?>" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" required >
           </div>
           <div class="wrap-infocart mar-t5">
             <span>Địa chỉ: </span>

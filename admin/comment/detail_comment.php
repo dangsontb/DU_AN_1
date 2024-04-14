@@ -3,7 +3,9 @@
 ?>
 <main class="container_">
     <h3 class="alert alert-primary text-primary text-center"> Chi tiết bình luận   </h3>  
+    
     <h4 class="text-info">Sản phẩm : <?=$product['name'] ?></h4>
+
     <form action="index.php?act=delete_comment_by_checkbox" method="post">
         <table class="table table-hover">
             <thead  class="table-secondary" >

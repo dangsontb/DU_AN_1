@@ -13,6 +13,7 @@
                             <th>Giá</th>
                             <th>Hình ảnh</th>
                             <th>Sale</th>
+                            <th>Số lượng</th>
                             <th>Ngày nhập</th>
                             
                             <th></th>
@@ -31,8 +32,8 @@
                             <td> <?= $name?></td>
                             <td> <?= $price?> </td>
                             <td> <img src="<?=$img ?>" class="img-thumbnail" width="60px" alt="..."> </td>
-                            <td> <?= $sale?> </td>
-                        
+                            <td> <?= $sale?> %</td>
+                            <td> <?= $product_quantity?> </td>
                             <td> <?= $create_at?> </td>
                             
                             <td>
