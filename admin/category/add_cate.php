@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container_">
         
-            <h3 class="alert alert-success text-success"> Thêm mới danh mục</h3>
+            <h3 class="alert alert-primary text-primary"> Thêm mới danh mục</h3>
    
             <form action="index.php?act=add_cate" method="post">
                 <div class="mb-3">

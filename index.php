@@ -17,6 +17,7 @@
     include "controller/ControllerHome/HomeControl.php";
     include "controller/ControllerHome/ProductControl.php";
     include "controller/ControllerHome/FilterControl.php";
+    include "controller/ControllerHome/CartControl.php";
 
 
     if (!isset($_SESSION['giohang']))
@@ -28,6 +29,7 @@
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
     $tong_sanpham  = count_product();
+   
     include "views/header.php";
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {

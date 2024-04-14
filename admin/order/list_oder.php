@@ -1,6 +1,6 @@
 <main class="container_">
         
-        <h3 class="alert alert-success text-success"> Danh sách bill</h3>
+        <h3 class="alert alert-primary text-primary"> Danh sách bill</h3>
         <table class="table table-hover">
             <thead  class="table-secondary" >
                 <tr>
@@ -25,14 +25,23 @@
                         <td><?= $id ?></td>
                         <td><?= $user_name ?></td>
                         <td><?= number_format($tong_donhang) ?></td>
-                        <td><?= $status_name ?></td>
+                        <td>
+                           
+                            <select class="form-select form-select-sm w-auto" id="status<?= $id?>" onchange="status_update(this)" aria-label="Small select example">
+                                <!-- <option selected><?= $status_name ?></option> -->
+                                <?php  foreach($status as $stt) :  ?>
+                                    <option value="<?=$id?>&id_status=<?= $stt['status_id'] ?>" <?= $id_status == $stt['status_id'] ? 'selected': '' ?>
+                                    ><?= $stt['status_name'] ?></option>
+                                <?php endforeach ?>    
+                             
+                            </select>
+                        </td>
                         <td><?= $phuongthuc_thanhtoan == 1 ? 'COD' : "Banking" ?></td>
                         <td><?= $order[9] ?></td>
                         
                         
                         <td>
-                            <a href="?act=order_detail&id=<?= $id ?>" class="btn btn-primary fw-medium">Chi tiết</a>
-                            <!-- <a href="" class="btn btn-outline-danger fw-medium" onclick="return confirm('Xác nhận xóa')">Delete</a> -->
+                            <a href="?act=order_detail&id=<?= $id ?>" class="btn btn-primary fw-medium">Chi tiết <i class="fas fa-info-circle"></i></a>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -41,14 +50,6 @@
             </tbody>
             
         </table>
-        <!-- <form action="" method="post">
-            <div class="form-group">
-                <button name="btn_insert" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>
-                <button type="reset"  class="btn btn-outline-info fw-medium">Bỏ chọn tất cả</button>
-                <a   class="btn btn-outline-danger fw-medium">Xóa mục đã chọn</a>
-                
-            </div>
-        </form> -->
         <div aria-label="Page navigation example" class="chuyentrang">
             <ul class="pagination justify-content-center" >
                 <li class="page-item">
@@ -90,3 +91,18 @@
         </div>
       
 </main>
+<script type="text/javascript">
+     function status_update(element){
+        var value = element.value;
+        // alert()
+        // alert(value);
+        if(value!= ""){
+            var url = "http://localhost/du_an_1/admin/index.php?act=update_order&order_id="+value;
+            // alert(url);
+            window.location.href = url;
+        }else{
+            alert('Hãy lọc sản phẩm');
+          }
+     }
+
+</script>

@@ -11,12 +11,13 @@
 </head>
 <body>
     <div class="container"> 
-        <header>
-            <h1 class="alert alert-success"><a class="nav-link text-primary" href="#">Website Admin</a></h1>
+        <header class="mt-5">
+            <h1 class="alert alert-primary "><a class="nav-link text-primary" href="#">Website Admin</a></h1>
             <nav class="navbar navbar-expand-lg bg-dark  rounded-2 " >
                 <div class="container-fluid ">       
                     <div class="collapse navbar-collapse " id="navbarNavDropdown">
                         <ul class="nav navbar-nav   ">
+                            
                             <li class="nav-item  ">
                                 <a class="nav-link text-light " aria-current="page" href="index.php">Home</a>
                             </li>

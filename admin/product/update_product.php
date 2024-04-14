@@ -17,7 +17,7 @@
         ?>
         <main class="container_">
         
-            <h3 class="alert alert-success text-success"> Cập nhật sản phẩm</h3>
+            <h3 class="alert alert-primary text-primary"> Cập nhật sản phẩm</h3>
    
             <form action="index.php?act=update_product" class="row g-3" method="post" enctype="multipart/form-data">
                 

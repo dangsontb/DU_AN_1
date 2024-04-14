@@ -2,7 +2,7 @@
         <!-- main -->
         <main class="container_">
         
-            <h3 class="alert alert-success text-success"> Update thương hiệu</h3>
+            <h3 class="alert alert-primary text-primary"> Update thương hiệu</h3>
    
             <form action="index.php?act=update_brand" method="post">
                 <?php  

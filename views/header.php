@@ -107,6 +107,7 @@ $count = countcart();
 
                                     <li><a class="dropdown-item" href="index.php?act=change_password">Đổi mật khẩu</a></li>
                                     <li><a class="dropdown-item" href="index.php?act=logout">Thoát</a></li>
+                                    <li><a class="dropdown-item" href="index.php?act=order_history">Lịch sử </a></li>
                                     
                                     <?php }else{?>
                                         <li><a class="dropdown-item" href="index.php?act=form_login">Đăng nhập</a></li>
@@ -129,6 +130,9 @@ $count = countcart();
 
 
 </style>
+<?php
+    if (  !isset($_GET['act']) || (isset($_GET['act']))&&($_GET['act']!="viewcart")  ) {
+?>
             <!-- ========================================================== SLIDESHOW========================================================= -->
             <div>
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -153,4 +157,5 @@ $count = countcart();
                     </button>
                 </div>
             </div>
+<?php }?>
         </header>

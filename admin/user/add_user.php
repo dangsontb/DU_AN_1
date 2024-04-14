@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container-fluid">
            <div >
-            <h3 class="alert alert-success text-success"> Thêm mới người dùng</h3>
+            <h3 class="alert alert-primary text-primary"> Thêm mới người dùng</h3>
    
             <form action="index.php?act=add_user" class="row g-3" method="post" >
                

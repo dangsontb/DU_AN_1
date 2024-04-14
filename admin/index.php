@@ -8,6 +8,7 @@
     include '../model/comment.php';
     include "../model/order_detail.php";
     include "../model/order.php";
+    include "../model/status.php";
     include '../controller/ControllerAdmin/ProductControl.php';
     include '../controller/ControllerAdmin/UserControl.php';
     include '../controller/ControllerAdmin/BrandControl.php';
@@ -148,10 +149,21 @@
                 order_detail();
                
                 break;
+            case 'update_order':
+                if(isset($_GET['order_id']) && $_GET['order_id'] > 0 && isset($_GET['id_status']) && $_GET['id_status'] > 0){
+                    $id_status = $_GET['id_status'];
+                    $order_id = $_GET['order_id'];
+                    $order = order_select_by_id($order_id);
+                    update_order($order_id, $order['ma_donhang'], $order['tong_donhang'], $order['phuongthuc_thanhtoan'], $order['order_name'], $order['phone'], $order['address'], $id_status, $order['id_user'],$order['create_at']);
+                    header("location: ?act=list_bill");
+                }
+                
+                break;  
+            
             default : 
                 include "home.php";
                 break;
-
+            
         }
     }else{
         include "home.php";

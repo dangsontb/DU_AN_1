@@ -3,7 +3,7 @@
         <!-- main -->
         <main class="container_">
         
-            <h3 class="alert alert-success text-success"> Update danh mục</h3>
+            <h3 class="alert alert-primary text-primary"> Update danh mục</h3>
    
             <form action="index.php?act=update_cate" method="post">
             <?php  

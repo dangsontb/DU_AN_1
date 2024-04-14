@@ -6,6 +6,7 @@ function list_order(){
     }else{
         $page = $_GET['page'];
     }
+    $status =status_select_all();
     $quantity = 6;
     $total_orders = order_select_all();
     $list_order = order_select_pages($page, $quantity) ;
@@ -14,6 +15,7 @@ function list_order(){
 }
 function order_detail(){
     $id = $_GET['id'];
+    $detail_order_name =  order_select_by_id($id);
     $list_order_detail = order_detail_by_order_id($id);
     include "order/order_detail.php";
 }
