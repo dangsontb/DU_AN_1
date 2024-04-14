@@ -19,7 +19,7 @@
                     <?php  foreach( $history_order_detail as $sp){
                         extract($sp);
                         // echo "<pre>";
-                        // var_dump($order_detail);
+                        // print_r($sp);
                         $hinh = $path_img.$hinhanh;
                     ?>
                     <tr>
@@ -30,11 +30,7 @@
                         <td><?= number_format($dongia)?></td>
                         <td><?=$total =  number_format($soluong * $dongia)?></td>
                         <td></td>
-                        <td>
-                            <?= $id_status == 1 ?
-                            '<a href="index.php?act=delete_order_detail&order_id=' . $id_order . '&id=' . $id . '" onclick="return confirm(\'Bạn có muốn xóa ' . $ten_sanpham . ' khỏi đơn hàng ?\')">
-                            <i class="fas fa-trash fa-sm" style="color: #b80000;"></i></a>' : '' ?>
-                        </td>
+                        <td></td>
                     </tr>
                     <?php } ?>
             </tbody>     

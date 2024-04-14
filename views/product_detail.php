@@ -205,7 +205,7 @@
                     <label for="comment">Comments:</label>
                     <textarea class="form-control" rows="5" id="comment" name="content"></textarea>
                     </div>
-                    <input name="submit" type="submit" class="btn btn-primary" value="Gui binh luan"> 
+                    <input name="submit" type="submit" class="btn btn-primary" value="Gửi bình luận"> 
                 </form>
             </div>
             
