@@ -6,7 +6,7 @@
                     <div class="col doanhthu bong">
                          <div class="price">
                               <p style="color: #725FF0; font-weight: 700;">Tổng doanh thu(Ngày)</p>
-                              <span>0đ</span>
+                              <span><?=  number_format($doanh_thu_ngay) ?></span>
                          </div>
                          <div class="dola">
                               <p>$</p>
@@ -16,7 +16,7 @@
                     <div class="col doanhthu bong">
                          <div class="price">
                               <p style="color: #FFB949; font-weight: 700;">Tổng doanh thu(Tuần)</p>
-                              <span>0đ</span>
+                              <span><?=  number_format($doanh_thu_tuan)?></span>
                          </div>
                          <div class="dola">
                               <p>$</p>
@@ -26,7 +26,7 @@
                     <div class="col doanhthu bong">
                          <div class="price">
                               <p style="color: #2AB476; font-weight: 700;">Tổng doanh thu(Tháng)</p>
-                              <span>0đ</span>
+                              <span><?=  number_format(doanh_thu_1_thang())?></span>
                          </div>
                          <div class="dola">
                               <p>$</p>
@@ -36,7 +36,7 @@
                     <div class="col bong doanhthu1" >
                          <div class="price">
                               <p style="color: #2254A2; font-weight: 700;">Tổng doanh thu(Năm)</p>
-                              <span>0đ</span>
+                              <span><?=  number_format(doanh_thu_1_nam())?></span>
                          </div>
                          <div class="dola">
                               <p>$</p>
@@ -50,27 +50,27 @@
                     <div class="col doanhthu bong">
                          <div class="price">
                               <p style="color: #725FF0; font-weight: 700;">Tổng đơn</p>
-                              <span>0</span>
+                              <span><?=  number_format(total_order())?></span>
                          </div>
                          <div class="logo">
                               <i class="fas fa-book fa-sm" style="color:  #424f66;"></i>
                          </div>
                     </div>
 
+                   
                     <div class="col doanhthu bong">
                          <div class="price">
-                              <p style="color: #FFB949; font-weight: 700;">Tổng khách hàng</p>
-                              <span>0</span>
+                              <p style="color: #2AB476; font-weight: 700;">Tổng số nhãn hiệu</p>
+                              <span><?=  number_format(total_brand())?></span>
                          </div>
                          <div class="logo">
-                              <i class="fas fa-user fa-sm" style="color: #424f66;"></i>
+                              <i class="fab fa-product-hunt fa-sm" style="color: #424f66;"></i>
                          </div>
                     </div>
-                    
                     <div class="col doanhthu bong">
                          <div class="price">
-                              <p style="color: #2AB476; font-weight: 700;">Tổng sản phẩm</p>
-                              <span>0</span>
+                              <p style="color: #2AB476; font-weight: 700;">Tổng mẫu mã</p>
+                              <span><?=  number_format(total_product())?></span>
                          </div>
                          <div class="logo">
                               <i class="fab fa-product-hunt fa-sm" style="color: #424f66;"></i>
@@ -79,11 +79,55 @@
 
                     <div class="col bong doanhthu1" >
                          <div class="price">
-                              <p style="color: #2254A2; font-weight: 700;">Tổng loại sản phẩm</p>
-                              <span>0</span>
+                              <p style="color: #2254A2; font-weight: 700;">Loại hàng</p>
+                              <span><?=  number_format(total_category())?></span>
                          </div>
                          <div class="logo">
                               <i class="fas fa-shopping-bag fa-sm" style="color: #424f66;"></i>
+                         </div> 
+                    </div>
+               </div>
+          </div>
+          <div class="container text-center item">
+               <div class="row">
+                    <div class="col doanhthu bong">
+                         <div class="price">
+                              <p style="color: #FFB949; font-weight: 700;">Tổng khách hàng</p>
+                              <span><?=  number_format(total_customer())?></span>
+                         </div>
+                         <div class="logo">
+                              <i class="fas fa-user fa-sm" style="color: #424f66;"></i>
+                         </div>
+                    </div>
+                    <div class="col doanhthu bong">
+                         <div class="price">
+                              <p style="color: #725FF0; font-weight: 700;">Số lượng sản phẩm đã bán</p>
+                              <span><?=  number_format(total_product_order())?></span>
+                         </div>
+                         <div class="logo">
+                              <i class="fas fa-book fa-sm" style="color:  #424f66;"></i>
+                         </div>
+                    </div>
+
+                    <div class="col doanhthu bong">
+                         <div class="price">
+                              <p style="color: #FFB949; font-weight: 700;">Tồn kho</p>
+                              <span><?=  number_format(Number_of_goods_in_stock())?></span>
+                         </div>
+                         <div class="logo">
+                              <i class="fas fa-user fa-sm" style="color: #424f66;"></i>
+                         </div>
+                    </div>
+                    
+                   
+
+                    <div class="col bong doanhthu1" >
+                         <div class="price">
+                              <p style="color: #2254A2; font-weight: 700;">Tổng số bình luận</p>
+                              <span><?=  number_format(total_comment())?></span>
+                         </div>
+                         <div class="logo">
+                         <i class="fas fa-comment fa-sm" style="color: #424f66;"></i>
                          </div> 
                     </div>
                </div>

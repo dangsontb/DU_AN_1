@@ -1,9 +1,9 @@
 <main class="container">
-        
+        <div class="row">
         <!-- <h3 class="alert alert-primary text-primary">Chi tiết đơn hàng : </h3> -->
         <?php if(is_array($list_order_detail)){?>
             
-            <div class="mb-2  w-25">
+            <div class="mb-2  w-25 col-3">
                 <ul class="list-group ">
                     <li class="list-group-item">Đơn hàng:  <span class="float-right text-danger fw-semibold"> <?=$detail_order_name['ma_donhang']?></span></li>
                     <li class="list-group-item">Khách hàng:  <span class="float-right text-danger fw-semibold"> <?=$list_order_detail[0]['order_name']?></span></li>
@@ -15,7 +15,9 @@
                 </ul>
             </div>
         <?php }?>
-        <table class="table table-hover text-center align-items-center">
+            <div class="col-9">
+            
+        <table class="table table-hover text-center align-items-center col-9">
             <thead  class="table-secondary" >
                 <tr>
              
@@ -52,6 +54,8 @@
             </tbody>
             
         </table>
+        </div>
+        </div>
         <!-- <form action="" method="post">
             <div class="form-group">
                 <button name="btn_insert" class="btn btn-outline-primary fw-medium">Chọn tất cả</button>

@@ -20,10 +20,11 @@
         include '../controller/ControllerAdmin/CommentControl.php';
         include '../controller/ControllerAdmin/OderControl.php';
         include '../controller/ControllerAdmin/StatisticalControl.php';
-
+        
         include "header.php";
         include "../global.php";
-    
+        $doanh_thu_ngay = doanh_thu_1_ngay();
+        $doanh_thu_tuan = doanh_thu_7_ngay_qua();
         if(isset($_GET['act'])){
             $act = $_GET['act'];
             switch($act){
@@ -184,7 +185,16 @@
                     selling_products();
                         
                     break;
+                    
+                case 'best_selling_brand':
+                    best_selling_brand();
+                        
+                    break;
+                case 'bieudo_brand':
+                    $list_bieudo = total_best_selling_brand();
+                    include "statistical/bieudo.php";
 
+                    break;
                 default : 
                     include "home.php";
                     break;

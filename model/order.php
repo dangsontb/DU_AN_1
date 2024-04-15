@@ -36,7 +36,7 @@ function order_select_pages( $page , $quantity){
     $sql = "SELECT * FROM `order` o 
             JOIN `user` u ON o.id_user = u.user_id
             JOIN `status` s ON o.id_status = s.status_id
-            ORDER BY o.id asc
+            ORDER BY o.id desc
             LIMIT $start , $quantity";
     return pdo_query($sql);
 }
@@ -70,3 +70,5 @@ function history($user_id){
         $sql="DELETE FROM `order` WHERE id=$id_order"; 
         pdo_execute($sql);
    }
+
+

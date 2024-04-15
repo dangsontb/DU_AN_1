@@ -43,7 +43,7 @@
                                 <a class="nav-link text-light" href="index.php?act=list_property">Thuộc tính</a>
                             </li> -->
                             <li class="nav-item">
-                                <a class="nav-link text-light" href="index.php?act=list_statistical">Thống kê</a>
+                                <a class="nav-link text-light" href="index.php?act=best_selling_brand">Thống kê</a>
                             </li>
                         </ul>
                     </div>

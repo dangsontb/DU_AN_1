@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 12, 2024 lúc 07:43 AM
+-- Thời gian đã tạo: Th4 15, 2024 lúc 07:11 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -81,44 +81,17 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`comment_id`, `content`, `date`, `rating`, `user_id`, `product_id`) VALUES
-(9, 'eqweqw', '28-03-2024', 0, 18, 42),
-(10, 'qưeqweqe', '28-03-2024', 0, 18, 42),
-(11, 'đâs', '28-03-2024', 0, 18, 42),
-(16, 'sadasd', '02-04-2024', 5, 18, 47),
-(17, 'đâsd', '02-04-2024', 5, 18, 52),
-(25, '111', '03-04-2024', 5, 19, 63),
-(26, '1111', '03-04-2024', 5, 19, 63),
-(27, '1111', '03-04-2024', 4, 19, 63),
-(28, '1111', '03-04-2024', 3, 19, 63),
-(29, 'wqeqwe', '04-04-2024', 4, 18, 45),
-(30, 'qq', '04-04-2024', 1, 18, 45),
-(31, 'a', '04-04-2024', 1, 18, 45),
-(32, 'ưqeqwe', '08-04-2024', 3, 19, 42),
-(33, 'qưeqwe', '08-04-2024', 5, 19, 42),
-(36, 'qưeqw', '08-04-2024', 2, 19, 47),
-(37, 'qưeqwe', '08-04-2024', 5, 19, 47),
-(38, 'ewqwe', '08-04-2024', 4, 19, 47),
-(39, '1111', '08-04-2024', 5, 19, 61),
-(40, '2111', '08-04-2024', 1, 19, 61),
-(41, '5', '08-04-2024', 2, 19, 61),
-(42, '5', '08-04-2024', 3, 19, 61),
-(43, '55', '08-04-2024', 5, 19, 61),
-(44, '1', '08-04-2024', 2, 19, 49),
-(45, '1', '08-04-2024', 3, 19, 49),
-(46, '11', '08-04-2024', 4, 19, 49),
-(47, '1111', '08-04-2024', 5, 19, 49),
-(48, '1', '08-04-2024', 2, 19, 50),
-(49, 'aaasdasdasdasdddddddddddddddddddd', '08-04-2024', 1, 19, 50),
-(50, '111111', '08-04-2024', 4, 19, 50),
-(51, '111111', '08-04-2024', 5, 19, 50),
-(54, 'qq', '08-04-2024', 5, 19, 46),
-(55, 'ưqeqw', '08-04-2024', 5, 19, 46),
-(56, 'qưeqweqw', '08-04-2024', 4, 19, 46),
-(57, 'đâs', '08-04-2024', 5, 19, 46),
-(58, 'ahihh', '08-04-2024', 5, 19, 46),
-(59, 'ádsadasdádasdasdasd', '08-04-2024', 5, 19, 46),
-(68, 'đẹp quá xá', '09-04-2024', 3, 19, 48),
-(69, 'Quá tuyệt', '09-04-2024', 5, 19, 48);
+(70, 'Giày đẹp quá', '14-04-2024', 5, 18, 42),
+(71, 'waoooo', '14-04-2024', 5, 18, 42),
+(72, 'sản phẩm tốt!!', '14-04-2024', 5, 18, 43),
+(73, 'ok ', '14-04-2024', 5, 18, 43),
+(74, 'sản phẩm đẹp đa dạng\r\n', '14-04-2024', 5, 18, 44),
+(75, 'đóng gói ok', '14-04-2024', 4, 18, 44),
+(76, 'tốt', '14-04-2024', 5, 18, 44),
+(77, 'đẹp quá', '14-04-2024', 5, 18, 45),
+(78, 'mê', '14-04-2024', 5, 18, 45),
+(79, 'sản phẩm đẹp', '14-04-2024', 5, 18, 45),
+(80, 'sản phẩm uki', '14-04-2024', 5, 18, 45);
 
 -- --------------------------------------------------------
 
@@ -357,7 +330,20 @@ INSERT INTO `product` (`product_id`, `name`, `price`, `image`, `description`, `s
 (63, 'Dép Biti\'s Sandal Black', 699000, '777692a08f5da7794385d1139c9989d1.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 1, 0, '2024-03-29', 2234, 36, 66),
 (64, 'Giày Biti\'s Hunter OR', 3500000, 'a9627c2c8259d882ebe08d00c5beaa87.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 4, 0, '2024-03-29', 1234, 1, 66),
 (65, 'Dép Biti\'s Sandal White', 2500000, 'ccd5df2095a25b3e72dc2308a6331c46.jpg', 'HIGHLIGHTS:\r\n\r\nThe model uses a 1-layer neck Knits for convenient wearing, convenient foot-piercing. The highlight SP woven straps with the logo Bird Wings combines the way the shoelaces are sewn with a more distinct difference.\r\n- SOLE: Phylon /Rubber\r\n\r\n- STRAP: Knits with stockings\r\n\r\n- With lanyard.\r\n\r\n- Due to the different monitor and light condition, the actual color of the item may be about 3-5% different.', 1, 0, '2024-03-29', 1234, 36, 66),
-(66, 'Dép lào', 10000, 'iPad-Gen-10-sliver-thumb-600x600.jpg', '   DÉp chuyên để đi  thả diều chăn trâu', 11, 89, '2024-04-12', 11, 36, 1);
+(67, 'Giày Puma RS-X_Suede', 49999999, 'RS-X-Suede-Multi-Sneakers.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 20, 50, '2024-04-14', 2, 1, 44),
+(68, 'Giày Puma NBA_basketball', 3500000, 'PUMA-x-NBA-2K-Scoot-Zeros-Men\'s-Basketball-giay.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 10, 50, '2024-04-14', 2, 1, 44),
+(69, 'Giày Puma soft_Women\'s', 2000000, 'Suede-XL-Soft-Women\'s-Sneakers.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n\r\n', 10, 50, '2024-04-14', 2, 1, 44),
+(70, 'Giày Puma soft_adc', 2000000, 'Suede-XL-Men\'s-Sneakers.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 10, 50, '2024-04-14', 2, 1, 44),
+(71, 'Giày Adidas_Running', 2500000, '4DFWD_3_Running_Shoes_Black_IG8985_01_standard.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 10, 50, '2024-04-14', 3, 1, 1),
+(72, 'Giày Adidas_Ubersonic', 3000000, 'Adizero_Ubersonic_4.1_Tennis_Shoes_Purple_IF0446_HM1.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 10, 50, '2024-04-14', 3, 1, 1),
+(73, 'Giày Adidas_Gamecourt', 3000000, 'Gamecourt_2.0_Tennis_Shoes_White_IG9568_01_standard.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 10, 50, '2024-04-14', 3, 1, 1),
+(74, 'Giày Adidas_SoleMatch', 4000000, 'SoleMatch_Control_Tennis_Shoes_Green_IF0438_HM1.avif', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 30, 50, '2024-04-14', 3, 1, 1),
+(75, 'Nike Air_max270', 1890000, 'air-max-270-shoes-2V5C4p.png', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 5, 50, '2024-04-14', 4, 1, 2),
+(76, 'Nike Custom_air_max95', 3000000, 'custom-nike-air-max-95-by-you.png', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 20, 50, '2024-04-14', 4, 1, 2),
+(77, 'Nike infinityrn_run', 2300000, 'infinityrn-4-road-running-shoes-VKhgV0.png', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 10, 50, '2024-04-14', 4, 1, 2),
+(78, 'Nike sb_check-canvas', 1900000, 'sb-check-canvas-older-skate-shoes-PMLTfN.png', 'This larger-than-life remix of the iconic Suede Classic has been blazing its own path. The Suede XL draws from PUMA\'s Y2K-inspired styles while retaining classic Suede DNA. But there\'s a twist. With its extra padding, extra-large tongue, and extra-thick laces, Suede XL maximizes everything. This sneaker is the perfect mix of understated and elevated.\r\nPUMA’s leather products support responsible manufacturing via the Leather Working Group.www.leatherworkinggroup.com\r\nSuede upper\r\nLeather Formstrip\r\nSuede tongue with mesh binding\r\nDebossed and foil-printed PUMA branding on quarter panel\r\nMesh lining\r\nMesh sockliner\r\nRubber midsole\r\nRubber outsole\r\nStyle: 395205_21\r\nColor: Dark Myrtle-Warm White\r\n\r\n', 10, 50, '2024-04-14', 4, 1, 2),
+(79, 'Giày Biti\'s Sub', 1500000, 'bsm002300den2_0ff6bb95397942c7a893fc8ae8aa7389_1024x1024.jpg', 'Đế giày thể thao nam Biti\'s Hunter HSM003200 làm từ vật liệu phylon nổi bật với đặc tính nhẹ, linh hoạt và độ đàn hồi tốt\r\nPhần đế giày được làm từ Phylon cao cấp, khi sử dụng mang lại cảm giác êm ái và mềm mại. Chất liệu đế giày mềm, có thể uốn cong mà không bị gãy mép\r\nĐế giày được thiết kế với họa tiết sọc với mục đích tăng độ ma sát, giảm thiểu độ hao mòn cũng như trơn trượt cho đôi giày\r\nPhần lót giày có khả năng hút mồ hôi, khử mùi cực kỳ hiệu quả.', 10, 50, '2024-04-14', 4, 1, 66),
+(80, 'Giày Biti\'s Sport_NSA', 2000000, 'giay-the-thao-nam-dsm075033trg-trang-47z78-color-trang_96e1965437fe4710b53788e6704473e5.jpg', 'Đế giày thể thao nam Biti\'s Hunter HSM003200 làm từ vật liệu phylon nổi bật với đặc tính nhẹ, linh hoạt và độ đàn hồi tốt\r\nPhần đế giày được làm từ Phylon cao cấp, khi sử dụng mang lại cảm giác êm ái và mềm mại. Chất liệu đế giày mềm, có thể uốn cong mà không bị gãy mép\r\nĐế giày được thiết kế với họa tiết sọc với mục đích tăng độ ma sát, giảm thiểu độ hao mòn cũng như trơn trượt cho đôi giày\r\nPhần lót giày có khả năng hút mồ hôi, khử mùi cực kỳ hiệu quả.', 10, 50, '2024-04-14', 4, 1, 66);
 
 -- --------------------------------------------------------
 
@@ -428,7 +414,8 @@ INSERT INTO `user` (`user_id`, `user_name`, `password`, `fullname`, `email`, `ph
 (18, 'dangvanson', 'anhsontb', 'Đặng Sơn TB', 'dangvanson210297@gmail.com', '0987654321', 'thái bình', 1, '04-04-24'),
 (19, 'anhsontb', '12345678', 'Đặng Văn Sơn', 'dangson@gmail.com', '0986767222', 'Thái bình', 1, '06-04-24'),
 (20, '123456789', '123456789', 'zcb', 'dangvanson2610297@gamail.com', '2345123450', 'thôn lai vy', 0, '06-04-24'),
-(21, 'dangsontb', '12345678', 'Đặng Văn Sơn', 'Dangvanson@gmail.com', '0339530282', 'Thái Bình', 0, '11-04-24');
+(21, 'dangsontb', '12345678', 'Đặng Văn Sơn', 'Dangvanson@gmail.com', '0339530282', 'Thái Bình', 0, '11-04-24'),
+(22, 'hieuthoi', '123456789', 'Nghiem Cong Hieu', 'hieuncph45632@fpt.edu.vn', '0394122004', 'sdvvegverv', 1, '14-04-24');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -520,7 +507,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT cho bảng `order`
@@ -538,7 +525,7 @@ ALTER TABLE `order_detail`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT cho bảng `size`
@@ -556,7 +543,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
