@@ -38,7 +38,7 @@
         </table>
   </div> -->
 
-  <h4 class="text-center" style="padding: 60px 0px ;">Lịch sử đơn hàng</h4>
+  <h2 class="text-center" style="padding: 60px 0px ;">Lịch sử đơn hàng</h2>
   <div class="container">
   <table class="table">
             <thead  class="table-secondary" >
