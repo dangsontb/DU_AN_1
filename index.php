@@ -28,7 +28,7 @@
     $list_brand=brand_select_all();
     $product_top10=loadall_product_top10();
     $tong_sanpham  = count_product();
-   
+    
     include "views/header.php";
 
     if ((isset($_GET['act']))&&($_GET['act']!="")) {
@@ -112,8 +112,6 @@
                 signup();
                 break;
 
-
-
             case 'change_password':
                 change_password();
                 break;
@@ -131,7 +129,12 @@
 
                 //include "views/cart/viewcart.php";
                 break;
-
+            case 'plus':
+                plus_quantity();
+                break;
+            case 'minus':
+                minus_quantity();
+                break;
             case 'delete_cart':
                 if(isset($_GET['i'])){
                     $i=$_GET['i'];
@@ -153,10 +156,33 @@
                 // }else{
                 //     header("location: index.php");
                 break;
-    
+            //------------------------------------------------------------------------ Đơn hàng ----------------------------------------------------------------------
+            case 'thanhtoan':
+                thanh_toan();
+                break;
+            case 'order_history':
+                order_history();
+                break;
+            case 'history_order_detail':
+                if (isset($_GET['order_id'])) {
+                    $order_id=$_GET['order_id'];
+                    $history_order_detail = order_detail_by_order_id($order_id);
+                    // echo "<pre>";
+                    // var_dump($history_order_detail);
+                }
+                include "views/cart/detail_history.php";
+                break;
+            case 'cancel_order':
+                update_quantity_cancel_order();
+                break;
+            case 'delete_order_detail':
+                delete_order_detail();
+                break;
+
             default:
                 include "views/home.php";
                 break;
+            
         }
     }else{
        
